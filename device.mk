@@ -377,6 +377,10 @@ PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.0 \
     android.hardware.secure_element@1.0-impl
 
+# Recovery
+PRODUCT_PACKAGES += \
+    librecovery_updater_RMX1971
+
 # Sensors
 PRODUCT_PACKAGES += \
    android.hardware.sensors@1.0-service \
