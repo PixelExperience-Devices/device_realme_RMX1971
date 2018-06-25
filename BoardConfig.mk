@@ -26,6 +26,7 @@ TARGET_USES_64_BIT_BINDER := true
 # Assert
 TARGET_OTA_ASSERT_DEVICE := RMX1971
 
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := sdm710
 TARGET_NO_BOOTLOADER := true
@@ -104,6 +105,7 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 # Treble
 PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
 PRODUCT_FULL_TREBLE_OVERRIDE := true
+
 
 # Inherit from the proprietary version
 -include vendor/realme/RMX1971/BoardConfigVendor.mk
