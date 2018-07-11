@@ -36,6 +36,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.target.rc
 
+PRODUCT_PACKAGES += \
+    init.qcom.rc
+
 # Display
 PRODUCT_PACKAGES += \
     libvulkan
