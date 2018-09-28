@@ -189,6 +189,7 @@ BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
+WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 
 # Inherit from the proprietary version
 -include vendor/realme/RMX1971/BoardConfigVendor.mk
