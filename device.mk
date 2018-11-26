@@ -364,6 +364,7 @@ PRODUCT_PACKAGES += \
 
 # RCS
 PRODUCT_PACKAGES += \
+    com.android.ims.rcsmanager \
     rcs_service_aidl \
     rcs_service_aidl.xml \
     rcs_service_api \
@@ -408,6 +409,7 @@ PRODUCT_COPY_FILES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+
 
 # Telephony
 PRODUCT_PACKAGES += \
