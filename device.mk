@@ -48,7 +48,8 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    libvulkan
+    libvulkan \
+    vendor.display.config@1.0
 
 # HIDL
 PRODUCT_COPY_FILES += \
@@ -112,5 +113,13 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     vndk-sp
 
+# WiFi Display
+PRODUCT_PACKAGES += \
+    libnl
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
+
 # Inherit from proprietary version
 $(call inherit-product-if-exists, vendor/realme/RMX1971/RMX1971-vendor.mk)
+
