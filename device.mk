@@ -225,6 +225,9 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
 #    RealmeParts
 
+# Enable updating of APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     vendor.oppo.hardware.biometrics.fingerprint@2.1 \
