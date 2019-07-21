@@ -24,9 +24,17 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     audio.a2dp.default
 
+# Device init scripts
+PRODUCT_PACKAGES += \
+    init.target.rc
+
 # Display
 PRODUCT_PACKAGES += \
     libvulkan
+
+# HIDL
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/manifest.xml:system/etc/manifest.xml
 
 # IMS
 PRODUCT_PACKAGES += \

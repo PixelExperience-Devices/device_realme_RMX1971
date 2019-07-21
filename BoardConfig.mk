@@ -106,6 +106,5 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 
-
 # Inherit from the proprietary version
 -include vendor/realme/RMX1971/BoardConfigVendor.mk
