@@ -123,6 +123,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
+# FM
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.fm.use_audio_session=true
+
 # FRP
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp
