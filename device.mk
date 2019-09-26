@@ -51,7 +51,8 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    vendor.oppo.hardware.biometrics.fingerprint@2.1
+    vendor.oppo.hardware.biometrics.fingerprint@2.1 \
+    android.hardware.biometrics.fingerprint@2.1-service.realme_sdm710
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
