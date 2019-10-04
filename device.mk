@@ -51,6 +51,10 @@ PRODUCT_PACKAGES += \
     libvulkan \
     vendor.display.config@1.0
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    vendor.oppo.hardware.biometrics.fingerprint@2.1
+
 # HIDL
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/manifest.xml:system/etc/manifest.xml
