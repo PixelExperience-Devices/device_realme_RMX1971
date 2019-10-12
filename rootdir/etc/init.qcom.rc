@@ -1598,3 +1598,11 @@ on property:ro.vendor.oppo.product.device=*
 on boot
     chown system system /dev/goodix_fp
 #endif
+
+service vendor.imsdatadaemon /vendor/bin/imsdatadaemon
+    override
+    class main
+    user radio
+    socket ims_datad stream 0660 system radio
+    group radio wifi inet vendor_qti_diag log
+    disabled
