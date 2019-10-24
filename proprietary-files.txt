@@ -834,6 +834,16 @@ vendor/firmware/a225_pm4.fw
 vendor/firmware/a300_pm4.fw
 vendor/firmware/a530_gpmu.fw2
 
+# IO Prefetcher
+vendor/lib/hw/vendor.qti.hardware.iop@2.0-impl.so
+vendor/lib/libqti-iopd-client.so
+vendor/lib/vendor.qti.hardware.iop@1.0.so
+vendor/lib/vendor.qti.hardware.iop@2.0.so
+vendor/lib64/hw/vendor.qti.hardware.iop@2.0-impl.so
+vendor/lib64/libqti-iopd-client.so
+vendor/lib64/vendor.qti.hardware.iop@1.0.so
+vendor/lib64/vendor.qti.hardware.iop@2.0.so
+
 # Keystore
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
 vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc
@@ -906,6 +916,30 @@ etc/permissions/vendor-qti-hardware-alarm.xml
 # Bluetooth (aptX) - from crosshatch - PD1A.180720.030
 lib64/libaptX_encoder.so|0cebad28afcf29f931bdc2d24fce2730dc882ecf
 lib64/libaptXHD_encoder.so|90f47f10af28b3ead143200cb4370b847c513127
+
+# Perf
+vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
+vendor/bin/msm_irqbalance
+vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
+vendor/etc/perf/commonresourceconfigs.xml
+vendor/etc/perf/perfboostsconfig.xml
+vendor/etc/perf/targetconfig.xml
+vendor/etc/perf/targetresourceconfigs.xml
+vendor/etc/powerhint.xml
+vendor/lib/libperfgluelayer.so
+vendor/lib/libqti-perfd-client.so
+vendor/lib/libqti-perfd.so
+vendor/lib/libqti-util.so
+vendor/lib/libqti-utils.so
+vendor/lib/vendor.qti.hardware.perf@1.0.so
+vendor/lib64/liblearningmodule.so
+vendor/lib64/libmeters.so
+vendor/lib64/libperfgluelayer.so
+vendor/lib64/libqti-perfd-client.so
+vendor/lib64/libqti-perfd.so
+vendor/lib64/libqti-util.so
+vendor/lib64/libqti-utils.so
+vendor/lib64/vendor.qti.hardware.perf@1.0.so
 
 # QMI
 etc/permissions/qti_libpermissions.xml
