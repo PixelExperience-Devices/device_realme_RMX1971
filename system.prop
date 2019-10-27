@@ -80,3 +80,7 @@ rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 # SSR
 persist.vendor.ssr.enable_ramdumps=0
 persist.vendor.ssr.restart_level=ALL_ENABLE
+
+# WFD
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.hwc.enable_vds=1
