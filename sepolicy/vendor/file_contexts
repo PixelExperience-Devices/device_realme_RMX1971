@@ -34,5 +34,7 @@
 # mdmreason device
 /dev/mdmreason             u:object_r:mdmreason_device:s0
 
+/(product|system/product)/vendor_overlay/[0-9]+/etc/perf(/.*)?   u:object_r:vendor_configs_file:s0
+
 # sysfs uio
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,oembackup_sharedmem/uio/uio[0-9]+(/.*)?         u:object_r:sysfs_uio_file:s0
