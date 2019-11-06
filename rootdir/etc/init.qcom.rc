@@ -894,6 +894,9 @@ service iprenew_bond0 /system/bin/dhcpcd -n
     disabled
     oneshot
 
+service cvphalservice /system/bin/true
+    disabled
+
 service iprenew_p2p /system/bin/dhcpcd -n
     class late_start
     disabled
