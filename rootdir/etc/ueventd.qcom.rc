@@ -419,3 +419,8 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/class/graphics/fb0     dynamic_bitclk           0664    system  graphics
 
 /sys/devices/virtual/hdcp/msm_hdcp  min_level_change 0664    system  graphics
+
+# fpc
+/sys/bus/platform/devices/soc:fpc_fpc1020 irq             0660 system system
+/sys/bus/platform/devices/soc:fpc_fpc1020 irq_enable      0660 system system
+/sys/bus/platform/devices/soc:fpc_fpc1020 wakelock_enable 0660 system system
