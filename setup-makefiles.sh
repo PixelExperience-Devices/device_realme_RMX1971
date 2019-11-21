@@ -26,13 +26,13 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
-# Initialize the helper for common
+# Initialize the helper
 setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" true
 
 # Copyright headers and guards
 write_headers "RMX1901"
 
-# The standard common blobs
+# The standard blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt true
 
 # We are done!
