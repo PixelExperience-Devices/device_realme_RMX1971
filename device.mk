@@ -258,6 +258,10 @@ PRODUCT_PACKAGES += \
     liboffloadhal \
     android.hardware.tetheroffload.control@1.0
 
+# IPC router config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
+
 # IPv6
 PRODUCT_PACKAGES += \
     ethertypes \
