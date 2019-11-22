@@ -23,6 +23,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Properties
 -include $(LOCAL_PATH)/system_prop.mk
+-include $(LOCAL_PATH)/vendor_props.mk
 
 # AID/fs configs
 PRODUCT_PACKAGES += \
@@ -166,7 +167,8 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.realme_sdm710
+    android.hardware.light@2.0-service.realme_sdm710 \
+    lights.sdm710
 
 # Media
 PRODUCT_COPY_FILES += \
