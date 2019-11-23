@@ -203,14 +203,14 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/msm_voicememo        0660   system     audio
 /dev/ttyHSL1              0660   system     system
 #ifndef VENDOR_EDIT
-#//Jianfeng.Qiu@PSW.MM.AudioDriver.Codec.1263116, 2018/05/15, Modify for smart mic
+#//Wang.kun@PSW.MM.AudioDriver.Codec.1263116, 2018/12/4, Remove for smart mic
 #/dev/ttyHS1               0660   system     system
 #else /* VENDOR_EDIT */
-/dev/ttyHS1               0660   root       audio
-/dev/adnc2                0660   root       audio
-/dev/adnc3                0660   root       audio
-/dev/adnc4                0660   root       audio
-/dev/adnc-cvq             0660   root       audio
+#/dev/ttyHS1               0660   root       audio
+#/dev/adnc2                0660   root       audio
+#/dev/adnc3                0660   root       audio
+#/dev/adnc4                0660   root       audio
+#/dev/adnc-cvq             0660   root       audio
 #endif /* VENDOR_EDIT */
 /dev/mdm                  0660   system     radio
 /sys/devices/virtual/smdpkt/smdcntl*       open_timeout   0664 radio radio
@@ -314,10 +314,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/assd                 0660    nfc         nfc
 /dev/p73                  0660    secure_element         secure_element
 /dev/pn544                0660    nfc         nfc
-#ifdef VENDOR_EDIT
-#wenjie.Liu@Connectivity.CN.NFC.BASIC.Hardware.1182186, 2018/02/13,
-/dev/cxd224x-i2c          0660    nfc         nfc
-#end VENDOR_EDIT
+
 # UIO devices
 /dev/uio0                 0660   system     system
 /dev/uio1                 0660   system     system

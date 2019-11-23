@@ -241,6 +241,9 @@ function configure_zram_parameters() {
 #ifdef VENDOR_EDIT
 #//Huacai.Zhou@PSW.Kernel.mm,2018-12-06, Modify for config zramsize according to ramsize
     if [ -f /sys/block/zram0/disksize ]; then
+#ifdef VENDOR_EDIT //You.Ma@PSW.Android, enable zram dedup
+        echo 1 >/sys/block/zram0/use_dedup
+#endif /*VENDOR_EDIT*/
         if [ $MemTotal -le 524288 ] && [ "$low_ram" == "true" ]; then
             echo lz4 > /sys/block/zram0/comp_algorithm
             echo 402653184 > /sys/block/zram0/disksize

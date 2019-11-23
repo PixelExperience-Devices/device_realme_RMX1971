@@ -58,7 +58,7 @@ else
 fi
 #add for differentiate sdm670 and sdm710
 prj_version=`cat /proc/oppoVersion/prjVersion`
-if [ "x${prj_version}" == "x18181" -o "x${prj_version}" == "x18182" -o "x${prj_version}" == "x18385" -o "x${prj_version}" == "x18386" -o "x${prj_version}" == "x18097" -o "x${prj_version}" == "x18041" -o "x${prj_version}" == "x18383" ];then
+if [ "x${prj_version}" == "x18181" -o "x${prj_version}" == "x18182" -o "x${prj_version}" == "x18385" -o "x${prj_version}" == "x18386" -o "x${prj_version}" == "x18097" -o "x${prj_version}" == "x18041" -o "x${prj_version}" == "x18621" -o "x${prj_version}" == "x19691" ];then
 	echo "prj_version=${prj_version} is sdm710 project"
 	isSdm710_Project=1
 else
@@ -137,9 +137,13 @@ if [ ! -s /mnt/vendor/persist/bdwlan.bin -o $system_version -gt $persist_version
 			"18041" )
 			case $operatorName in
 				 "8" | "2" )
-				    cp /vendor/etc/wifi/bdwlan_18041_id1.bin /mnt/vendor/persist/bdwlan_18041_id1.bin
+				     case $Modem_version in
+					     "0" | "7")
+				             cp /vendor/etc/wifi/bdwlan_18041_id1.bin /mnt/vendor/persist/bdwlan_18041_id1.bin
+							 ;;
+					esac
 				    ;;
-				 "5" | "32" )
+				 "5")
 				     cp /vendor/etc/wifi/bdwlan_18539.bin /mnt/vendor/persist/bdwlan_18539.bin
 					;;
 			esac
@@ -180,9 +184,6 @@ if [ ! -s /mnt/vendor/persist/bdwlan.bin -o $system_version -gt $persist_version
 			    ;;
 			esac
 		    ;;
-		    "18383" )
-				cp /vendor/etc/wifi/bdwlan_18383.bin /mnt/vendor/persist/bdwlan_18383.bin
-			;;
 	    esac		
 	fi
     echo "$system_version" > /mnt/vendor/persist/bin_version
@@ -259,11 +260,15 @@ if [ "x${isSdm710_Project}" == "x1" ]; then
 			"18041" )
 			case $operatorName in
 				 "8" | "2" )
-				    cp /mnt/vendor/persist/bdwlan_18041_id1.bin /mnt/vendor/persist/bdwlan.bin
+				     case $Modem_version in
+					     "0" | "7" )
+				             cp /mnt/vendor/persist/bdwlan_18041_id1.bin /mnt/vendor/persist/bdwlan.bin
+							 ;;
+					esac
 				    ;;
-				 "5" | "32" )
+				 "5")
 				     cp /mnt/vendor/persist/bdwlan_18539.bin /mnt/vendor/persist/bdwlan.bin
-					 ;;
+							 ;;
 			esac
 			;;
 		"18181" | "18182" | "18385" | "18386")
@@ -301,12 +306,259 @@ if [ "x${isSdm710_Project}" == "x1" ]; then
 		      esac
               ;;
         esac			  
-		;;
-		"18383" )
-			cp /mnt/vendor/persist/bdwlan_18383.bin /mnt/vendor/persist/bdwlan.bin
-		;;
+	;;
 	esac
 fi
+
+
+
+
+
+
+
+#liushupei@RM.CN.Wifi.Hardware, 2018/11/29,
+#Add for make bin Rom-update for Realme.
+if [ -s /vendor/etc/wifi/bin_version_realme ]; then
+    system_version=`cat /vendor/etc/wifi/bin_version_realme`
+else
+    system_version=1
+fi
+if [ -s /mnt/vendor/persist/bin_version ]; then
+    persist_version=`cat /mnt/vendor/persist/bin_version`
+else
+    persist_version=0
+fi
+
+prj_version=`cat /proc/oppoVersion/prjVersion`
+
+if [ ! -s /mnt/vendor/persist/bdwlan.bin -o $system_version -gt $persist_version ]; then
+	prj_version=`cat /proc/oppoVersion/prjVersion`
+	Modem_version=`cat /proc/oppoVersion/modemType`
+	operatorName=`cat /proc/oppoVersion/operatorName`
+	pcbVersion=`cat /proc/oppoVersion/pcbVersion`
+	echo "#RM1 prj_version=${prj_version}"
+	echo "#RM1 Modem_version=${Modem_version}"
+	echo "#RM1 operatorName=${operatorName}"
+	echo "#RM1 pcbVersion=${pcbVersion}"
+	#add for 710
+	echo "#1enter sdm710 project"
+	case $prj_version in 
+		"18621")
+		case $operatorName in
+		     "2")
+			 ##18638
+			     case $Modem_version in
+				      "4" )
+						case $pcbVersion in
+							"0" | "1" | "2" | "3" | "4" |"5")
+								cp /vendor/etc/wifi/bdwlan_18638.bin /mnt/vendor/persist/bdwlan.bin
+							;;
+							*)
+								cp /vendor/etc/wifi/bdwlan_18638_mp.bin /mnt/vendor/persist/bdwlan.bin
+							;;
+						esac
+				      ;;
+				 esac
+			 ;;
+		     "8")
+			 ##18637
+			     case $Modem_version in
+				      "2" )
+						case $pcbVersion in
+							"0" | "1" | "2" | "3" | "4" | "5")
+								cp /vendor/etc/wifi/bdwlan_18637.bin /mnt/vendor/persist/bdwlan.bin
+							;;
+							*)
+								cp /vendor/etc/wifi/bdwlan_18637_mp.bin /mnt/vendor/persist/bdwlan.bin
+							;;
+						esac
+				      ;;
+				 esac
+			 ;;
+		     "30")
+			 ##18623
+			     case $Modem_version in
+				      "5" )
+						case $pcbVersion in
+							"0" | "1" | "2" | "3" | "4" | "5")
+								cp /vendor/etc/wifi/bdwlan_18621_id2.bin /mnt/vendor/persist/bdwlan.bin
+							;;
+							*)
+								cp /vendor/etc/wifi/bdwlan_18621_id2_mp.bin /mnt/vendor/persist/bdwlan.bin
+							;;
+						esac
+				      ;;
+				 esac
+			 ;;
+			 "31")
+			 ##18621
+			     case $Modem_version in
+				      "7" | "2" )
+						case $pcbVersion in
+							"0" | "1" | "2" | "3" | "4" | "5")
+								cp /vendor/etc/wifi/bdwlan_18621_id3.bin /mnt/vendor/persist/bdwlan.bin
+							;;
+							*)
+								cp /vendor/etc/wifi/bdwlan_18621_id3_mp.bin /mnt/vendor/persist/bdwlan.bin
+							;;
+						esac
+				      ;;
+			     esac
+			;;
+			 "32")
+			 ##18625
+			     case $Modem_version in
+				      "3" )
+						case $pcbVersion in
+							"0" | "1" | "2" | "3" | "4" | "5")
+								cp /vendor/etc/wifi/bdwlan_18621_id1.bin /mnt/vendor/persist/bdwlan.bin
+							;;
+							*)
+								cp /vendor/etc/wifi/bdwlan_18621_id1_mp.bin /mnt/vendor/persist/bdwlan.bin
+							;;
+						esac
+				      ;;
+			     esac
+			;;
+			 "33")
+			 ##18627
+			     case $Modem_version in
+				      "6" )
+						case $pcbVersion in
+							"0" | "1" | "2" | "3" | "4" | "5")
+								cp /vendor/etc/wifi/bdwlan_18621_id4.bin /mnt/vendor/persist/bdwlan.bin
+							;;
+							*)
+								cp /vendor/etc/wifi/bdwlan_18621_id4_mp.bin /mnt/vendor/persist/bdwlan.bin
+							;;
+						esac
+				      ;;
+			     esac
+			;;
+			 "34")
+			 ##18633
+			     case $Modem_version in
+				      "1" )
+						case $pcbVersion in
+							"0" | "1" | "2" | "3" | "4" | "5")
+								cp /vendor/etc/wifi/bdwlan_18621_id5.bin /mnt/vendor/persist/bdwlan.bin
+							;;
+							*)
+								cp /vendor/etc/wifi/bdwlan_18621_id5_mp.bin /mnt/vendor/persist/bdwlan.bin
+							;;
+						esac
+				      ;;
+			     esac
+			;;
+		esac
+		;;
+		"19691")
+		##19691 19791 19692 19693
+			case $operatorName in
+				"30")
+				##19691
+					case $Modem_version in
+						"7")
+							cp /vendor/etc/wifi/bdwlan_19691.bin /mnt/vendor/persist/bdwlan_19691.bin
+						;;
+					esac
+				;;
+				"8")
+				##19791
+					case $Modem_version in
+						"2")
+							cp /vendor/etc/wifi/bdwlan_19791.bin /mnt/vendor/persist/bdwlan_19791.bin
+						;;
+					esac
+				;;
+				"5")
+				##19692
+					case $Modem_version in
+						"5")
+							cp /vendor/etc/wifi/bdwlan_19692.bin /mnt/vendor/persist/bdwlan_19692.bin
+						;;
+					esac
+				;;
+				"32")
+				##19693
+					case $Modem_version in
+						"1")
+							cp /vendor/etc/wifi/bdwlan_19691.bin /mnt/vendor/persist/bdwlan_19691.bin
+						;;
+					esac
+				;;
+			esac
+	esac
+	echo "$system_version" > /mnt/vendor/persist/bin_version
+fi
+# endof ! -s /mnt/vendor/persist/bdwlan.bin -o $system_version -gt $persist_version  
+
+#liushupei@RM.CN.Wifi.Hardware, 2019/08/07,
+#we need force replace the bdwlan.bin in persist in case the bdf is damaged
+prj_version=`cat /proc/oppoVersion/prjVersion`
+Modem_version=`cat /proc/oppoVersion/modemType`
+operatorName=`cat /proc/oppoVersion/operatorName`
+case $prj_version in
+	"19691")
+	##19691 19791 19692 19693
+		case $operatorName in
+			"30")
+			##19691
+				case $Modem_version in
+					"7")
+					if [ ! -s /mnt/vendor/persist/bdwlan_19691.bin ]; then
+						cp /vendor/etc/wifi/bdwlan_19691.bin /mnt/vendor/persist/bdwlan.bin
+					else
+						cp /mnt/vendor/persist/bdwlan_19691.bin /mnt/vendor/persist/bdwlan.bin
+					fi
+					;;
+				esac
+			;;
+			"8")
+			##19791
+				case $Modem_version in
+					"2")
+					if [ ! -s /mnt/vendor/persist/bdwlan_19791.bin ]; then
+						cp /vendor/etc/wifi/bdwlan_19791.bin /mnt/vendor/persist/bdwlan.bin
+					else
+						cp /mnt/vendor/persist/bdwlan_19791.bin /mnt/vendor/persist/bdwlan.bin
+					fi
+					;;
+				esac
+			;;
+			"5")
+			##19692
+				case $Modem_version in
+					"5")
+					if [ ! -s /mnt/vendor/persist/bdwlan_19692.bin ]; then
+						cp /vendor/etc/wifi/bdwlan_19692.bin /mnt/vendor/persist/bdwlan.bin
+					else
+						cp /mnt/vendor/persist/bdwlan_19692.bin /mnt/vendor/persist/bdwlan.bin
+					fi
+					;;
+				esac
+			;;
+			"32")
+			##19693
+				case $Modem_version in
+					"1")
+					if [ ! -s /mnt/vendor/persist/bdwlan_19691.bin ]; then
+						cp /vendor/etc/wifi/bdwlan_19691.bin /mnt/vendor/persist/bdwlan.bin
+					else
+						cp /mnt/vendor/persist/bdwlan_19691.bin /mnt/vendor/persist/bdwlan.bin
+					fi
+					;;
+				esac
+			;;
+		esac
+esac
+
+
+
+
+
+
+
 
 chmod 666 /mnt/vendor/persist/bdwlan.bin
 chown system:wifi /mnt/vendor/persist/bdwlan.bin

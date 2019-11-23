@@ -134,8 +134,8 @@ on boot
     chmod 0660 /sys/module/hci_uart/parameters/ath_btwrite
     chmod 0660 /dev/ttyHS0
     #ifdef VENDOR_EDIT
-    #//Jianfeng.Qiu@PSW.MM.AudioDriver.Codec.1263116, 2018/05/15, Add for smart mic
-    chmod 0660 /dev/ttyHS1
+    #//Wang.kun@PSW.MM.AudioDriver.Codec.1263116, 2018/12/5, Remove for smart mic
+    #chmod 0660 /dev/ttyHS1
     #endif VENDOR_EDIT /* VENDOR_EDIT */
     chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
     chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
@@ -233,11 +233,6 @@ on boot
 
     chown system system /sys/class/backlight/panel0-backlight/brightness
     chown system system /sys/class/backlight/panel0-backlight/max_brightness
-#ifdef VENDOR_EDIT
-#liping-m@SWDP.MM.Display.LCD, 2019/3/27 Add for dc backlight
-    chown system system /sys/kernel/oppo_display/dimlayer_bl_en
-    chmod 0666 /sys/kernel/oppo_display/dimlayer_bl_en
-#endif /* VENDOR_EDIT */
 
     # Allow access to sensors device attributes
     chown system system /sys/class/sensors/MPU6050-accel/enable
@@ -267,14 +262,6 @@ on post-fs-data
 
     # Create directory used for dump collection
     mkdir /data/vendor/ssrdump 0770 root system
-
-#ifdef VENDOR_EDIT
-#wenjie.Liu@Connectivity.CN.NFC.BASIC.Hardware.1182186, 2018/02/13,
-    mkdir /data/nfc 0770 nfc nfc
-    mkdir /data/nfc/param 0770 nfc nfc
-    chmod 0660 /data/nfc/felica.cfg
-    chown nfc nfc /data/nfc/felica.cfg
-#end VENDOR_EDIT
 
     # Create directory used by display clients
     mkdir /data/vendor/display 0770 system graphics
@@ -1496,6 +1483,8 @@ service vendor.wifilearner /system/vendor/bin/wifilearner
 #Add for make WCNSS_qcom_cfg.ini Rom-update.
 on post-fs-data
     chmod 0666 /mnt/vendor/persist/WCNSS_qcom_cfg.ini
+    #add for start self-init core after mount data
+    start prop-adap-core
 
 # To rename ini_temp.txt into WCNSS_qcom_cfg.ini
 on property:oppo.wifi.iniromupdate=*
@@ -1533,8 +1522,6 @@ service vendor.audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service
     oneshot
     interface android.hardware.audio@4.0::IDevicesFactory default
     interface android.hardware.audio@2.0::IDevicesFactory default
-
-
 
 #ifdef VENDOR_EDIT
 #Qiang.shao@PSW.AD.OppoFeature.CommonSoft.1181235, 2016/07/30, Add for self_init domain to access block_device for init prop
@@ -1584,12 +1571,6 @@ on property:ro.vendor.oppo.product.name=*
     setprop ro.product.vendor.name ${ro.vendor.oppo.product.name}
 on property:ro.vendor.oppo.product.device=*
     setprop ro.product.vendor.device ${ro.vendor.oppo.product.device}
-#endif
-
-#ifdef VENDOR_EDIT
-#Hongyu.lu@BSP.Fingerprint.Basic, 2018/11/24, Add for face init.rc
-on boot
-    chown system system /dev/goodix_fp
 #endif
 
 service debug_logcat /system/bin/logcat -f /data/logcat.txt -v threadtime

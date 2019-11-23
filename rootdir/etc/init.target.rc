@@ -29,12 +29,11 @@
 
 on early-init
     #ifndef VENDOR_EDIT
-    #Jianfeng.Qiu@PSW.MM.AudioDriver.Codec, 2018/04/20, Modify for audio config
-    #xiang.fei@PSW.MM.AudioDriver.Codec, 2018/10/29, Add for dbmdx
+    #Wang.kun@PSW.MM.AudioDriver.Codec, 2018/12/5, Modify for audio config
     #exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_apr audio_wglink audio_adsp_loader audio_q6_pdr audio_q6_notifier audio_q6 audio_usf audio_native audio_pinctrl_wcd audio_pinctrl_lpi audio_swr audio_platform audio_hdmi audio_wcd_spi audio_stub audio_digital_cdc audio_analog_cdc audio_msm_sdw audio_wcd_cpe audio_cpe_lsm audio_wcd9335 audio_machine_sdm710
     #else /*VENDOR_EDIT*/
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_apr audio_wglink audio_adsp_loader audio_q6_pdr audio_q6_notifier audio_q6 audio_usf audio_native audio_pinctrl_wcd audio_pinctrl_lpi audio_swr audio_platform audio_hdmi audio_wcd_spi audio_stub audio_digital_cdc audio_analog_cdc audio_msm_sdw audio_wcd_cpe audio_cpe_lsm audio_wcd9335 audio_machine_sdm710 \
-    audio_tfa98xx-v6 audio_ak4376 audio_audience audio_max20328 audio_dspg_dbmdx
+    audio_tfa98xx-v6
     #endif /*VENDOR_EDIT*/
     write /proc/sys/kernel/sched_boost 1
     symlink /data/tombstones /tombstones
@@ -84,9 +83,6 @@ on post-fs-data
     mkdir /data/vendor/hbtp 0750 system system
     mkdir /data/vendor/tloc 0700 system drmrpc
     mkdir /data/vendor/nnhal 0700 system system
-    #ifdef VENDOR_EDIT
-    mkdir /data/vendor/dolby 0770 media media
-    #endif /*VENDOR_EDIT*/
 
 # For cpusets initialize for Silver Only first and then Silver + Gold
 # Silver Only configuration cannot work with 0-7
