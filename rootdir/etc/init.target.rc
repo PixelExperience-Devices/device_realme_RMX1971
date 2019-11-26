@@ -99,6 +99,8 @@ on boot
     write /dev/cpuset/foreground/boost/cpus 0-7
     write /dev/cpuset/background/cpus 0-7
     write /dev/cpuset/system-background/cpus 0-7
+    # update touchscreen firmware on boot
+    write /proc/touchpanel/tp_fw_update 1
 
 # Add a cpuset for the camera daemon
 # We want all cores for camera
