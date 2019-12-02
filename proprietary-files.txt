@@ -350,6 +350,7 @@ vendor/lib/libobcdepth_hal.so
 vendor/lib/libocam_common.so
 vendor/lib/libocam_snapshot_intf.so
 vendor/lib/libOccluDetect.so
+vendor/lib/libOPPORectify.so
 vendor/lib/libPerfectlyClearCrux.so
 vendor/lib/libPolarrRender.so
 vendor/lib/libSCES.so
@@ -422,6 +423,7 @@ vendor/lib64/libmm-omxcore.so
 vendor/lib64/libmmcamera_faceproc.so
 vendor/lib64/libmmcamera_faceproc2.so
 vendor/lib64/libmpbase.so
+vendor/lib64/libOPPORectify.so
 vendor/lib64/libsnsapi.so
 vendor/lib64/libsnsdiaglog.so
 vendor/lib64/libsns_device_mode_stub.so
