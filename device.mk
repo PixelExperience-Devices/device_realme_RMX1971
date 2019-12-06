@@ -24,7 +24,8 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Properties
 -include $(LOCAL_PATH)/vendor_props.mk
 
-PRODUCT_ENFORCE_RRO_TARGETS := *
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res
 
 # Permissions
 PRODUCT_COPY_FILES += \
