@@ -11,14 +11,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/potato/config/common_full_phone.mk)
 
 # Inherit from RMX1901 device.
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_DEVICE := RMX1971
-PRODUCT_NAME := lineage_RMX1971
+PRODUCT_NAME := potato_RMX1971
 PRODUCT_BRAND := Realme
 PRODUCT_MODEL := Realme 5 Pro
 PRODUCT_MANUFACTURER := Realme
