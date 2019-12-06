@@ -384,8 +384,8 @@ PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 PRODUCT_PACKAGES += \
     telephony-ext
 
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+#PRODUCT_BOOT_JARS += \
+#    telephony-ext
 
 # TextClassifier
 PRODUCT_PACKAGES += \
@@ -434,8 +434,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libnl
 
-PRODUCT_BOOT_JARS += \
-    WfdCommon
+#PRODUCT_BOOT_JARS += \
+#    WfdCommon
 
 # Inherit from proprietary version
 $(call inherit-product-if-exists, vendor/realme/RMX1971/RMX1971-vendor.mk)
