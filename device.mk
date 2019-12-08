@@ -246,7 +246,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
 
 # Hardware
-PRODUCT_BOARD_PLATFORM := sdm710
+PRODUCT_BOARD_PLATFORM := sdm845
 PRODUCT_USES_QCOM_HARDWARE := true
 
 # Health
