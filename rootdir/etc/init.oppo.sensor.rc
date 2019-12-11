@@ -28,4 +28,4 @@ on boot
     chmod 0666 /proc/oppoAls/green_max_lux
     chmod 0666 /proc/oppoAls/red_max_lux
     chmod 0666 /proc/oppoAls/row_coe
-    chmod 0666 /proc/oppoAls/white_max_lux
+    chmod 0666 /proc/oppoAls/white_max_lux 

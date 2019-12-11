@@ -191,8 +191,6 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.target.rc \
-    init.wlan.qcom.rc \
-    init.wlan.target.rc \
     ueventd.qcom.rc
 
 # Display
