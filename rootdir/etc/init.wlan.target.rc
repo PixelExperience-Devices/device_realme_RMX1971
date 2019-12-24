@@ -29,11 +29,12 @@
 
 on early-init
     #ifndef VENDOR_EDIT
-    #Wang.kun@PSW.MM.AudioDriver.Codec, 2018/12/5, Modify for audio config
+    #Jianfeng.Qiu@PSW.MM.AudioDriver.Codec, 2018/04/20, Modify for audio config
+    #xiang.fei@PSW.MM.AudioDriver.Codec, 2018/10/29, Add for dbmdx
     #exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_apr audio_wglink audio_adsp_loader audio_q6_pdr audio_q6_notifier audio_q6 audio_usf audio_native audio_pinctrl_wcd audio_pinctrl_lpi audio_swr audio_platform audio_hdmi audio_wcd_spi audio_stub audio_digital_cdc audio_analog_cdc audio_msm_sdw audio_wcd_cpe audio_cpe_lsm audio_wcd9335 audio_machine_sdm710
     #else /*VENDOR_EDIT*/
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_apr audio_wglink audio_adsp_loader audio_q6_pdr audio_q6_notifier audio_q6 audio_usf audio_native audio_pinctrl_wcd audio_pinctrl_lpi audio_swr audio_platform audio_hdmi audio_wcd_spi audio_stub audio_digital_cdc audio_analog_cdc audio_msm_sdw audio_wcd_cpe audio_cpe_lsm audio_wcd9335 audio_machine_sdm710 \
-    audio_tfa98xx-v6
+    audio_tfa98xx-v6 audio_ak4376 audio_audience audio_max20328 audio_dspg_dbmdx
     #endif /*VENDOR_EDIT*/
     write /proc/sys/kernel/sched_boost 1
     symlink /data/tombstones /tombstones
@@ -55,7 +56,12 @@ on fs
     #Xuefeng.Peng@PSW.AD.Storage.ReservePartition.1207580, 2018/11/19, Add for change opporeserve mount point for google GSI test
     mkdir /mnt/vendor/opporeserve 0771 system system
     #endif /*VENDOR_EDIT*/
-    mount_all /vendor/etc/fstab.qcom
+#ifdef VENDOR_EDIT
+#Fuchun.Liao@BSP.CHG.Basic 2019/01/01 modify for not mount userdata in wlan mode because of FBE
+    #mount_all /vendor/etc/fstab.qcom
+#else
+	mount_all /vendor/etc/fstab-wlan.qcom
+#endif /* VENDOR_EDIT */
     chown root system /mnt/vendor/persist
     chmod 0771 /mnt/vendor/persist
     restorecon_recursive /mnt/vendor/persist
@@ -95,15 +101,11 @@ on boot
     write /dev/cpuset/foreground/boost/cpus 0-7
     write /dev/cpuset/background/cpus 0-7
     write /dev/cpuset/system-background/cpus 0-7
-    # OTG
-    write /sys/class/power_supply/usb/otg_switch 1
-    # update touchscreen firmware on boot
-    write /proc/touchpanel/tp_fw_update 1
 
 # Add a cpuset for the camera daemon
 # We want all cores for camera
     mkdir /dev/cpuset/camera-daemon
-    write /dev/cpuset/camera-daemon/cpus 0-7
+    write /dev/cpuset/camera-daemon/cpus 0-3
     write /dev/cpuset/camera-daemon/mems 0
     chown cameraserver cameraserver /dev/cpuset/camera-daemon
     chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
@@ -166,7 +168,6 @@ on property:init.svc.vendor.per_mgr=running
 
 on property:sys.shutdown.requested=*
     stop vendor.per_proxy
-    stop vendor.ims_rtp_daemon
 
 on boot
     chown system system /sys/class/leds/red/blink
@@ -501,12 +502,12 @@ service energy-awareness /system/vendor/bin/energy-awareness
     user system
     group system
     oneshot
-#ifndef VENDOR_EDIT /*Jianchao.Shi@BSP.CHG.Basic, 2018/01/26, sjc Delete for for charging */
-#service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
-#    class main
-#    user root
-#    group system wakelock
-#endif
+
+service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
+    class main
+    user root
+    group system wakelock
+
 service tlocd /vendor/bin/tloc_daemon
     class late_start
     user system
@@ -516,4 +517,3 @@ service smcinvoked /system/bin/smcinvoked
     class main
     user system
     group system
-

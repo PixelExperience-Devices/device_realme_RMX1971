@@ -10,7 +10,7 @@
 #** Date created: 2018/11/20,20:27
 #** Author: Chao.Zeng@PSW.BSP.Sensor
 #**
-##** --------------------------- Revision History: ------------------------------------
+#** --------------------------- Revision History: ------------------------------------
 #* <version>		<date>		<author>		<desc>
 #* Revision 1.0		2018/10/30	Chao.Zeng@PSW.BSP.Sensor	Created
 #**************************************************************************************/
@@ -28,4 +28,4 @@ on boot
     chmod 0666 /proc/oppoAls/green_max_lux
     chmod 0666 /proc/oppoAls/red_max_lux
     chmod 0666 /proc/oppoAls/row_coe
-    chmod 0666 /proc/oppoAls/white_max_lux 
+    chmod 0666 /proc/oppoAls/white_max_lux

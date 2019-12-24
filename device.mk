@@ -158,7 +158,6 @@ PRODUCT_PACKAGES += \
 
 # Device init scripts
 PRODUCT_PACKAGES += \
-    init.target.rc \
     init.class_late.sh \
     init.class_main.sh \
     init.crda.sh \
@@ -192,7 +191,9 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.target.rc \
-    ueventd.qcom.rc
+    init.wlan.qcom.rc \
+    init.wlan.target.rc \
+    ueventd.rc
 
 # Display
 PRODUCT_PACKAGES += \

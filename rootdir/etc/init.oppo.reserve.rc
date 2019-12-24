@@ -59,3 +59,13 @@ on post-fs-data
   chown system system /mnt/vendor/opporeserve/media/Camera
   chmod 0771 /mnt/vendor/opporeserve/media/Camera
   restorecon_recursive /mnt/vendor/opporeserve
+
+##ifdef VENDOR_EDIT
+#wenjie.Liu@CN.NFC.Basic.Felica.1334855,add for: Felica Nvram store in opporeserve
+  mkdir /mnt/vendor/opporeserve/media/nfclock 0771
+  chown system system /mnt/vendor/opporeserve/media/nfclock
+  mkdir /mnt/vendor/opporeserve/connectivity 0771
+  chown nfc system /mnt/vendor/opporeserve/connectivity
+  mkdir /mnt/vendor/opporeserve/connectivity/felicalock 0771
+  chown nfc system /mnt/vendor/opporeserve/connectivity/felicalock
+##endif VENDOR_EDIT
