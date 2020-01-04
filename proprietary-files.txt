@@ -1081,7 +1081,7 @@ vendor/bin/hw/vendor.oppo.wifi.sniffer@1.0-service
 vendor/bin/opposysd
 vendor/etc/init/vendor.oppo.engnative.engsensor@1.0-service.rc
 vendor/etc/init/vendor.oppo.engnative.messager@1.0-service.rc
-vendor/etc/init/vendor.oppo.hardware.biometrics.fingerprint@2.1-service.rc
+vendor/etc/init/vendor.oppo.hardware.biometrics.fingerprint@2.1-service.rc|65c8a07b15edf94d4afd4d777e5a98953dd5798b
 vendor/etc/init/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-service.rc
 vendor/etc/init/vendor.oppo.hardware.cryptoeng@1.0-service.rc
 vendor/etc/init/vendor.oppo.hardware.hypnus@1.0-service.rc
@@ -1095,6 +1095,7 @@ vendor/lib/hw/vendor.oppo.hardware.hypnus@1.0-impl.so
 vendor/lib/hw/vendor.oppo.hardware.ktv@1.0-impl.so
 vendor/lib/hw/vendor.oppo.hardware.mmdisplayfeature@1.0-impl.so
 vendor/lib/hw/vendor.oppo.hardware.oiface@1.0-impl.so
+vendor/lib/libbthost_if.so
 vendor/lib/libhypnusclient.so
 vendor/lib/libOppoAlgoClient.so
 vendor/lib/liboppoalgolib.so
@@ -1115,12 +1116,14 @@ vendor/lib64/hw/vendor.oppo.hardware.hypnus@1.0-impl.so
 vendor/lib64/hw/vendor.oppo.hardware.ktv@1.0-impl.so
 vendor/lib64/hw/vendor.oppo.hardware.mmdisplayfeature@1.0-impl.so
 vendor/lib64/hw/vendor.oppo.hardware.oiface@1.0-impl.so
+vendor/lib64/libbthost_if.so
 vendor/lib64/libhypnusclient.so
 vendor/lib64/liboppoalgolib.so
 vendor/lib64/vendor.oppo.engnative.engsensor@1.0.so
 vendor/lib64/vendor.oppo.engnative.messager@1.0.so
 vendor/lib64/vendor.oppo.engnative.transfer@1.0.so
 vendor/lib64/vendor.oppo.hardware.biometrics.fingerprint@2.1.so
+vendor/lib64/vendor.oppo.hardware.biometrics.fingerprintpay@1.0.so
 vendor/lib64/vendor.oppo.hardware.commondcs@1.0.so
 vendor/lib64/vendor.oppo.hardware.cryptoeng@1.0.so
 vendor/lib64/vendor.oppo.hardware.hypnus@1.0.so

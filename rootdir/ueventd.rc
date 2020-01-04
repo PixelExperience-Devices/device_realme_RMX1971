@@ -370,6 +370,11 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/silead_fp            0660   system     system
 #endif /* VENDOR_EDIT */
 
+# Fingerprint Permission
+/sys/bus/platform/devices/soc:fpc_fpc1020 irq             0660 system system
+/sys/bus/platform/devices/soc:fpc_fpc1020 irq_enable      0660 system system
+/sys/bus/platform/devices/soc:fpc_fpc1020 wakelock_enable 0660 system system
+
 # NPU device
 /dev/msm_npu             0644   system     system
 
