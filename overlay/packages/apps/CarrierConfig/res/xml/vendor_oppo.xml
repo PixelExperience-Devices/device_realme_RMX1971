@@ -408,8 +408,17 @@
         <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="carrier_wfc_ims_available_bool" value="true" />
         <boolean name="config_oppo_sms_ims_support_bool" value="true" />
+        <boolean name="config_disable_clir_over_ut" value="true" />
         <string-array name="mccmnc" num="1">
             <item value="42004" />
+        </string-array>
+    </carrier_config>
+    <carrier_config operator="STC_SA">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
+        <boolean name="config_disable_clir_over_ut" value="true" />
+        <string-array name="mccmnc" num="1">
+            <item value="42001" />
         </string-array>
     </carrier_config>
     <carrier_config operator="ETISALAT">
@@ -573,6 +582,17 @@
         <boolean name="config_oppo_sms_ims_support_bool" value="false" />
         <string-array name="mccmnc" num="1">
             <item value="20404" />
+        </string-array>
+    </carrier_config>
+    <carrier_config operator="O2-CZ">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_vt_available_bool" value="true" />
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
+        <boolean name="config_oppo_ut_support_bool" value="true" />
+        <boolean name="config_oppo_sms_ims_support_bool" value="true" />
+        <boolean name="config_oppo_support_viwifi_bool" value="false" />
+        <string-array name="mccmnc" num="1">
+            <item value="23002" />
         </string-array>
     </carrier_config>
 </carrier_config_list>

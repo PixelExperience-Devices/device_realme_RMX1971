@@ -171,7 +171,7 @@ ENABLE_VENDOR_RIL_SERVICE := true
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2019-11-05
+VENDOR_SECURITY_PATCH := 2020-01-05
 
 # Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
