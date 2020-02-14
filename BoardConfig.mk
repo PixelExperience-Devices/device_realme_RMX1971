@@ -177,9 +177,6 @@ VENDOR_SECURITY_PATCH := 2020-01-05
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
-# SurfaceFlinger
-TARGET_USE_AOSP_SURFACEFLINGER := true
-
 # Treble
 BOARD_VNDK_RUNTIME_DISABLE := true
 BOARD_VNDK_VERSION := current
