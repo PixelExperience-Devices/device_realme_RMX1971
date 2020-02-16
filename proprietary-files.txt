@@ -1575,16 +1575,16 @@ vendor/lib64/libscvePanorama.so
 vendor/lib64/vendor.qti.hardware.scve.objecttracker@1.0.so
 vendor/lib64/vendor.qti.hardware.scve.panorama@1.0.so
 
-# Thermal
-vendor/bin/thermal-engine
-vendor/etc/thermal-engine.conf
-vendor/lib/libthermalclient.so
-vendor/lib64/libthermalclient.so
+# Thermal - from PNX_00WW_FIH-user 10 QKQ1.190725.002 00WW_4_15B release-keys
+vendor/bin/thermal-engine|9a6abfdcb9427f06beb7991b90fe071121738c6a
+vendor/etc/thermal-engine.conf|c6c9312b7c7b52926cf7d0fc9bff933d90967100
+vendor/lib/libthermalclient.so|d4b661435b66e8d299bc98aa7c3d22f723a74e39
+vendor/lib64/libthermalclient.so|64d43159078bc9d1128747ef8b380b10d309ff88
 
-# Time services
--vendor/app/TimeService/TimeService.apk
-vendor/bin/time_daemon
-vendor/lib64/libtime_genoff.so
+# Time services - from PNX_00WW_FIH-user 10 QKQ1.190725.002 00WW_4_15B release-keys
+-vendor/app/TimeService/TimeService.apk|4a37afd1395758d946580af184a738e3c657b1e2
+vendor/bin/time_daemon|0431ad6f6f7bc3aa72a9798aa55a9d0b496ea06f
+vendor/lib64/libtime_genoff.so|746db5267fde236de820fa7d887386f65aea7a8a
 
 # Touchscreen firmware
 vendor/firmware/tp/18041/FW_S3706_SAMSUNG.img
