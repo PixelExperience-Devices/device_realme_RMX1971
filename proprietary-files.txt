@@ -1158,6 +1158,16 @@ vendor/lib64/libqti-util.so|04be2c51cddf63689db1dfa490a697379ecb825e
 vendor/lib64/libqti-utils.so|c6c96af1b3d15b32206882ae44a3d02d88e5202c
 vendor/lib64/vendor.qti.hardware.perf@2.0.so|5f9077ec1314e2d1bd03eda4d31f76c7f1ce7e1b
 
+# Perf - IOP - from Nokia/Phoenix_00WW/PNX_sprout:10/QKQ1.190725.002/00WW_4_15B:user/release-keys
+vendor/lib/vendor.qti.hardware.iop@1.0.so|84c6e46f5f6644518ff20d406a97401f5d179ee5
+vendor/lib/vendor.qti.hardware.iop@2.0.so|11cfc3b61853ca647878da82d7f131b5f0b87267
+vendor/lib/hw/vendor.qti.hardware.iop@2.0-impl.so|c0e92630e7dc339e2c3772a6229181fc7980a294
+vendor/lib/libqti-iopd-client.so|6fbc7c917d44e8ec40f0b46a255aafa9f11103f5
+vendor/lib64/vendor.qti.hardware.iop@1.0.so|00fd7f75435e5436e4998d5d81c068f7d6e3c18b
+vendor/lib64/vendor.qti.hardware.iop@2.0.so|3a2ea07bbc1ef859c1c959245dbfe0227b6d1803
+vendor/lib64/hw/vendor.qti.hardware.iop@2.0-impl.so|e35e6391bc6293033ee2712d0f3302a084e74eee
+vendor/lib64/libqti-iopd-client.so|5ff9cc9294eb7347ce15d8b4af26d5628ec330d0
+
 # Peripheral manager - from Nokia/Phoenix_00WW/PNX_sprout:10/QKQ1.190725.002/00WW_4_15B:user/release-keys
 vendor/bin/pm-proxy|81cd613123ed524d517375377f0eeea6e1463fc3
 vendor/bin/pm-service|e71c162bd09e5823cb89446df70f14116a7df5ad
