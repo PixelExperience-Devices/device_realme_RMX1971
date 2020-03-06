@@ -1172,29 +1172,36 @@ vendor/firmware/audience/ia6xx/ia6xx-bargein-uart.bin
 vendor/firmware/audience/ia6xx/ia6xx-vs-hw.bin
 vendor/firmware/audience/ia6xx/ia6xx-vs-uart.bin
 
-# Perf
-vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
-vendor/bin/msm_irqbalance
-vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
-vendor/etc/perf/commonresourceconfigs.xml
-vendor/etc/perf/perfboostsconfig.xml
-vendor/etc/perf/targetconfig.xml
-vendor/etc/perf/targetresourceconfigs.xml
-vendor/etc/powerhint.xml
-vendor/lib/libperfgluelayer.so
-vendor/lib/libqti-perfd-client.so
-vendor/lib/libqti-perfd.so
-vendor/lib/libqti-util.so
-vendor/lib/libqti-utils.so
-vendor/lib/vendor.qti.hardware.perf@1.0.so
-vendor/lib64/liblearningmodule.so
-vendor/lib64/libmeters.so
-vendor/lib64/libperfgluelayer.so
-vendor/lib64/libqti-perfd-client.so
-vendor/lib64/libqti-perfd.so
-vendor/lib64/libqti-util.so
-vendor/lib64/libqti-utils.so
-vendor/lib64/vendor.qti.hardware.perf@1.0.so
+# Perf - from Nokia/Phoenix_00WW/PNX_sprout:10/QKQ1.190725.002/00WW_4_15B:user/release-keys
+-framework/QPerformance.jar|557d4bb4e6009190a9a9df65c4c1fb0c37c2730a
+-framework/UxPerformance.jar|13c626f1a42fc084b64447460417afa1091f0c0f
+product/lib/vendor.qti.hardware.perf@2.0.so|266e111e402d29f3713c656df3dc6678cd1c5d7d
+product/lib64/vendor.qti.hardware.perf@2.0.so|d4569c43c32a2ec851e45b6084fc7e08dd89f0ca
+lib/libqti_performance.so|5060214a293a6949c92acaf19d6e1adef12dba10
+lib/libqti-perfd-client_system.so|cd36868f3f9eed8dca5a661f7ebdff8ccfc4b401
+lib64/libqti_performance.so|5f719089c377f77a62ca40647450b36c2b710773
+lib64/libqti-perfd-client_system.so|cc52dfe74158017838ca1e4881bb0c3628423ec9
+vendor/bin/hw/vendor.qti.hardware.perf@2.0-service|ec54271b7fe6e60c297bcb668a3466cd8a666bb4
+vendor/etc/init/vendor.qti.hardware.perf@2.0-service.rc|0101a3294311c2988060a00f7b25d8abf2f428f9
+vendor/etc/perf/commonresourceconfigs.xml|9e277f76243eb5ad16d3e55843aadf68a54e7aaa
+vendor/etc/perf/perfconfigstore.xml|440eeac31d2c8ff3309de65c01505310276b5e47
+vendor/etc/perf/perfboostsconfig.xml|04c53be260bb060fa886a21e7e8111f3916efa1a
+vendor/etc/perf/targetconfig.xml|788ced0689fe95a42e881ea86f3aefc0b4b64042
+vendor/etc/perf/targetresourceconfigs.xml|dea9afb72aef1aa48884bf70749f3d0b33d7ecb7
+vendor/lib/libperfconfig.so|aafdb4401a85f4d7b391fad621843debae580a35
+vendor/lib/libperfgluelayer.so|0090fb4efe03bab1773ee174b29fb5e8d6bd6a7c
+vendor/lib/libqti-perfd-client.so|7caa9783eb30a34eecac770505bbf86ee1e9bb62
+vendor/lib/libqti-perfd.so|b558ab16217bee6b5bc4c6500f51ecefd19277c9
+vendor/lib/libqti-util.so|9532fb89585d38709160e3b7c28769eb209a997c
+vendor/lib/libqti-utils.so|d545c4b61690b0920b1fc7849b2ab393785857ed
+vendor/lib/vendor.qti.hardware.perf@2.0.so|dc085d75c5be72e5e5e36dec420d6353574973dc
+vendor/lib64/libperfconfig.so|39df6be26d7fb9420bcb4f8be43277ee8c8f0fba
+vendor/lib64/libperfgluelayer.so|33659b1cfe28126df3580ae504b3eb4f17fde8ac
+vendor/lib64/libqti-perfd-client.so|b343197f7fb2b41048e4be4e8c75d13e276b8cfb
+vendor/lib64/libqti-perfd.so|4ee49fe245f9eb73cd20fe63c930dca453bc36ff
+vendor/lib64/libqti-util.so|04be2c51cddf63689db1dfa490a697379ecb825e
+vendor/lib64/libqti-utils.so|c6c96af1b3d15b32206882ae44a3d02d88e5202c
+vendor/lib64/vendor.qti.hardware.perf@2.0.so|5f9077ec1314e2d1bd03eda4d31f76c7f1ce7e1b
 
 # Peripheral manager
 vendor/bin/pm-proxy
