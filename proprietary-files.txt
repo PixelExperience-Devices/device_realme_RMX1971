@@ -395,9 +395,7 @@ vendor/lib/libVDRTImageAdjustment.so
 vendor/lib/libVDSuperPhotoAPI.so
 vendor/lib/libvideoutils.so
 vendor/lib/libvidhance.so
-vendor/lib/libvslam.so
 vendor/lib/qcom.camera.log.so
-vendor/lib/voc.dat.zip
 vendor/lib64/camera/com.qti.sensormodule.holitech_gc2375h.bin
 vendor/lib64/camera/com.qti.sensormodule.holitech_sp2509v.bin
 vendor/lib64/camera/com.qti.sensormodule.sunny_hi846.bin
@@ -406,8 +404,6 @@ vendor/lib64/camera/com.qti.sensormodule.trulyi2c20_imx471.bin
 vendor/lib64/camera/com.qti.tuned.holitech_gc2375h.bin
 vendor/lib64/camera/com.qti.tuned.holitech_sp2509v.bin
 vendor/lib64/camera/com.qti.tuned.sunny_hi846.bin
-vendor/lib64/camera/com.qti.tuned.sunny_imx586.bin
-vendor/lib64/camera/com.qti.tuned.truly_imx471.bin
 vendor/lib64/camera/fdconfigpreview.bin
 vendor/lib64/camera/fdconfigpreviewlite.bin
 vendor/lib64/camera/fdconfigvideo.bin
@@ -1094,33 +1090,12 @@ vendor/etc/init/android.hardware.neuralnetworks@1.1-service-qti.rc
 vendor/lib64/libhexagon_nn_stub.so
 
 # Oppo HIDL hals
-vendor/bin/hw/vendor.oppo.engnative.engsensor@1.0-service
-vendor/bin/hw/vendor.oppo.engnative.messager@1.0-service
 vendor/bin/hw/vendor.oppo.hardware.biometrics.fingerprint@2.1-service
 vendor/bin/hw/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-service
-vendor/bin/hw/vendor.oppo.hardware.cryptoeng@1.0-service
-vendor/bin/hw/vendor.oppo.hardware.hypnus@1.0-service
-vendor/bin/hw/vendor.oppo.hardware.ktv@1.0-service
-vendor/bin/hw/vendor.oppo.hardware.mmdisplayfeature@1.0-service
-vendor/bin/hw/vendor.oppo.hardware.oiface@1.0-service
-vendor/bin/hw/vendor.oppo.wifi.sniffer@1.0-service
-vendor/bin/opposysd
-vendor/etc/init/vendor.oppo.engnative.engsensor@1.0-service.rc
-vendor/etc/init/vendor.oppo.engnative.messager@1.0-service.rc
 vendor/etc/init/vendor.oppo.hardware.biometrics.fingerprint@2.1-service.rc|65c8a07b15edf94d4afd4d777e5a98953dd5798b
 vendor/etc/init/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-service.rc
-vendor/etc/init/vendor.oppo.hardware.cryptoeng@1.0-service.rc
-vendor/etc/init/vendor.oppo.hardware.hypnus@1.0-service.rc
-vendor/etc/init/vendor.oppo.hardware.ktv@1.0-service.rc
-vendor/etc/init/vendor.oppo.hardware.mmdisplayfeature@1.0-service.rc
-vendor/etc/init/vendor.oppo.hardware.oiface@1.0-service.rc
-vendor/etc/init/vendor.oppo.wifi.sniffer@1.0-service.rc
 vendor/lib/hw/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-impl.so
 vendor/lib/hw/vendor.oppo.hardware.camera.oppoHalAssist@1.0-impl.so
-vendor/lib/hw/vendor.oppo.hardware.hypnus@1.0-impl.so
-vendor/lib/hw/vendor.oppo.hardware.ktv@1.0-impl.so
-vendor/lib/hw/vendor.oppo.hardware.mmdisplayfeature@1.0-impl.so
-vendor/lib/hw/vendor.oppo.hardware.oiface@1.0-impl.so
 vendor/lib/libbthost_if.so
 vendor/lib/libhypnusclient.so
 vendor/lib/libOppoAlgoClient.so
@@ -1135,29 +1110,13 @@ vendor/lib/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0.so
 vendor/lib/vendor.oppo.hardware.camera.oppoHalAssist@1.0.so
 vendor/lib/vendor.oppo.hardware.commondcs@1.0.so
 vendor/lib/vendor.oppo.hardware.hypnus@1.0.so
-vendor/lib/vendor.oppo.hardware.ktv@1.0.so
-vendor/lib/vendor.oppo.hardware.mmdisplayfeature@1.0.so
-vendor/lib/vendor.oppo.hardware.oiface@1.0.so
-vendor/lib64/hw/vendor.oppo.hardware.hypnus@1.0-impl.so
-vendor/lib64/hw/vendor.oppo.hardware.ktv@1.0-impl.so
-vendor/lib64/hw/vendor.oppo.hardware.mmdisplayfeature@1.0-impl.so
-vendor/lib64/hw/vendor.oppo.hardware.oiface@1.0-impl.so
 vendor/lib64/libbthost_if.so
 vendor/lib64/libhypnusclient.so
 vendor/lib64/liboppoalgolib.so
-vendor/lib64/vendor.oppo.engnative.engsensor@1.0.so
-vendor/lib64/vendor.oppo.engnative.messager@1.0.so
-vendor/lib64/vendor.oppo.engnative.transfer@1.0.so
 vendor/lib64/vendor.oppo.hardware.biometrics.fingerprint@2.1.so
 vendor/lib64/vendor.oppo.hardware.biometrics.fingerprintpay@1.0.so
 vendor/lib64/vendor.oppo.hardware.commondcs@1.0.so
-vendor/lib64/vendor.oppo.hardware.cryptoeng@1.0.so
 vendor/lib64/vendor.oppo.hardware.hypnus@1.0.so
-vendor/lib64/vendor.oppo.hardware.ktv@1.0.so
-vendor/lib64/vendor.oppo.hardware.mmdisplayfeature@1.0.so
-vendor/lib64/vendor.oppo.hardware.oiface@1.0.so
-vendor/lib64/vendor.oppo.hardware.wifi.sniffer@1.0.so
-vendor/lib64/vendor.oppo.hardware.wifi.supplicant@1.0.so
 
 # Oppo Voice Model Firmware
 vendor/firmware/audience/cvqmodels/oemkw_Baidu_YiXia.bin
@@ -1399,8 +1358,6 @@ lib/lib-imsvtutils.so
 lib/libdiag_system.so
 lib/libimscamera_jni.so
 lib/libimsmedia_jni.so
-lib/libmmrtpdecoder.so
-lib/libmmrtpencoder.so
 lib/librcc.so
 lib/vendor.qti.hardware.radio.ims@1.0.so
 lib/vendor.qti.hardware.radio.ims@1.1.so
