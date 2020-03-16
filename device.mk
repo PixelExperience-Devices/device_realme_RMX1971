@@ -218,8 +218,8 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.2-service.clearkey
 
 # Doze
-#PRODUCT_PACKAGES += \
-#    RealmeParts
+PRODUCT_PACKAGES += \
+    RealmeParts
 
 # Fingerprint
 PRODUCT_PACKAGES += \
