@@ -1,0 +1,3 @@
+allow qti_init_shell persist_file:lnk_file { read };
+allow qti_init_shell oppo_debug_prop:file { read };
+allow qti_init_shell configfs:dir { write };

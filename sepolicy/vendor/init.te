@@ -1,0 +1,2 @@
+allow init vendor_file:file { execute };
+allow init socket_device:sock_file { create };
