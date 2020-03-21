@@ -27,4 +27,7 @@
         orientation. If zero, the value of rounded_corner_radius is used. -->
     <dimen name="rounded_corner_radius_bottom">108px</dimen>
 
+    <dimen name="status_bar_extra_padding">12dp</dimen> 
+    <dimen name="rounded_corner_content_padding">36px</dimen>
+
 </resources>
