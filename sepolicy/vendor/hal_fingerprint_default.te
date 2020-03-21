@@ -10,7 +10,7 @@ allow hal_fingerprint_default proc_oppo_fp:file r_file_perms;
 
 allow hal_fingerprint_default sysfs:file { write };
 allow hal_fingerprint_default uhid_device:chr_file { write open ioctl };
-allow hal_fingerprint_default default_prop:file { read open getattr };
+allow hal_fingerprint_default default_prop:file { getattr };
 
 allow hal_fingerprint_default proc_touchpanel:dir search;
 allow hal_fingerprint_default proc_touchpanel:file rw_file_perms;
