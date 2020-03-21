@@ -529,11 +529,10 @@
          appended after the path string to interpret coordinates in dp instead of px units.
          Note that a physical cutout should be configured in pixels for the best results.
     -->
-     <string translatable="false" name="config_mainBuiltInDisplayCutout">M -143,0 L -143,76 L 143,76 L 143,0 Z</string>
+     <string translatable="false" name="config_mainBuiltInDisplayCutout">M -70,0 L -70,76 L 70,76 L 70,0 Z</string>
 
     <!-- Height of the status bar -->
-    <dimen name="status_bar_height_portrait">28.0dip</dimen>
-    <dimen name="status_bar_height_landscape">24.0dp</dimen>
+    <dimen name="status_bar_height_portrait">32.0dip</dimen>
 
     <!-- Enables or disables haptic effect when the text insertion/selection handle is moved
           manually by the user. Off by default, since the expected haptic feedback may not be
