@@ -54,7 +54,7 @@ def OTA_InstallEnd(info, input_zip):
   return
 
 def AddTrustZoneAssertion(info, input_zip):
-  android_info = info.input_zip.read("OTA/android-info.txt")
+  android_info = input_zip.read("OTA/android-info.txt")
   m = re.search(r'require\s+version-trustzone\s*=\s*(\S+)', android_info)
   if m:
     versions = m.group(1).split('|')
