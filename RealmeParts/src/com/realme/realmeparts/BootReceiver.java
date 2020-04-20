@@ -28,7 +28,7 @@ import com.realme.realmeparts.settings.ScreenOffGesture;
 import com.realme.realmeparts.util.Utils;
 import com.realme.realmeparts.gestures.SensorsDozeService;
 import java.io.File;
-import android.support.v7.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 
 public class BootReceiver extends BroadcastReceiver {
 
