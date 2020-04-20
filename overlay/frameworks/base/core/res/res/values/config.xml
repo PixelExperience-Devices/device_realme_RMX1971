@@ -573,4 +573,14 @@
 	<item>com.google.android.googlequicksearchbox/com.google.android.hotword.service.HotwordService</item>
     </string-array>
 
+    <!-- Paths to the libraries that contain device specific key handlers -->
+    <string-array name="config_deviceKeyHandlerLibs" translatable="false">
+       <item>/system/priv-app/RealmeParts/RealmeParts.apk</item>
+    </string-array>
+
+    <!-- Names of the key handler classes -->
+     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
+       <item>com.realme.realmeparts.KeyHandler</item>
+    </string-array>
+
 </resources>

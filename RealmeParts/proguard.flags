@@ -1,0 +1,5 @@
+-keep public class com.realme.realmeparts.KeyHandler
+
+-keepclassmembers public class com.realme.realmeparts.KeyHandler {
+    *;
+}
