@@ -54,16 +54,19 @@ public class ScreenOffGesture extends PreferenceFragment implements
 
     public static final String PREF_GESTURE_ENABLE = "enable_gestures";
     public static final String PREF_GESTURE_DOUBLE_TAP = "gesture_double_tap";
-    public static final String PREF_GESTURE_C = "gesture_c";
-    public static final String PREF_GESTURE_E = "gesture_e";
     public static final String PREF_GESTURE_W = "gesture_w";
-    public static final String PREF_GESTURE_V = "gesture_v";
-    public static final String PREF_GESTURE_S = "gesture_s";
-    public static final String PREF_GESTURE_Z = "gesture_z";
+    public static final String PREF_GESTURE_M = "gesture_m";
+    public static final String PREF_GESTURE_CIRCLE = "gesture_circle";
+    public static final String PREF_GESTURE_TWO_SWIPE = "gesture_two_swipe";
+    public static final String PREF_GESTURE_UP_ARROW = "gesture_up_arrow";
+    public static final String PREF_GESTURE_DOWN_ARROW = "gesture_down_arrow";
+    public static final String PREF_GESTURE_LEFT_ARROW = "gesture_left_arrow";
+    public static final String PREF_GESTURE_RIGHT_ARROW = "gesture_right_arrow";
     public static final String PREF_GESTURE_UP = "gesture_up";
     public static final String PREF_GESTURE_DOWN = "gesture_down";
     public static final String PREF_GESTURE_LEFT = "gesture_left";
     public static final String PREF_GESTURE_RIGHT = "gesture_right";
+    public static final String PREF_GESTURE_SINGLE_TAP = "gesture_single_tap";
 
     private static final String KEY_GESTURE_HAPTIC_FEEDBACK = "gesture_haptic_feedback";
 
@@ -73,12 +76,15 @@ public class ScreenOffGesture extends PreferenceFragment implements
     private static final int MENU_RESET = Menu.FIRST;
 
     private Preference mGestureDoubleTap;
-    private Preference mGestureC;
-    private Preference mGestureE;
     private Preference mGestureW;
-    private Preference mGestureV;
-    private Preference mGestureS;
-    private Preference mGestureZ;
+    private Preference mGestureM;
+    private Preference mGestureCircle;
+    private Preference mGestureTwoSwipe;
+    private Preference mGestureLeftArrow;
+    private Preference mGestureUpArrow;
+    private Preference mGestureDownArrow;
+    private Preference mGestureRightArrow;
+    private Preference mGestureSingleTap;
     private Preference mGestureSwipeUp;
     private Preference mGestureSwipeDown;
     private Preference mGestureSwipeLeft;
@@ -145,12 +151,15 @@ public class ScreenOffGesture extends PreferenceFragment implements
         mHapticFeedback.setOnPreferenceChangeListener(this);
 
 	mGestureDoubleTap = (Preference) prefs.findPreference(PREF_GESTURE_DOUBLE_TAP);
-        mGestureC = (Preference) prefs.findPreference(PREF_GESTURE_C);
-        mGestureE = (Preference) prefs.findPreference(PREF_GESTURE_E);
         mGestureW = (Preference) prefs.findPreference(PREF_GESTURE_W);
-        mGestureV = (Preference) prefs.findPreference(PREF_GESTURE_V);
-        mGestureS = (Preference) prefs.findPreference(PREF_GESTURE_S);
-        mGestureZ = (Preference) prefs.findPreference(PREF_GESTURE_Z);
+        mGestureM = (Preference) prefs.findPreference(PREF_GESTURE_M);
+        mGestureCircle = (Preference) prefs.findPreference(PREF_GESTURE_CIRCLE);
+        mGestureTwoSwipe = (Preference) prefs.findPreference(PREF_GESTURE_TWO_SWIPE);
+        mGestureDownArrow = (Preference) prefs.findPreference(PREF_GESTURE_DOWN_ARROW);
+        mGestureUpArrow = (Preference) prefs.findPreference(PREF_GESTURE_UP_ARROW);
+        mGestureLeftArrow = (Preference) prefs.findPreference(PREF_GESTURE_LEFT_ARROW);
+        mGestureRightArrow = (Preference) prefs.findPreference(PREF_GESTURE_RIGHT_ARROW);
+        mGestureSingleTap = (Preference) prefs.findPreference(PREF_GESTURE_SINGLE_TAP);
         mGestureSwipeUp = (Preference) prefs.findPreference(PREF_GESTURE_UP);
         mGestureSwipeDown = (Preference) prefs.findPreference(PREF_GESTURE_DOWN);
         mGestureSwipeLeft = (Preference) prefs.findPreference(PREF_GESTURE_LEFT);
@@ -158,18 +167,22 @@ public class ScreenOffGesture extends PreferenceFragment implements
 
         setupOrUpdatePreference(mGestureDoubleTap, mScreenOffGestureSharedPreferences
                 .getString(PREF_GESTURE_DOUBLE_TAP, ActionConstants.ACTION_WAKE_DEVICE));
-        setupOrUpdatePreference(mGestureC, mScreenOffGestureSharedPreferences
-                .getString(PREF_GESTURE_C, ActionConstants.ACTION_CAMERA));
-        setupOrUpdatePreference(mGestureE, mScreenOffGestureSharedPreferences
-                .getString(PREF_GESTURE_E, ActionConstants.ACTION_MEDIA_PLAY_PAUSE));
+        setupOrUpdatePreference(mGestureM, mScreenOffGestureSharedPreferences
+                .getString(PREF_GESTURE_M, ActionConstants.ACTION_CAMERA));
         setupOrUpdatePreference(mGestureW, mScreenOffGestureSharedPreferences
-                    .getString(PREF_GESTURE_W, ActionConstants.ACTION_TORCH));
-        setupOrUpdatePreference(mGestureV, mScreenOffGestureSharedPreferences
-                .getString(PREF_GESTURE_V, ActionConstants.ACTION_VIB_SILENT));
-        setupOrUpdatePreference(mGestureS, mScreenOffGestureSharedPreferences
-                .getString(PREF_GESTURE_S, ActionConstants.ACTION_MEDIA_PREVIOUS));
-        setupOrUpdatePreference(mGestureZ, mScreenOffGestureSharedPreferences
-                .getString(PREF_GESTURE_Z, ActionConstants.ACTION_MEDIA_NEXT));
+                .getString(PREF_GESTURE_W, ActionConstants.ACTION_MEDIA_PLAY_PAUSE));
+        setupOrUpdatePreference(mGestureCircle, mScreenOffGestureSharedPreferences
+                .getString(PREF_GESTURE_CIRCLE, ActionConstants.ACTION_MEDIA_PLAY_PAUSE));
+        setupOrUpdatePreference(mGestureTwoSwipe, mScreenOffGestureSharedPreferences
+                .getString(PREF_GESTURE_TWO_SWIPE, ActionConstants.ACTION_MEDIA_PLAY_PAUSE));
+        setupOrUpdatePreference(mGestureUpArrow, mScreenOffGestureSharedPreferences
+                    .getString(PREF_GESTURE_UP_ARROW, ActionConstants.ACTION_TORCH));
+        setupOrUpdatePreference(mGestureDownArrow, mScreenOffGestureSharedPreferences
+                .getString(PREF_GESTURE_DOWN_ARROW, ActionConstants.ACTION_VIB_SILENT));
+        setupOrUpdatePreference(mGestureLeftArrow, mScreenOffGestureSharedPreferences
+                .getString(PREF_GESTURE_LEFT_ARROW, ActionConstants.ACTION_MEDIA_PREVIOUS));
+        setupOrUpdatePreference(mGestureRightArrow, mScreenOffGestureSharedPreferences
+                .getString(PREF_GESTURE_RIGHT_ARROW, ActionConstants.ACTION_MEDIA_NEXT));
         setupOrUpdatePreference(mGestureSwipeUp, mScreenOffGestureSharedPreferences
                     .getString(PREF_GESTURE_UP, ActionConstants.ACTION_WAKE_DEVICE));
         setupOrUpdatePreference(mGestureSwipeDown, mScreenOffGestureSharedPreferences
@@ -178,6 +191,8 @@ public class ScreenOffGesture extends PreferenceFragment implements
                 .getString(PREF_GESTURE_LEFT, ActionConstants.ACTION_MEDIA_PREVIOUS));
         setupOrUpdatePreference(mGestureSwipeRight, mScreenOffGestureSharedPreferences
                 .getString(PREF_GESTURE_RIGHT, ActionConstants.ACTION_MEDIA_NEXT));
+        setupOrUpdatePreference(mGestureSingleTap, mScreenOffGestureSharedPreferences
+                .getString(PREF_GESTURE_SINGLE_TAP, ActionConstants.ACTION_MEDIA_NEXT));
 
         boolean enableGestures =
                 mScreenOffGestureSharedPreferences.getBoolean(PREF_GESTURE_ENABLE, true);
@@ -223,24 +238,24 @@ public class ScreenOffGesture extends PreferenceFragment implements
 	if (preference == mGestureDoubleTap) {
             settingsKey = PREF_GESTURE_DOUBLE_TAP;
             dialogTitle = R.string.gesture_double_tap_title;
-        } else if (preference == mGestureC) {
-            settingsKey = PREF_GESTURE_C;
-            dialogTitle = R.string.gesture_c_title;
-        } else if (preference == mGestureE) {
-            settingsKey = PREF_GESTURE_E;
-            dialogTitle = R.string.gesture_e_title;
+        } else if (preference == mGestureM) {
+            settingsKey = PREF_GESTURE_M;
+            dialogTitle = R.string.gesture_m_title;
         } else if (preference == mGestureW) {
             settingsKey = PREF_GESTURE_W;
             dialogTitle = R.string.gesture_w_title;
-        } else if (preference == mGestureV) {
-            settingsKey = PREF_GESTURE_V;
-            dialogTitle = R.string.gesture_v_title;
-        } else if (preference == mGestureS) {
-            settingsKey = PREF_GESTURE_S;
-            dialogTitle = R.string.gesture_s_title;
-        } else if (preference == mGestureZ) {
-            settingsKey = PREF_GESTURE_Z;
-            dialogTitle = R.string.gesture_z_title;
+        } else if (preference == mGestureTwoSwipe) {
+            settingsKey = PREF_GESTURE_TWO_SWIPE;
+            dialogTitle = R.string.gesture_two_swipe_title;
+        } else if (preference == mGestureUpArrow) {
+            settingsKey = PREF_GESTURE_UP_ARROW;
+            dialogTitle = R.string.gesture_up_arrow_title;
+        } else if (preference == mGestureDownArrow) {
+            settingsKey = PREF_GESTURE_DOWN_ARROW;
+            dialogTitle = R.string.gesture_down_arrow_title;
+        } else if (preference == mGestureLeftArrow) {
+            settingsKey = PREF_GESTURE_LEFT_ARROW;
+            dialogTitle = R.string.gesture_left_arrow_title;
         } else if (preference == mGestureSwipeUp) {
             settingsKey = PREF_GESTURE_UP;
             dialogTitle = R.string.gesture_up_title;
@@ -253,6 +268,18 @@ public class ScreenOffGesture extends PreferenceFragment implements
         } else if (preference == mGestureSwipeRight) {
             settingsKey = PREF_GESTURE_RIGHT;
             dialogTitle = R.string.gesture_right_title;
+        } else if (preference == mGestureRightArrow) {
+            settingsKey = PREF_GESTURE_RIGHT_ARROW;
+            dialogTitle = R.string.gesture_right_arrow_title;
+        } else if (preference == mGestureCircle) {
+            settingsKey = PREF_GESTURE_CIRCLE;
+            dialogTitle = R.string.gesture_circle_title;
+        } else if (preference == mGestureTwoSwipe) {
+            settingsKey = PREF_GESTURE_TWO_SWIPE;
+            dialogTitle = R.string.gesture_two_swipe_title;
+        } else if (preference == mGestureSingleTap) {
+            settingsKey = PREF_GESTURE_SINGLE_TAP;
+            dialogTitle = R.string.gesture_single_tap_title;
         }
         if (settingsKey != null) {
             showDialogInner(DLG_SHOW_ACTION_DIALOG, settingsKey, dialogTitle);
@@ -289,17 +316,21 @@ public class ScreenOffGesture extends PreferenceFragment implements
                 .putBoolean(PREF_GESTURE_ENABLE, true).commit();
         editor.putString(PREF_GESTURE_DOUBLE_TAP,
                 ActionConstants.ACTION_WAKE_DEVICE).commit();
-        editor.putString(PREF_GESTURE_C,
+        editor.putString(PREF_GESTURE_M,
                 ActionConstants.ACTION_CAMERA).commit();
-        editor.putString(PREF_GESTURE_E,
-                ActionConstants.ACTION_MEDIA_PLAY_PAUSE).commit();
         editor.putString(PREF_GESTURE_W,
+                ActionConstants.ACTION_MEDIA_PLAY_PAUSE).commit();
+        editor.putString(PREF_GESTURE_CIRCLE,
+                ActionConstants.ACTION_MEDIA_PLAY_PAUSE).commit();
+        editor.putString(PREF_GESTURE_TWO_SWIPE,
+                ActionConstants.ACTION_MEDIA_PLAY_PAUSE).commit();
+        editor.putString(PREF_GESTURE_UP_ARROW,
                 ActionConstants.ACTION_TORCH).commit();
-        editor.putString(PREF_GESTURE_V,
+        editor.putString(PREF_GESTURE_DOWN_ARROW,
                 ActionConstants.ACTION_VIB_SILENT).commit();
-        editor.putString(PREF_GESTURE_S,
+        editor.putString(PREF_GESTURE_LEFT_ARROW,
                 ActionConstants.ACTION_MEDIA_PREVIOUS).commit();
-        editor.putString(PREF_GESTURE_Z,
+        editor.putString(PREF_GESTURE_RIGHT_ARROW,
                 ActionConstants.ACTION_MEDIA_NEXT).commit();
 		editor.putString(PREF_GESTURE_UP,
                 ActionConstants.ACTION_WAKE_DEVICE).commit();

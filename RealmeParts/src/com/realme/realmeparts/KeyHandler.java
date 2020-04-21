@@ -59,30 +59,36 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final boolean DEBUG = true;
 
     // Supported scancodes
-    private static final int GESTURE_DOUBLE_TAP_SCANCODE = 260;
-    private static final int GESTURE_C_SCANCODE = 249;
-    private static final int GESTURE_E_SCANCODE = 250;
-    private static final int GESTURE_S_SCANCODE = 251;
-    private static final int GESTURE_V_SCANCODE = 252;
-    private static final int GESTURE_W_SCANCODE = 253;
-    private static final int GESTURE_Z_SCANCODE = 254;
-    private static final int GESTURE_SWIPE_UP_SCANCODE = 255;
-    private static final int GESTURE_SWIPE_DOWN_SCANCODE = 256;
-    private static final int GESTURE_SWIPE_LEFT_SCANCODE = 257;
-    private static final int GESTURE_SWIPE_RIGHT_SCANCODE = 258;
+    private static final int GESTURE_DOUBLE_TAP_SCANCODE = 248;
+    private static final int GESTURE_M_SCANCODE = 247;
+    private static final int GESTURE_W_SCANCODE = 246;
+    private static final int GESTURE_CIRCLE_SCANCODE = 249;
+    private static final int GESTURE_TWO_SWIPE_SCANCODE = 250;
+    private static final int GESTURE_RIGHT_ARROW_SCANCODE = 254;
+    private static final int GESTURE_LEFT_ARROW_SCANCODE = 253;
+    private static final int GESTURE_UP_ARROW_SCANCODE = 251;
+    private static final int GESTURE_DOWN_ARROW_SCANCODE = 252;
+    private static final int GESTURE_SWIPE_UP_SCANCODE = 256;
+    private static final int GESTURE_SWIPE_DOWN_SCANCODE = 255;
+    private static final int GESTURE_SWIPE_LEFT_SCANCODE = 258;
+    private static final int GESTURE_SWIPE_RIGHT_SCANCODE = 257;
+    private static final int GESTURE_SINGLE_TAP_SCANCODE = 259;
 
      private static final int[] sSupportedGestures = new int[]{
         GESTURE_DOUBLE_TAP_SCANCODE,
-        GESTURE_C_SCANCODE,
-        GESTURE_E_SCANCODE,
-        GESTURE_V_SCANCODE,
+        GESTURE_M_SCANCODE,
         GESTURE_W_SCANCODE,
-        GESTURE_S_SCANCODE,
-        GESTURE_Z_SCANCODE,
+        GESTURE_CIRCLE_SCANCODE,
+        GESTURE_TWO_SWIPE_SCANCODE,
+        GESTURE_RIGHT_ARROW_SCANCODE,
+        GESTURE_LEFT_ARROW_SCANCODE,
+        GESTURE_UP_ARROW_SCANCODE,
+        GESTURE_DOWN_ARROW_SCANCODE,
         GESTURE_SWIPE_UP_SCANCODE,
 	GESTURE_SWIPE_DOWN_SCANCODE,
 	GESTURE_SWIPE_LEFT_SCANCODE,
-	GESTURE_SWIPE_RIGHT_SCANCODE
+	GESTURE_SWIPE_RIGHT_SCANCODE,
+        GESTURE_SINGLE_TAP_SCANCODE
     };
 
     private final Context mContext;
@@ -161,43 +167,55 @@ public class KeyHandler implements DeviceKeyHandler {
                         doHapticFeedback();
                 break;
 
-            case GESTURE_C_SCANCODE:
+            case GESTURE_M_SCANCODE:
                 action = getGestureSharedPreferences()
-                        .getString(ScreenOffGesture.PREF_GESTURE_C,
+                        .getString(ScreenOffGesture.PREF_GESTURE_M,
                         ActionConstants.ACTION_CAMERA);
-                        doHapticFeedback();
-                break;
-            case GESTURE_E_SCANCODE:
-                action = getGestureSharedPreferences()
-                        .getString(ScreenOffGesture.PREF_GESTURE_E,
-                        ActionConstants.ACTION_MEDIA_PLAY_PAUSE);
-                        doHapticFeedback();
-                break;
-            case GESTURE_V_SCANCODE:
-                action = getGestureSharedPreferences()
-                        .getString(ScreenOffGesture.PREF_GESTURE_V,
-                        ActionConstants.ACTION_VIB_SILENT);
                         doHapticFeedback();
                 break;
             case GESTURE_W_SCANCODE:
                 action = getGestureSharedPreferences()
                         .getString(ScreenOffGesture.PREF_GESTURE_W,
+                        ActionConstants.ACTION_MEDIA_PLAY_PAUSE);
+                        doHapticFeedback();
+                break;
+            case GESTURE_CIRCLE_SCANCODE:
+                action = getGestureSharedPreferences()
+                        .getString(ScreenOffGesture.PREF_GESTURE_CIRCLE,
+                        ActionConstants.ACTION_MEDIA_PLAY_PAUSE);
+                        doHapticFeedback();
+                break;
+            case GESTURE_TWO_SWIPE_SCANCODE:
+                action = getGestureSharedPreferences()
+                        .getString(ScreenOffGesture.PREF_GESTURE_TWO_SWIPE,
+                        ActionConstants.ACTION_MEDIA_PLAY_PAUSE);
+                        doHapticFeedback();
+                break;
+            case GESTURE_DOWN_ARROW_SCANCODE:
+                action = getGestureSharedPreferences()
+                        .getString(ScreenOffGesture.PREF_GESTURE_DOWN_ARROW,
+                        ActionConstants.ACTION_VIB_SILENT);
+                        doHapticFeedback();
+                break;
+            case GESTURE_UP_ARROW_SCANCODE:
+                action = getGestureSharedPreferences()
+                        .getString(ScreenOffGesture.PREF_GESTURE_UP_ARROW,
                         ActionConstants.ACTION_TORCH);
                         doHapticFeedback();
                 break;
-            case GESTURE_S_SCANCODE:
+            case GESTURE_LEFT_ARROW_SCANCODE:
                 action = getGestureSharedPreferences()
-                        .getString(ScreenOffGesture.PREF_GESTURE_S,
+                        .getString(ScreenOffGesture.PREF_GESTURE_LEFT_ARROW,
                         ActionConstants.ACTION_MEDIA_PREVIOUS);
                         doHapticFeedback();
                 break;
-            case GESTURE_Z_SCANCODE:
+            case GESTURE_RIGHT_ARROW_SCANCODE:
                 action = getGestureSharedPreferences()
-                        .getString(ScreenOffGesture.PREF_GESTURE_Z,
+                        .getString(ScreenOffGesture.PREF_GESTURE_RIGHT_ARROW,
                         ActionConstants.ACTION_MEDIA_NEXT);
                         doHapticFeedback();
                 break;
-			case GESTURE_SWIPE_UP_SCANCODE:
+           case GESTURE_SWIPE_UP_SCANCODE:
                 action = getGestureSharedPreferences()
                         .getString(ScreenOffGesture.PREF_GESTURE_UP,
                         ActionConstants.ACTION_WAKE_DEVICE);
@@ -218,6 +236,12 @@ public class KeyHandler implements DeviceKeyHandler {
             case GESTURE_SWIPE_RIGHT_SCANCODE:
                 action = getGestureSharedPreferences()
                         .getString(ScreenOffGesture.PREF_GESTURE_RIGHT,
+                        ActionConstants.ACTION_MEDIA_NEXT);
+                        doHapticFeedback();
+                break;
+            case GESTURE_SINGLE_TAP_SCANCODE:
+                action = getGestureSharedPreferences()
+                        .getString(ScreenOffGesture.PREF_GESTURE_SINGLE_TAP,
                         ActionConstants.ACTION_MEDIA_NEXT);
                         doHapticFeedback();
                 break;
