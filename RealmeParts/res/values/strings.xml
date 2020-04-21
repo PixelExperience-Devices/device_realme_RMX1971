@@ -53,33 +53,12 @@
     <string name="ambient_display_summary_on">Screen will wake when you receive notifications</string>
     <string name="ambient_display_summary_off">Screen will not wake when you receive notifications</string>
 
-    <!-- Tilt sensor -->
-    <string name="tilt_sensor_title">Tilt sensor</string>
-
     <!-- Pickup sensor -->
     <string name="pickup_sensor_title">Pickup sensor</string>
-
-    <!-- Proximity sensor -->
-    <string name="proximity_sensor_title">Proximity sensor</string>
-
-    <!-- Hand wave gesture -->
-    <string name="hand_wave_gesture_title">Hand wave</string>
-    <string name="hand_wave_gesture_summary">Pulse notifications on hand wave</string>
-    <string name="hand_wave_gesture_flat_title">Detect orientation</string>
-    <string name="hand_wave_gesture_flat_summary">Pulse only if the phone is lying face up on a flat surface</string>
 
     <!-- Pick-up gesture -->
     <string name="pick_up_gesture_title">Pick-up</string>
     <string name="pick_up_gesture_summary">Pulse notifications on pick-up</string>
-
-    <!-- Pocket gesture -->
-    <string name="pocket_gesture_title">Pocket</string>
-    <string name="pocket_gesture_summary">Pulse notifications on removal from pocket</string>
-
-    <!-- Proximity wake -->
-    <string name="proximity_wake_title">Proximity wake</string>
-    <string name="proximity_wake_enable_title">Proximity wake</string>
-    <string name="proximity_wake_enable_summary">Wake device on hand wave</string>
 
     <!-- Label for feature switch  -->
     <string name="switch_bar_on">On</string>
@@ -94,7 +73,6 @@
     <string name="screen_gestures_panel_title">Gestures</string>
 
     <!-- Ambient gesture haptic feedback -->
-    <string name="ambient_gesture_extras">Extras</string>
     <string name="ambient_gesture_haptic_feedback">Haptic feedback</string>
     <string name="ambient_gesture_haptic_feedback_summary">Vibrate when a Ambient gesture is detected</string>
 
