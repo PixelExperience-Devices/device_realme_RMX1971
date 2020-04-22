@@ -111,12 +111,6 @@
                 android:title="@string/gesture_right_title"
                 android:persistent="false"
                 android:dependency="enable_gestures" />
-
-            <Preference
-                android:key="gesture_single_tap"
-                android:title="@string/gesture_single_tap_title"
-                android:persistent="false"
-                android:dependency="enable_gestures" />
         </PreferenceCategory>
 
 </PreferenceScreen>

@@ -40,7 +40,6 @@
     <string name="gesture_down_title">Gesture Swipe Down</string>
     <string name="gesture_left_title">Gesture Swipe Left</string>
     <string name="gesture_right_title">Gesture Swipe Right</string>
-    <string name="gesture_single_tap_title">Gesture Single tap</string>
     <string name="realmeparts">RealmeParts</string>
     <string name="realmeparts_summary">Gestures and Tweaks for Realme</string>
     <string name="screen_off_gestures">Screen-off gestures</string>
