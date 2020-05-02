@@ -121,7 +121,6 @@ on boot
     write /proc/touchpanel/oppo_tp_limit_enable 0
     write /proc/touchpanel/oppo_tp_direction 1
     write /proc/touchpanel/game_switch_enable 1
-    write /sys/class/leds/vibrator/vmax_mv 2000
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/state
