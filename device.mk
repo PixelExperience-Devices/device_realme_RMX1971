@@ -333,10 +333,6 @@ PRODUCT_BOOT_JARS += \
     QPerformance \
     UxPerformance
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/perfconfigstore.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/perf/perfconfigstore.xml
-
-
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service-qti
