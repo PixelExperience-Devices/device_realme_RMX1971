@@ -1,7 +1,7 @@
 [
   {
     "remote":"github",
-    "branch":"ten",
+    "branch":"ten-plus",
     "repository": "PixelExperience-Devices/kernel_realme_RMX1971",
     "target_path": "kernel/realme/RMX1971"
   },
