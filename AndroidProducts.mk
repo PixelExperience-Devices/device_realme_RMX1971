@@ -5,4 +5,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_RMX1971.mk
+    $(LOCAL_DIR)/rebellion_RMX1971.mk
