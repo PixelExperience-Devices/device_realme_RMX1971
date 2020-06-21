@@ -25,5 +25,8 @@
 
     <!-- Doze: check proximity sensor before pulsing? -->
     <bool name="doze_proximity_check_before_pulse">false</bool>
+
+    <!-- Allow devices override audio panel location to the left side -->
+    <bool name="config_audioPanelOnLeftSide">true</bool>
 </resources>
 
