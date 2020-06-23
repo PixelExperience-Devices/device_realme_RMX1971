@@ -183,22 +183,20 @@ PRODUCT_PACKAGES += \
     init.qti.fm.sh \
     init.qti.ims.sh \
     init.qti.manifest_sku.sh \
+    init.qti.chg_policy.sh \
     init.qti.qseecomd.sh \
     fstab.qcom \
     init.msm.usb.configfs.rc \
     init.oppo.debug.diag.rc \
     init.oppo.reserve.rc \
     init.oppo.sensor.rc \
-    init.oppo.vendor.fingerprint.rc \
-    init.oppo.vendor.motor.rc \
     init.qcom.factory.rc \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.target.rc \
     init.wlan.qcom.rc \
     init.wlan.target.rc \
-    ueventd.rc \
-    move_wifi_data.sh
+    ueventd.rc
 
 # Display
 PRODUCT_PACKAGES += \
