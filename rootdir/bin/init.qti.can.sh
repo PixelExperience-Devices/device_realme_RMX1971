@@ -29,4 +29,3 @@
 
 ip link set can0 type can bitrate 250000
 ip link set up can0
-
