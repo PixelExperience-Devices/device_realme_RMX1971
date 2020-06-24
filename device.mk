@@ -264,10 +264,7 @@ PRODUCT_PACKAGES += \
 
 # IMS
 PRODUCT_PACKAGES += \
-    ims-ext-common_system
-
-PRODUCT_BOOT_JARS += \
-    ims-ext-common_system
+    ims-ext-common
 
 # IPACM
 PRODUCT_PACKAGES += \
