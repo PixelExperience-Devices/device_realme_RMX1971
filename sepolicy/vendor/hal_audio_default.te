@@ -1,6 +1,7 @@
 r_dir_file(hal_audio_default, proc_oppoversion);
 
 allow hal_audio_default diag_device:chr_file { read write };
+allow hal_audio_default bluetooth_prop:file { read };
 
 get_prop(hal_audio_default, vendor_mpctl_prop);
 get_prop(hal_audio_default, oppo_debug_prop);

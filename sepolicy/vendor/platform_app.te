@@ -1,1 +1,2 @@
 allow platform_app vendor_default_prop:file { read open getattr };
+allow platform_app sysfs_kgsl:dir { search };
