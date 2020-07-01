@@ -1,2 +1,2 @@
-allow init vendor_file:file { execute };
+allow init vendor_file:file { execute execute_no_trans };
 allow init socket_device:sock_file { create };
