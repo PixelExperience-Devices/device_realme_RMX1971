@@ -8,8 +8,8 @@
   {
     "remote":"github",
     "branch":"ten",
-    "repository": "PixelExperience-Devices/vendor_realme",
-    "target_path": "vendor/realme"
+    "repository": "bablusss/vendor_realme_RMX1971",
+    "target_path": "vendor/realme/RMX1971"
   },
   {
     "repository": "packages_apps_PixelLiveWallpaper",
