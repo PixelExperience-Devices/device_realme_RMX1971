@@ -45,43 +45,34 @@ vendor/etc/acdbdata/QRD/sdm670-skuw-snd-card/QRD_SKUW_workspaceFile.qwsp
 vendor/bin/adsprpcd
 vendor/lib/libadsprpc.so
 vendor/lib/libadsp_default_listener.so
+vendor/lib/libfastcvdsp_stub.so
+vendor/lib/libfastcvopt.so
 vendor/lib/libmdsprpc.so
 vendor/lib/libsdsprpc.so
 vendor/lib64/libadsprpc.so
 vendor/lib64/libadsp_default_listener.so
+vendor/lib64/libfastcvdsp_stub.so
+vendor/lib64/libfastcvopt.so
 vendor/lib64/libmdsprpc.so
+vendor/lib64/libsdsprpc.so
 
 # ADSP Modules
-vendor/lib/libdepthmap.so
-vendor/lib/libsnpeml.so
-vendor/lib/libsnpe_adsp.so
-vendor/lib/libsnpe_cdsp.so
-vendor/lib/libsnpe_cdsp_v65.so
-vendor/lib/libsnpe_dsp_domains_v2.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
-vendor/lib/rfsa/adsp/dirac-capiv2-game.so
-vendor/lib/rfsa/adsp/dirac-capiv2.so
-vendor/lib/rfsa/adsp/dirac_resource.dar
-vendor/lib/rfsa/adsp/dirac_resource_game.dar
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libarcsoft_dualcam_refocus_skel.so
 vendor/lib/rfsa/adsp/libarcsoft_hdrplus_hvx_skel.so
-vendor/lib/rfsa/adsp/libarcsoft_hdr_hvx_skel.so
-vendor/lib/rfsa/adsp/libarcsoft_llhdr_hvx_skel.so
 vendor/lib/rfsa/adsp/libarcsoft_portraitSN_hvx_skel.so
-vendor/lib/rfsa/adsp/libBeautyShot_skel.so
+vendor/lib/rfsa/adsp/libcamera_nn_skel.so
+vendor/lib/rfsa/adsp/libclock_adjust_skel.so
+vendor/lib/rfsa/adsp/libcvpdsp_skel.so
 vendor/lib/rfsa/adsp/libdepthmap_skel.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
 vendor/lib/rfsa/adsp/libfastcvdsp_skel.so
 vendor/lib/rfsa/adsp/libhexagon_nn_skel.so
-vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
-vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
-vendor/lib/rfsa/adsp/libscveT2T_skel.so
-vendor/lib/rfsa/adsp/libsnpe_dsp_skel.so
+vendor/lib/rfsa/adsp/libproxy_skel.so
 vendor/lib/rfsa/adsp/libsnpe_dsp_v65_domains_v2_skel.so
-vendor/lib/rfsa/adsp/libsnpe_dsp_v65_skel.so
 vendor/lib/rfsa/adsp/libsns_device_mode_skel.so
 vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
 vendor/lib/rfsa/adsp/libthread_blur_skel.so
@@ -90,19 +81,19 @@ vendor/lib/rfsa/adsp/libVC1DecDsp_skel.so
 vendor/lib/rfsa/adsp/libVDHexagonBlurless_skel.so
 vendor/lib/rfsa/adsp/libVDHexagonBlurless_v2_skel.so
 vendor/lib/rfsa/adsp/libVDHexagonSuperPhoto_skel.so
-vendor/lib/rfsa/adsp/remote_heap_config.so
-vendor/lib64/libsysmon_cdsp_skel.so
+vendor/lib64/rfsa/adsp/libBeautyShot_skel.so
 vendor/lib64/rfsa/adsp/libdsp_streamer_add_constant.so
 vendor/lib64/rfsa/adsp/libdsp_streamer_skel.so
 
-# Alarm - from Nokia/Phoenix_00WW/PNX_sprout:10/QKQ1.190725.002/00WW_4_15B:user/release-keys
-product/framework/vendor.qti.hardware.alarm-V1.0-java.jar|69dedc62181ae26bb2fac4eaacb1f2c38eb21c31
--product/app/PowerOffAlarm/PowerOffAlarm.apk|af790539b68b3a2b4e908dae76d53d63a41df960
-vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|ace444a46744cc1f99b579ff57503d3be6d33e1b
-vendor/bin/power_off_alarm|7dfd842f50fb9cab2d0ae90996c6df6e3674915f
-vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|c9877b6cae0353d5fdea5bc23dba77101b3d6980
-vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|4e66cbe25c3b31662b986ee3b58160f526f04e07
-vendor/lib64/vendor.qti.hardware.alarm@1.0.so|af14bdb67a6ea27662a607fff62bd06b20cf8607
+# Alarm
+product/framework/vendor.qti.hardware.alarm-V1.0-java.jar
+vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
+vendor/bin/power_off_alarm
+vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
+vendor/lib/hw/vendor.qti.hardware.alarm@1.0-impl.so
+vendor/lib/vendor.qti.hardware.alarm@1.0.so
+vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
 # Alipay Firmware
 vendor/firmware/alipay.b00
@@ -115,15 +106,15 @@ vendor/firmware/alipay.b06
 vendor/firmware/alipay.b07
 vendor/firmware/alipay.mdt
 
-# ANT+ - from Nokia/Phoenix_00WW/PNX_sprout:10/QKQ1.190725.002/00WW_4_15B:user/release-keys
--lib/libantradio.so|26556e21001f5d7aa551566209a4e30caed13906
--lib64/libantradio.so|cc8adb37d332fa5ab74889529c81a90cbef091e2
-product/lib/com.qualcomm.qti.ant@1.0.so|d62a952e299eff4b77a58508338d5ffb5665f056
-product/lib64/com.qualcomm.qti.ant@1.0.so|964da29cf0f2bfb78cc2a5ce34426954c3bf249c
-vendor/lib/com.qualcomm.qti.ant@1.0.so|631c8ec2aff8895f16c5698ae52fd2103795dfda
-vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so|e8a371a61ab7b41bb7f96e35de20f79c5122b758
-vendor/lib64/com.qualcomm.qti.ant@1.0.so|89ddc7c4fca432fa03fc8a222da079853d2ea3b2
-vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so|4c8d6971513503e0ca97b440c04f93b23680546c
+# ANT+
+-lib/libantradio.so
+-lib64/libantradio.so
+product/lib/com.qualcomm.qti.ant@1.0.so
+product/lib64/com.qualcomm.qti.ant@1.0.so
+vendor/lib/com.qualcomm.qti.ant@1.0.so
+vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
+vendor/lib64/com.qualcomm.qti.ant@1.0.so
+vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
 # Audio Hal
 vendor/lib/hw/audio.primary.sdm710.so
@@ -167,17 +158,10 @@ vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
 vendor/lib64/soundfx/libshoebox.so
 
-# Amf
-vendor/firmware/tfa98xx_18041.cnt
-vendor/firmware/tfa98xx_18081.cnt
-vendor/firmware/tfa98xx_18085.cnt
-vendor/firmware/tfa98xx_18097.cnt
-vendor/firmware/tfa98xx_18181.cnt
-vendor/firmware/tfa98xx_18385.cnt
-vendor/firmware/tfa98xx_18621.cnt
-vendor/firmware/tfa98xx_19651.cnt
-vendor/firmware/tfa98xx_19655.cnt
+# Audio module firmware
+vendor/firmware/dbmd4_va_fw.bin
 vendor/firmware/tfa98xx_19691.cnt
+vendor/firmware/voice_amodel.bin
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
@@ -574,9 +558,12 @@ product/etc/CarrierSettings/vodafone_ie.pb|1f7ca43c098518675cebca9af978189137c98
 vendor/bin/cdsprpcd
 vendor/lib/libcdsprpc.so
 vendor/lib/libcdsp_default_listener.so
+vendor/lib/libfastrpc_utf_stub.so
+vendor/lib/libsysmon_cdsp_skel.so
 vendor/lib64/libcdsprpc.so
 vendor/lib64/libcdsp_default_listener.so
-vendor/lib64/libsdsprpc.so
+vendor/lib64/libfastrpc_utf_stub.so
+vendor/lib64/libsysmon_cdsp_skel.so
 
 # Charger
 vendor/bin/hvdcp_opti
@@ -715,6 +702,10 @@ vendor/firmware/cryptoeng.b06
 vendor/firmware/cryptoeng.b07
 vendor/firmware/cryptoeng.mdt
 
+# dpAP firmware
+vendor/firmware/dpAP_full.mbn
+vendor/firmware/dpAP_mini.mbn
+
 # Display - from PNX_00WW_FIH-user 10 QKQ1.190725.002 00WW_4_15B release-keys
 vendor/lib/libdisplayqos.so|cf1e9eaafec38a2dba24b51ad9f12a129ecea60c
 vendor/lib/libsdedrm.so|6fe09f656810dfc313d5028ea8d2039d27ca8bee
@@ -727,9 +718,9 @@ vendor/lib64/libsdmextension.so|a3b4fed84b9766c750e1378b737a93985402b696
 
 # Display calibration data
 vendor/etc/OPPO_OLED_AD_calib.cfg
-vendor/etc/qdcm_calib_data_Dual_nt35597_video_mode_dsi_truly_panel_without_DSC.xml
-vendor/etc/qdcm_calib_data_nt35597_cmd_mode_dsi_truly_panel_with_DSC.xml
+vendor/etc/qdcm_calib_data_oppo18041samsung_ams653tk01_1080_2340_cmd_mode_dsi_panel.xml
 vendor/etc/qdcm_calib_data_oppo18621_hx83112a_1080_2340_video_mode_dsi_panel.xml
+vendor/etc/qdcm_calib_data_rm19651samsung_ams641rw01_1080_2340_cmd_mode_dsi_panel.xml
 
 # Display postprocessing - from PNX_00WW_FIH-user 10 QKQ1.190725.002 00WW_4_15B release-keys
 lib64/vendor.display.color@1.0.so|f0423bf7d9028b32ed1533123953c01d7f228de4
@@ -771,62 +762,70 @@ product/lib64/libdpmframework.so
 product/lib64/libdpmtcm.so
 -product/priv-app/dpmserviceapp/dpmserviceapp.apk
 vendor/bin/dpmQmiMgr
+vendor/etc/init/dpmQmiMgr.rc
 vendor/lib/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib/libdpmqmihal.so
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/libdpmqmihal.so
 
 # DRM
-vendor/bin/hw/android.hardware.drm@1.1-service.widevine
 vendor/bin/qseecomd
-vendor/etc/gpfspath_oem_config.xml
-vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
-vendor/lib/libbase64.so
-vendor/lib/libcpion.so
+vendor/bin/seemp_healthd
+vendor/etc/init/qseecomd.rc
 vendor/lib/libcppf.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/libGPreqcancel.so
 vendor/lib/libGPreqcancel_svc.so
-vendor/lib/libhdcpsrm.so
-vendor/lib/liboemcrypto.so
 vendor/lib/libqisl.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/librpmb.so
-vendor/lib/libsecureui.so
 vendor/lib/libSecureUILib.so
+vendor/lib/libsecureui.so
 vendor/lib/libsecureui_svcsock.so
 vendor/lib/libssd.so
 vendor/lib/libStDrvInt.so
 vendor/lib/libtzdrmgenprov.so
-vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib/qcdrm/playready/lib/libprdrmdecrypt_customer.so
-vendor/lib/qcdrm/playready/lib/libtzplayready_customer.so
-vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmdecrypt_customer.so
-vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmplugin_customer.so
-vendor/lib64/libbase64.so
 vendor/lib64/libcpion.so
-vendor/lib64/libcppf.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
-vendor/lib64/libhdcpsrm.so
-vendor/lib64/liboemcrypto.so
 vendor/lib64/libqisl.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/librpmb.so
-vendor/lib64/libsecureui.so
 vendor/lib64/libSecureUILib.so
+vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
 vendor/lib64/libtzdrmgenprov.so
-vendor/lib64/libtzplayready.so
-vendor/lib64/libwvhidl.so
-vendor/lib64/mediadrm/libwvdrmengine.so
 
-# DRM firmware
+# DRM-HDCP
+vendor/bin/hdcp1prov
+vendor/bin/hdcp2p2prov
+vendor/lib/libhdcp1prov.so
+vendor/lib/libhdcp2p2prov.so
+vendor/lib/libhdcpsrm.so
+vendor/lib/libmm-hdcpmgr.so
+vendor/lib64/libhdcp1prov.so
+vendor/lib64/libhdcp2p2prov.so
+vendor/lib64/libhdcpsrm.so
+vendor/lib64/libmm-hdcpmgr.so
+
+# DRM-Qteeconnector
+vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
+vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc
+vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
+vendor/lib/libQTEEConnector_vendor.so
+vendor/lib/vendor.qti.hardware.qteeconnector@1.0.so
+vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
+vendor/lib64/libQTEEConnector_vendor.so
+vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
+
+# DRM-Widevine
+vendor/bin/hw/android.hardware.drm@1.2-service.widevine
+vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
 vendor/firmware/cppf.b00
 vendor/firmware/cppf.b01
 vendor/firmware/cppf.b02
@@ -845,14 +844,19 @@ vendor/firmware/widevine.b05
 vendor/firmware/widevine.b06
 vendor/firmware/widevine.b07
 vendor/firmware/widevine.mdt
+vendor/lib/mediadrm/libdrmclearkeyplugin.so
+vendor/lib/mediadrm/libwvdrmengine.so
+vendor/lib64/libwvhidl.so
+vendor/lib64/mediadrm/libdrmclearkeyplugin.so
+vendor/lib64/mediadrm/libwvdrmengine.so
 
-# ESE-Powermanager - from Nokia/Phoenix_00WW/PNX_sprout:10/QKQ1.190725.002/00WW_4_15B:user/release-keys
-vendor/bin/hw/vendor.qti.esepowermanager@1.0-service|ad84b94fbbbfbfb45b29842b854eec62e5c8af21
-vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc|58a3866ad5a7613d9392c9adb671eaa7825578a2
-vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so|812ed808b964489e0e2a157ef04de354a5b49e4e
-vendor/lib/vendor.qti.esepowermanager@1.0.so|c58cd1e7d2c8588bc46e06c388904b049423a73c
-vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so|d7756e0b3eb97db47675ba937214b735b9cfde21
-vendor/lib64/vendor.qti.esepowermanager@1.0.so|4e6185c300acabe4dbe397a77e09ced413a58afb
+# ESE-Powermanager
+vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
+vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc
+vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so
+vendor/lib/vendor.qti.esepowermanager@1.0.so
+vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so
+vendor/lib64/vendor.qti.esepowermanager@1.0.so
 
 # Face Recognition Firmware
 vendor/firmware/facereg.b00
@@ -866,72 +870,54 @@ vendor/firmware/facereg.b07
 vendor/firmware/facereg.mdt
 
 # Fast Charge Firmware
-vendor/firmware/fastchg/18041/oppo_vooc_fw.bin
-vendor/firmware/fastchg/18041/oppo_vooc_fw_n76e.bin
-vendor/firmware/fastchg/18081/oppo_vooc_fw.bin
-vendor/firmware/fastchg/18081/oppo_vooc_fw_n76e.bin
-vendor/firmware/fastchg/18085/oppo_vooc_fw.bin
-vendor/firmware/fastchg/18085/oppo_vooc_fw_n76e.bin
-vendor/firmware/fastchg/18097/oppo_vooc_fw.bin
-vendor/firmware/fastchg/18097/oppo_vooc_fw_n76e.bin
-vendor/firmware/fastchg/18181/oppo_vooc_fw.bin
-vendor/firmware/fastchg/18381/oppo_vooc_fw.bin
-vendor/firmware/fastchg/18381/oppo_vooc_fw_n76e.bin
-vendor/firmware/fastchg/18621/oppo_vooc_fw.bin
-vendor/firmware/fastchg/18637/oppo_vooc_fw.bin
 vendor/firmware/fastchg/19691/oppo_vooc_fw.bin
 vendor/firmware/fastchg/19691/oppo_vooc_fw_n76e.bin
 
 # Fingerprint
-lib/android.frameworks.fingerprintservice@1.0.so
-lib64/android.frameworks.fingerprintservice@1.0.so
+vendor/bin/hw/vendor.oppo.hardware.biometrics.fingerprint@2.1-service
 vendor/bin/qfp-daemon
-vendor/etc/init/init_qfp_daemon.rc
+vendor/etc/init/vendor.oppo.hardware.biometrics.fingerprint@2.1-service.rc
 vendor/etc/permissions/qti_fingerprint_interface.xml
-vendor/etc/qti_fp/image_quality/templates/double_fan_target_3_6/template1.pgm
-vendor/etc/qti_fp/image_quality/templates/double_fan_target_3_6/template2.pgm
-vendor/etc/qti_fp/image_quality/templates/double_fan_target_3_6/template3.pgm
-vendor/etc/qti_fp/image_quality/templates/double_fan_target_3_6/template4.pgm
-vendor/etc/qti_fp/image_quality/templates/double_fan_target_4_2/template1.pgm
-vendor/etc/qti_fp/image_quality/templates/double_fan_target_4_2/template2.pgm
-vendor/etc/qti_fp/image_quality/templates/double_fan_target_4_2/template3.pgm
-vendor/etc/qti_fp/image_quality/templates/double_fan_target_4_2/template4.pgm
-vendor/etc/qti_fp/image_quality/templates/fan_target/template1.pgm
-vendor/etc/qti_fp/image_quality/templates/fan_target/template2.pgm
-vendor/etc/qti_fp/image_quality/templates/fan_target/template3.pgm
-vendor/etc/qti_fp/image_quality/templates/fan_target/template4.pgm
-vendor/etc/qti_fp/image_quality/templates/slanted_target/template1.pgm
-vendor/etc/qti_fp/image_quality/templates/slanted_target/template2.pgm
-vendor/etc/qti_fp/image_quality/templates/slanted_target/template3.pgm
-vendor/etc/qti_fp/image_quality/templates/slanted_target/template4.pgm
-vendor/etc/qti_fp/wakeup/templates/template_imaginary.bin
-vendor/etc/qti_fp/wakeup/templates/template_real.bin
-vendor/firmware/a_fp.b00
-vendor/firmware/a_fp.b01
-vendor/firmware/a_fp.b02
-vendor/firmware/a_fp.b03
-vendor/firmware/a_fp.b04
-vendor/firmware/a_fp.b05
-vendor/firmware/a_fp.b06
-vendor/firmware/a_fp.b07
-vendor/firmware/a_fp.mdt
-vendor/lib/libqfp-service.so
+vendor/lib/hw/fingerprint.goodix_G2.default.so
+vendor/lib/hw/fingerprint.goodix_G3.default.so
+vendor/lib/libarm_proxy_skel.so
+vendor/lib/libgf_hal_G2.so
+vendor/lib/libgf_hal_G3.so
+vendor/lib/libhvx_proxy_stub.so
 vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
 vendor/lib64/android.frameworks.fingerprintservice@1.0.so
+vendor/lib64/hw/fingerprint.goodix_G2.default.so
+vendor/lib64/hw/fingerprint.goodix_G3.default.so
+vendor/lib64/libarm_proxy_skel.so
+vendor/lib64/libgf_hal_G2.so
+vendor/lib64/libgf_hal_G3.so
+vendor/lib64/libhvx_proxy_stub.so
 vendor/lib64/libqfp-service.so
+vendor/lib64/vendor.oppo.hardware.biometrics.fingerprint@2.1.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
-# FM - from Nokia/Phoenix_00WW/PNX_sprout:10/QKQ1.190725.002/00WW_4_15B:user/release-keys
--product/lib/vendor.qti.hardware.fm@1.0.so|ce4624bef4783644f4726aa96bd93e660192f7c8
--product/lib64/vendor.qti.hardware.fm@1.0.so|83c099ceb60c24302bf7f667cdbd15b4ee1911c1
-lib/fm_helium.so|2f1b6d913e162030a23ed854ad4cc6405a3332ce
-lib/libfm-hci.so|d92eb5da4217279c0eb2731ad45bdb3f72db7145
-lib64/fm_helium.so|81d133dbd74194243cdff442cf3a10f06dbd7b8f
-lib64/libfm-hci.so|20b3be5d0afa646b55ed3bc0122dbc86cf8a159c
-vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so|013d1d81b13533841e227e85cc45c2afd8af6e36
-vendor/lib/vendor.qti.hardware.fm@1.0.so|fe98e7a653abe2c17ab75b9b8774d5a4ae19102e
-vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|4daefcda006d4f6705deff5c6eff222b580ff30a
-vendor/lib64/vendor.qti.hardware.fm@1.0.so|51e2009e10ba869ab529d95ce024b0fab260de8b
+# Fingerprint - firmware - from sdm710-user-9-PKQ1.190101.001-release-keys
+vendor/firmware/a_fp.b00|640419b3c01e088e08a74fd01a00e319f02045e9
+vendor/firmware/a_fp.b01|66c16231a6fdde787a811c0bdfa345f8f1e64b51
+vendor/firmware/a_fp.b02|2bcc9fd27b7dc91b7ace0ab83d3e41818062cc53
+vendor/firmware/a_fp.b03|015829a1c64e127dc85117bfbaed01de24c122c1
+vendor/firmware/a_fp.b04|b6472569b60b791e4fed968772eb32f7780f7539
+vendor/firmware/a_fp.b05|8d746b7adcaf976a2d8958422881b63e43d4cf6f
+vendor/firmware/a_fp.b06|567ec80d7933db26f516c7459ab7da9195e79bc8
+vendor/firmware/a_fp.b07|86dfe80d0757f586321d7d74829101d12781f1a6
+vendor/firmware/a_fp.mdt|c4320ba070f1ff855d8ab318e55934387c0712a8
+
+# FM
+lib64/fm_helium.so
+lib64/libfm-hci.so
+lib/fm_helium.so
+lib/libfm-hci.so
+-product/lib/vendor.qti.hardware.fm@1.0.so
+-product/lib64/vendor.qti.hardware.fm@1.0.so
+vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
+vendor/lib/vendor.qti.hardware.fm@1.0.so
+vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
@@ -1071,16 +1057,6 @@ vendor/firmware/a630_sqe.fw
 vendor/firmware/leia_pfp_470.fw
 vendor/firmware/leia_pm4_470.fw
 
-# IO Prefetcher
-vendor/lib/hw/vendor.qti.hardware.iop@2.0-impl.so
-vendor/lib/libqti-iopd-client.so
-vendor/lib/vendor.qti.hardware.iop@1.0.so
-vendor/lib/vendor.qti.hardware.iop@2.0.so
-vendor/lib64/hw/vendor.qti.hardware.iop@2.0-impl.so
-vendor/lib64/libqti-iopd-client.so
-vendor/lib64/vendor.qti.hardware.iop@1.0.so
-vendor/lib64/vendor.qti.hardware.iop@2.0.so
-
 # IPA Firmware
 vendor/firmware/ipa_fws.b00
 vendor/firmware/ipa_fws.b01
@@ -1090,7 +1066,8 @@ vendor/firmware/ipa_fws.b04
 vendor/firmware/ipa_fws.elf
 vendor/firmware/ipa_fws.mdt
 
-# Keystore
+# Keymaster
+vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
 vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc
 vendor/lib/hw/android.hardware.keymaster@3.0-impl-qti.so
@@ -1098,47 +1075,48 @@ vendor/lib/libkeymasterdeviceutils.so
 vendor/lib/libkeymasterprovision.so
 vendor/lib/libkeymasterutils.so
 vendor/lib/libqtikeymaster4.so
-vendor/lib/libspcom.so
 vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so
 vendor/lib64/libkeymasterdeviceutils.so
 vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libkeymasterutils.so
 vendor/lib64/libqtikeymaster4.so
+
+# Keystore
+vendor/lib/libspcom.so
+vendor/lib64/libkeystore-engine-wifi-hidl.so
+vendor/lib64/libkeystore-wifi-hidl.so
 vendor/lib64/libspcom.so
+vendor/lib64/vendor.qti.hardware.wifi.keystore@1.0.so
 
-# Latency - from Nokia/Phoenix_00WW/PNX_sprout:10/QKQ1.190725.002/00WW_4_15B:user/release-keys
-product/framework/vendor.qti.hardware.data.latency-V1.0-java.jar|c6c5d5bbf50b068df0184aef8551b95daa5f4791
-product/framework/vendor.qti.latency-V2.0-java.jar|d345e24271b83faecdb1abe1361db812fae0646f
-product/lib/vendor.qti.latency@2.0.so|466f2dd3e69b81a6f058bafa1ef8c340cd9c2b98
-product/lib64/vendor.qti.latency@2.0.so|c23e71ee4a755944393a2e4e2787fe3d02cefc8f
-product/lib64/vendor.qti.hardware.data.latency@1.0.so|9d6ca29a9a9ae10b923a8b76758b54cf3e237642
-product/lib/vendor.qti.hardware.data.latency@1.0.so|98e42d70368ae1f3345a9c6e1689ec743e03832e
-vendor/lib/vendor.qti.hardware.data.latency@1.0.so|70b5f26dfb7e6b29a091473812292e1715d06467
-vendor/lib/vendor.qti.latency@2.0.so|8fd4728c89a0700c85e2eb4ed15ee3608ddb148a
-vendor/lib64/vendor.qti.hardware.data.latency@1.0.so|10d24f1e86e4ac55fd2acb0fbb68f9585cfef1f3
-vendor/lib64/vendor.qti.latency@2.0.so|39c9f71ff80942bc2a6c6984fada97dfed6286a4
+# Latency
+product/framework/vendor.qti.hardware.data.latency-V1.0-java.jar
+product/framework/vendor.qti.latency-V2.0-java.jar
+product/lib/vendor.qti.hardware.data.latency@1.0.so
+product/lib/vendor.qti.latency@2.0.so
+product/lib64/vendor.qti.hardware.data.latency@1.0.so
+product/lib64/vendor.qti.latency@2.0.so
+vendor/lib/vendor.qti.hardware.data.latency@1.0.so
+vendor/lib/vendor.qti.latency@2.0.so
+vendor/lib64/vendor.qti.hardware.data.latency@1.0.so
+vendor/lib64/vendor.qti.latency@2.0.so
 
-# Listen - from Nokia/Phoenix_00WW/PNX_sprout:10/QKQ1.190725.002/00WW_4_15B:user/release-keys
-vendor/lib/hw/sound_trigger.primary.sdm710.so|dbb9a91a6d0cc7d9c464ab38cfc09518ec46e2ec
-vendor/lib/libadpcmdec.so|0814f09dc41317a5b63064acccdf94f22ce55000
-vendor/lib/libcapiv2svacnn.so|4809641628c8372e382ffa7fa3e79ebdb2bfd40e
-vendor/lib/libcapiv2vop.so|c71c693035d63abdc0ba9d489c3d381897a401f8
-vendor/lib/libgcs-calwrapper.so|cf952009e8ca79c939c526ce50c13f58545bea9d
-vendor/lib/libgcs-ipc.so|5cb7b46e45975147e8a1fa590e1045c043457423
-vendor/lib/libgcs-osal.so|534918053aab6c6b04ea99fc40219fc276ee81f2
-vendor/lib/libgcs.so|d1810f491b524b3e93a279a13f35b9d64dd44642
-vendor/lib/liblistensoundmodel2.so|41303027ac7bac4bf7759df05f59481c577c9308
-vendor/lib/libmulawdec.so|e96b3dd6faeb3c104de6ac629a3c51364048a848
-vendor/lib/libsmwrapper.so|6064d4fb548da1698d310d5e71e2419425b43444
-vendor/lib64/hw/sound_trigger.primary.sdm710.so|83b1007d6c38476186b0d37769fb6a3c02c92934
-vendor/lib64/libcapiv2svacnn.so|bdf9d1c07925832d9f6c87a9e5216ab1797dfef6
-vendor/lib64/libcapiv2vop.so|03160a5821bbd1d5022129d23fee6ff24b91c094
-vendor/lib64/libgcs-calwrapper.so|aaa0fc594fd8fadd01b1c8f1bf995309b2eb0b76
-vendor/lib64/libgcs-ipc.so|0a547b8d7fa2d1c3b6e9800e352547044d8fe3db
-vendor/lib64/libgcs-osal.so|c1bfe5e694541e9f6ec700e04df33550b5948d05
-vendor/lib64/libgcs.so|db46e72b8e94c8d05fdc7a6c97fbfabf83e4e8ac
-vendor/lib64/liblistensoundmodel2.so|77bc963e0d930c2e7909c56b6a4534d0b8abac2c
-vendor/lib64/libmulawdec.so|e9c4538a519b47af966c51284db83c26e8d83e15
+# Listen
+vendor/lib/hw/sound_trigger.primary.sdm710.so
+vendor/lib/libadpcmdec.so
+vendor/lib/libgcs-calwrapper.so
+vendor/lib/libgcs-ipc.so
+vendor/lib/libgcs-osal.so
+vendor/lib/libgcs.so
+vendor/lib/liblistenjni.so
+vendor/lib/liblistensoundmodel2.so
+vendor/lib/libsmwrapper.so
+vendor/lib64/hw/sound_trigger.primary.sdm710.so
+vendor/lib64/libgcs-calwrapper.so
+vendor/lib64/libgcs-ipc.so
+vendor/lib64/libgcs-osal.so
+vendor/lib64/libgcs.so
+vendor/lib64/liblistenjni.so
+vendor/lib64/liblistensoundmodel2.so
 
 # Media - from PNX_00WW_FIH-user 10 QKQ1.190725.002 00WW_4_15B release-keys
 lib/extractors/libmmparser.so|6bd2f2876cb1b99dff7b9536b1fbea3da6b842fd
@@ -1220,23 +1198,28 @@ vendor/lib64/libvpptestutils.so|01e4fffd18684c08963313d439b9166b5b309aa7
 vendor/lib64/vendor.qti.hardware.vpp@1.1.so|e6fc7cae3215ca39745b5e85d937a7fafca9ed5f
 
 # Neural-networks
-vendor/bin/hw/android.hardware.neuralnetworks@1.1-service-qti
-vendor/etc/init/android.hardware.neuralnetworks@1.1-service-qti.rc
+vendor/bin/hw/android.hardware.neuralnetworks@1.2-service-qti
+vendor/etc/init/android.hardware.neuralnetworks@1.2-service-qti.rc
+vendor/lib64/unnhal-acc-adreno.so
+vendor/lib64/unnhal-acc-common.so
+vendor/lib64/unnhal-acc-hvx.so
 vendor/lib64/libhexagon_nn_stub.so
 
 # Oppo HIDL hals
-vendor/bin/hw/vendor.oppo.hardware.biometrics.fingerprint@2.1-service
 vendor/bin/hw/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-service
-vendor/etc/init/vendor.oppo.hardware.biometrics.fingerprint@2.1-service.rc|65c8a07b15edf94d4afd4d777e5a98953dd5798b
+vendor/bin/hw/vendor.oppo.hardware.mmdisplayfeature@1.0-service
+vendor/etc/audio_platform_info_oppo.xml
 vendor/etc/init/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-service.rc
+vendor/etc/init/vendor.oppo.hardware.mmdisplayfeature@1.0-service.rc
 vendor/lib/hw/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-impl.so
 vendor/lib/hw/vendor.oppo.hardware.camera.oppoHalAssist@1.0-impl.so
-vendor/lib/libbthost_if.so
+vendor/lib/hw/vendor.oppo.hardware.mmdisplayfeature@1.0-impl.so
 vendor/lib/libhypnusclient.so
 vendor/lib/libOppoAlgoClient.so
 vendor/lib/liboppoalgolib.so
 vendor/lib/libOppoAPSMemMgr.so
 vendor/lib/liboppocamalgo_daemon.so
+vendor/lib/libOPPORectify.so
 vendor/lib/libopposfr.so
 vendor/lib/liboppo_aisd.so
 vendor/lib/liboppo_log_print.so
@@ -1245,26 +1228,26 @@ vendor/lib/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0.so
 vendor/lib/vendor.oppo.hardware.camera.oppoHalAssist@1.0.so
 vendor/lib/vendor.oppo.hardware.commondcs@1.0.so
 vendor/lib/vendor.oppo.hardware.hypnus@1.0.so
-vendor/lib64/libbthost_if.so
+vendor/lib/vendor.oppo.hardware.mmdisplayfeature@1.0.so
+vendor/lib64/hw/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-impl.so
+vendor/lib64/hw/vendor.oppo.hardware.camera.oppoHalAssist@1.0-impl.so
+vendor/lib64/hw/vendor.oppo.hardware.mmdisplayfeature@1.0-impl.so
 vendor/lib64/libhypnusclient.so
+vendor/lib64/libOppoAlgoClient.so
 vendor/lib64/liboppoalgolib.so
-vendor/lib64/vendor.oppo.hardware.biometrics.fingerprint@2.1.so
-vendor/lib64/vendor.oppo.hardware.biometrics.fingerprintpay@1.0.so
+vendor/lib64/libOppoAPSMemMgr.so
+vendor/lib64/libOPPORectify.so
+vendor/lib64/libopposfr.so
+vendor/lib64/liboppo_aisd.so
+vendor/lib64/liboppo_log_print.so
+vendor/lib64/liboppo_platform_hwi.so
+vendor/lib64/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0.so
+vendor/lib64/vendor.oppo.hardware.camera.oppoHalAssist@1.0.so
 vendor/lib64/vendor.oppo.hardware.commondcs@1.0.so
+vendor/lib64/vendor.oppo.hardware.mmdisplayfeature@1.0.so
+vendor/lib64/vendor.oppo.hardware.radio.oppoappradio@1.0.so
+vendor/lib64/vendor.oppo.hardware.radio.opporadio@1.0.so
 vendor/lib64/vendor.oppo.hardware.hypnus@1.0.so
-
-# Oppo Voice Model Firmware
-vendor/firmware/audience/cvqmodels/oemkw_Baidu_YiXia.bin
-vendor/firmware/audience/cvqmodels/oemkw_Hello_VoiceQ.bin
-vendor/firmware/audience/cvqmodels/oemkw_XiaoDu_XiaoDu.bin
-vendor/firmware/audience/cvqmodels/refModel/ref_BaiDuYiXia1.model
-vendor/firmware/audience/cvqmodels/refModel/ref_BaiDuYiXia2.model
-vendor/firmware/audience/cvqmodels/refModel/ref_BaiDuYiXia3.model
-vendor/firmware/audience/cvqmodels/refModel/ref_BaiDuYiXia4.model
-vendor/firmware/audience/ia6xx/ia6xx-bargein-hw.bin
-vendor/firmware/audience/ia6xx/ia6xx-bargein-uart.bin
-vendor/firmware/audience/ia6xx/ia6xx-vs-hw.bin
-vendor/firmware/audience/ia6xx/ia6xx-vs-uart.bin
 
 # Perf - from Nokia/Phoenix_00WW/PNX_sprout:10/QKQ1.190725.002/00WW_4_15B:user/release-keys
 -framework/QPerformance.jar|557d4bb4e6009190a9a9df65c4c1fb0c37c2730a
@@ -1307,72 +1290,55 @@ vendor/lib64/vendor.qti.hardware.iop@2.0.so|3a2ea07bbc1ef859c1c959245dbfe0227b6d
 vendor/lib64/hw/vendor.qti.hardware.iop@2.0-impl.so|e35e6391bc6293033ee2712d0f3302a084e74eee
 vendor/lib64/libqti-iopd-client.so|5ff9cc9294eb7347ce15d8b4af26d5628ec330d0
 
-# Peripheral manager - from Nokia/Phoenix_00WW/PNX_sprout:10/QKQ1.190725.002/00WW_4_15B:user/release-keys
-vendor/bin/pm-proxy|81cd613123ed524d517375377f0eeea6e1463fc3
-vendor/bin/pm-service|e71c162bd09e5823cb89446df70f14116a7df5ad
-vendor/lib/libperipheral_client.so|d4e89606c8d180368f294ab37f39ca996de3d8aa
-vendor/lib64/libperipheral_client.so|d87217ba55d7fc1496445f8814100cf31f9cab68
+# Peripheral manager
+vendor/bin/pm-proxy
+vendor/bin/pm-service
+vendor/lib/libperipheral_client.so
+vendor/lib64/libperipheral_client.so
 
-# QMI - from PNX_00WW_FIH-user 10 QKQ1.190725.002 00WW_4_15B release-keys
-vendor/lib/libqmi_cci.so|f53a3b1e4e5e22dc139d43ef1d7574e96f472352
-vendor/lib64/libqmi_cci.so|e030b0a491c46d87034295c1f339a540d1ba4a89
-
-# Qualcomm Display Utils - from PNX_00WW_FIH-user 10 QKQ1.190725.002 00WW_4_15B release-keys
-vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti|34ee510604b6d8b47cc492f8be2ed9a06563b64a
-vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc|69d9cbc54f8ac0a0fb010f92bfa7de5981d643cf
-vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so|5ab6c87792eb610e35ae575ced7b67f33d5bba7e
-vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so|695c43548e9bf1719bbd460f80db1cacc5abe405
+# Qualcomm Display Utils
+vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
+vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
+vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
+vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
 # Qualcomm MSM Interface
 etc/permissions/qti_libpermissions.xml
 etc/permissions/qti_permissions.xml
 vendor/bin/irsc_util
-vendor/bin/pd-mapper
+vendor/etc/sec_config
 vendor/lib/libdiag.so
+vendor/lib/libdsi_netctrl.so
 vendor/lib/libdsutils.so
 vendor/lib/libidl.so
-vendor/lib/libminkdescriptor.so
 vendor/lib/libqcci_legacy.so
+vendor/lib/libqcmaputils.so
 vendor/lib/libqdi.so
 vendor/lib/libqdp.so
 vendor/lib/libqmi.so
-vendor/lib/libqmiservices.so
+vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_client_helper.so
 vendor/lib/libqmi_client_qmux.so
 vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
+vendor/lib/libqmiservices.so
 vendor/lib64/libdiag.so
-vendor/lib64/libdiagjni.so
+vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
 vendor/lib64/libidl.so
-vendor/lib64/libminkdescriptor.so
 vendor/lib64/libqcci_legacy.so
+vendor/lib64/libqcmaputils.so
 vendor/lib64/libqdi.so
 vendor/lib64/libqdp.so
 vendor/lib64/libqmi.so
-vendor/lib64/libqmiservices.so
+vendor/lib64/libqmi_cci.so
 vendor/lib64/libqmi_client_helper.so
 vendor/lib64/libqmi_client_qmux.so
 vendor/lib64/libqmi_common_so.so
 vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
-
-# Qualcomm Trusted Execution Environment
-vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
-vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc
-vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
-vendor/lib/libGPQTEEC_vendor.so
-vendor/lib/libGPTEE_vendor.so
-vendor/lib/libQTEEConnector_vendor.so
-vendor/lib/vendor.qti.hardware.qteeconnector@1.0.so
-vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
-vendor/lib64/libGPMTEEC_vendor.so
-vendor/lib64/libGPQTEEC_vendor.so
-vendor/lib64/libGPTEE_vendor.so
-vendor/lib64/libqsee_keybox_ca.so
-vendor/lib64/libQTEEConnector_vendor.so
-vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
+vendor/lib64/libqmiservices.so
 
 # Radio
 -product/app/QtiTelephonyService/QtiTelephonyService.apk
@@ -1666,79 +1632,77 @@ vendor/lib64/sensors.ssc.so
 vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 
 # Snapdragon Computer Vision Engine
-lib/vendor.qti.hardware.scve.objecttracker@1.0.so
-lib/vendor.qti.hardware.scve.panorama@1.0-adapter-helper.so
-lib/vendor.qti.hardware.scve.panorama@1.0.so
-lib64/vendor.qti.hardware.scve.objecttracker@1.0.so
-lib64/vendor.qti.hardware.scve.panorama@1.0.so
-vendor/lib/libfastcvdsp_stub.so
-vendor/lib/libfastcvopt.so
+product/lib/vendor.qti.hardware.scve.objecttracker@1.0-adapter-helper.so
+product/lib/vendor.qti.hardware.scve.objecttracker@1.0.so
+product/lib/vendor.qti.hardware.scve.panorama@1.0-adapter-helper.so
+product/lib/vendor.qti.hardware.scve.panorama@1.0.so
+product/lib64/vendor.qti.hardware.scve.objecttracker@1.0-adapter-helper.so
+product/lib64/vendor.qti.hardware.scve.objecttracker@1.0.so
+product/lib64/vendor.qti.hardware.scve.panorama@1.0-adapter-helper.so
+product/lib64/vendor.qti.hardware.scve.panorama@1.0.so
+vendor/etc/scve/facereco/gModel.dat
 vendor/lib/libscveBlobDescriptor.so
+vendor/lib/libscveBlobDescriptor_stub.so
 vendor/lib/libscveCommon.so
 vendor/lib/libscveCommon_stub.so
+vendor/lib/libscveFaceRecognition.so
 vendor/lib/libscveObjectSegmentation.so
+vendor/lib/libscveObjectSegmentation_stub.so
 vendor/lib/libscveObjectTracker.so
+vendor/lib/libscveObjectTracker_stub.so
 vendor/lib/libscvePanorama.so
+vendor/lib/libscvePanorama_lite.so
+vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
+vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
+vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/vendor.qti.hardware.scve.objecttracker@1.0.so
 vendor/lib/vendor.qti.hardware.scve.panorama@1.0.so
-vendor/lib64/libfastcvdsp_stub.so
-vendor/lib64/libfastcvopt.so
 vendor/lib64/libscveBlobDescriptor.so
+vendor/lib64/libscveBlobDescriptor_stub.so
 vendor/lib64/libscveCommon.so
 vendor/lib64/libscveCommon_stub.so
+vendor/lib64/libscveFaceRecognition.so
 vendor/lib64/libscveObjectSegmentation.so
+vendor/lib64/libscveObjectSegmentation_stub.so
 vendor/lib64/libscveObjectTracker.so
+vendor/lib64/libscveObjectTracker_stub.so
 vendor/lib64/libscvePanorama.so
+vendor/lib64/libscvePanorama_lite.so
 vendor/lib64/vendor.qti.hardware.scve.objecttracker@1.0.so
 vendor/lib64/vendor.qti.hardware.scve.panorama@1.0.so
 
-# Thermal - from PNX_00WW_FIH-user 10 QKQ1.190725.002 00WW_4_15B release-keys
-vendor/bin/thermal-engine|9a6abfdcb9427f06beb7991b90fe071121738c6a
-vendor/etc/thermal-engine.conf|c6c9312b7c7b52926cf7d0fc9bff933d90967100
-vendor/lib/libthermalclient.so|d4b661435b66e8d299bc98aa7c3d22f723a74e39
-vendor/lib64/libthermalclient.so|64d43159078bc9d1128747ef8b380b10d309ff88
+# Thermal
+vendor/bin/thermal-engine
+vendor/etc/thermal-engine.conf
+vendor/lib/libthermalclient.so
+vendor/lib64/libthermalclient.so
 
-# Time services - from PNX_00WW_FIH-user 10 QKQ1.190725.002 00WW_4_15B release-keys
--vendor/app/TimeService/TimeService.apk|4a37afd1395758d946580af184a738e3c657b1e2
-vendor/bin/time_daemon|0431ad6f6f7bc3aa72a9798aa55a9d0b496ea06f
-vendor/lib64/libtime_genoff.so|746db5267fde236de820fa7d887386f65aea7a8a
+# Time services
+-vendor/app/TimeService/TimeService.apk
+vendor/bin/time_daemon
+vendor/etc/init/init.time_daemon.rc
+vendor/lib/libtime_genoff.so
+vendor/lib64/libtime_genoff.so
 
 # Touchscreen firmware
-vendor/firmware/tp/18041/FW_S3706_SAMSUNG.img
-vendor/firmware/tp/18041/FW_S3706_SAMSUNG_FAE.img
-vendor/firmware/tp/18041/LIMIT_S3706_SAMSUNG.img
-vendor/firmware/tp/18081/FW_S3706_SAMSUNG.img
-vendor/firmware/tp/18081/FW_S3706_SAMSUNG_FAE.img
-vendor/firmware/tp/18081/LIMIT_S3706_SAMSUNG.img
-vendor/firmware/tp/18085/FW_S3706_SAMSUNG.img
-vendor/firmware/tp/18085/LIMIT_S3706_SAMSUNG.img
-vendor/firmware/tp/18097/FW_S3706_SAMSUNG.img
-vendor/firmware/tp/18097/FW_S3706_SAMSUNG_FAE.img
-vendor/firmware/tp/18097/LIMIT_S3706_SAMSUNG.img
-vendor/firmware/tp/18621/FW_HX_NF83112A_DSJM.img
-vendor/firmware/tp/18621/FW_HX_NF83112A_DSJM_FAE.img
-vendor/firmware/tp/18621/FW_HX_NF83112A_DSJM_TEST.img
-vendor/firmware/tp/18637/FW_HX_NF83112A_DSJM.img
-vendor/firmware/tp/18637/FW_HX_NF83112A_DSJM_FAE.img
-vendor/firmware/tp/18637/FW_HX_NF83112A_DSJM_TEST.img
 vendor/firmware/tp/19691/FW_HX_NF83112A_DSJM.img
 vendor/firmware/tp/19691/FW_HX_NF83112A_DSJM_FAE.img
 vendor/firmware/tp/19691/FW_HX_NF83112A_DSJM_TEST.img
 
-# Trusted User Interface - from Nokia/Phoenix_00WW/PNX_sprout:10/QKQ1.190725.002/00WW_4_15B:user/release-keys
-vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|f14d7f1497aad5917acf4dad78ece07e4919f930
-vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
-vendor/lib/vendor.qti.hardware.tui_comm@1.0.so|3f5ad85323db888067e8f98eafce5f43f558fcbc
-vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|c6772b82c02af368d9b52f4c84b98f1e5a9f7123
+# Trusted User Interface
+vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
+vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
+vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # UFS Firmware
-vendor/firmware/emmc/move_target_emmc_fw_to_opporeserve1.sh
 vendor/firmware/ufs/MICRON-128GB-UFS-MT.bin
 vendor/firmware/ufs/move_target_ufs_fw_to_opporeserve1.sh
+vendor/firmware/ufs/SAMSUNG-KM2B8001CM-BB01.bin
+vendor/firmware/ufs/SAMSUNG-KM8B8001JM-BC01.bin
+vendor/firmware/ufs/SKhynix-H9HQ16AECMMDAR.bin
 vendor/firmware/ufs/SKhynix-H9HQ53ACPMMDAR.bin
 vendor/firmware/ufs/SKhynix-H9HQ53AECMMDAR.bin
-vendor/firmware/ufs/SAMSUNG-KM5V7001DM-B621.bin
-vendor/firmware/ufs/SAMSUNG-KM8V7001JM-B810.bin
 
 # WiFi
 bin/iwpriv
@@ -1746,37 +1710,7 @@ vendor/bin/cnss-daemon
 vendor/bin/cnss_diag
 vendor/etc/wifi/aoa_cldb_falcon.bin
 vendor/etc/wifi/aoa_cldb_swl14.bin
-vendor/etc/wifi/bdwlan_18041_id1.bin
-vendor/etc/wifi/bdwlan_18081_id1.bin
-vendor/etc/wifi/bdwlan_18081_id2.bin
-vendor/etc/wifi/bdwlan_18081_id3.bin
-vendor/etc/wifi/bdwlan_18081_id4.bin
-vendor/etc/wifi/bdwlan_18097_id1.bin
-vendor/etc/wifi/bdwlan_18097_id2.bin
-vendor/etc/wifi/bdwlan_18181_id1.bin
-vendor/etc/wifi/bdwlan_18181_id2.bin
-vendor/etc/wifi/bdwlan_18181_id3.bin
-vendor/etc/wifi/bdwlan_18181_id4.bin
-vendor/etc/wifi/bdwlan_18381_id1.bin
-vendor/etc/wifi/bdwlan_18381_id2.bin
-vendor/etc/wifi/bdwlan_18381_id3.bin
-vendor/etc/wifi/bdwlan_18381_id4.bin
-vendor/etc/wifi/bdwlan_18383.bin
-vendor/etc/wifi/bdwlan_18385_id1.bin
-vendor/etc/wifi/bdwlan_18385_id2.bin
-vendor/etc/wifi/bdwlan_18385_id3.bin
-vendor/etc/wifi/bdwlan_18385_id4.bin
-vendor/etc/wifi/bdwlan_18397_id1.bin
-vendor/etc/wifi/bdwlan_18539.bin
-vendor/etc/wifi/bdwlan_18621.bin
-vendor/etc/wifi/bdwlan_18621_mp.bin
-vendor/etc/wifi/bdwlan_18633.bin
-vendor/etc/wifi/bdwlan_18633_mp.bin
-vendor/etc/wifi/bdwlan_19651.bin
-vendor/etc/wifi/bdwlan_19653.bin
 vendor/etc/wifi/bdwlan_19691.bin
-vendor/etc/wifi/bdwlan_19692.bin
-vendor/etc/wifi/bdwlan_19791.bin
 vendor/etc/wifi/bin_version
 vendor/etc/wifi/bin_version_realme
 vendor/etc/wifi/sar-vendor-cmd.xml
