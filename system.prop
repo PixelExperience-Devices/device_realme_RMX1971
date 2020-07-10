@@ -43,12 +43,11 @@ sdm.debug.disable_inline_rotator_secure=1
 sdm.debug.prefersplit=1
 
 # LMKD
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.config.low_ram=false \
-    ro.lmk.kill_heaviest_task=true \
-    ro.lmk.kill_timeout_ms=100 \
-    ro.lmk.use_minfree_levels=true \
-    ro.lmk.log_stats=true
+ro.config.low_ram=false
+ro.lmk.kill_heaviest_task=true
+ro.lmk.kill_timeout_ms=100
+ro.lmk.use_minfree_levels=true
+ro.lmk.log_stats=true
 
 # Media
 audio.offload.video=true
@@ -99,8 +98,7 @@ persist.vendor.ssr.enable_ramdumps=0
 persist.vendor.ssr.restart_level=ALL_ENABLE
 
 # WFD
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.hwc.enable_vds=1
+persist.hwc.enable_vds=1
 
 # Zygote preforking
 persist.device_config.runtime_native.usap_pool_enabled=true
