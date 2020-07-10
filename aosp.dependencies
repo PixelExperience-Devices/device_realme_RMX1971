@@ -6,9 +6,9 @@
     "target_path": "kernel/realme/RMX1971"
   },
   {
-    "remote":"github",
+    "remote":"pixel-devices-bitbucket",
     "branch":"ten",
-    "repository": "bablusss/vendor_realme_RMX1971",
+    "repository": "vendor_realme_RMX1971",
     "target_path": "vendor/realme/RMX1971"
   },
   {
