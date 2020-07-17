@@ -232,10 +232,10 @@ PRODUCT_PACKAGES += \
     vendor.oppo.hardware.biometrics.fingerprint@2.1 \
     android.hardware.biometrics.fingerprint@2.1-service.realme_sdm710
 
-#Gpi
+# Gpi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl
-#Gps
+# Gps
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/apdr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/apdr.conf \
     $(LOCAL_PATH)/configs/gps/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
@@ -250,10 +250,10 @@ PRODUCT_USES_QCOM_HARDWARE := true
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-service \
+    android.hardware.health@2.0-impl \
     android.hardware.health@2.0-service
 
-#HIDL
+# HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.base@1.0_system \
@@ -442,7 +442,7 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service \
+    android.hardware.usb@1.0-service
 
 # Vibrator
 PRODUCT_PACKAGES += \
