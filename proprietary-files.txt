@@ -346,7 +346,6 @@ vendor/lib/libfastcrc.so
 vendor/lib/libffv.so
 vendor/lib/libiu456_datapath_filt_lib.so
 vendor/lib/libiu456_datapath_processor.so
-vendor/lib/libgui_vendor.so
 vendor/lib/libmegface.so
 vendor/lib/libmegface_meglive.so
 vendor/lib/libMegviiHum.so
