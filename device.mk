@@ -87,12 +87,10 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@4.0-impl \
     android.hardware.audio@2.0-service \
     android.hardware.audio.effect@2.0-service \
-    android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.soundtrigger@2.1-impl \
     android.hardware.audio.effect@4.0-impl \
     audio.primary.sdm710 \
     audio.a2dp.default \
-    audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
@@ -143,8 +141,13 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    android.hardware.bluetooth.audio@2.0-impl \
+    audio.bluetooth.default \
     BluetoothResCommon \
-    libldacBT_dec
+    libbthost_if \
+    libldacBT_dec \
+    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
+    vendor.qti.hardware.btconfigstore@1.0.vendor
 
 # Camera
 PRODUCT_PACKAGES += \
