@@ -202,7 +202,6 @@
     <!-- HFP end -->
     <!-- echo reference -->
     <ctl name="AUDIO_REF_EC_UL1 MUX" value="None" />
-    <ctl name="AUDIO_REF_EC_UL10 MUX" value="None" />
     <!-- usb headset -->
     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia1" value="0" />
     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia2" value="0" />
@@ -298,6 +297,11 @@
     <ctl name="MultiMedia1 Mixer SLIM_7_TX" value="0" />
     <!-- audio record compress-->
     <ctl name="MultiMedia8 Mixer SLIM_0_TX" value="0" />
+    <ctl name="MultiMedia17 Mixer SLIM_0_TX" value="0" />
+    <ctl name="MultiMedia18 Mixer SLIM_0_TX" value="0" />
+    <ctl name="MultiMedia19 Mixer SLIM_0_TX" value="0" />
+    <ctl name="MultiMedia28 Mixer SLIM_0_TX" value="0" />
+    <ctl name="MultiMedia29 Mixer SLIM_0_TX" value="0" />
     <ctl name="MultiMedia8 Mixer SLIM_7_TX" value="0" />
     <ctl name="MultiMedia8 Mixer AFE_PCM_TX" value="0" />
     <!-- audio record compress end-->
@@ -545,14 +549,6 @@
     <path name="echo-reference headphones-44.1">
     </path>
 
-    <path name="echo-reference-voip">
-        <ctl name="AUDIO_REF_EC_UL10 MUX" value="SLIM_RX" />
-    </path>
-
-    <path name="echo-reference-voip headphones">
-        <ctl name="AUDIO_REF_EC_UL10 MUX" value="SLIM_6_RX" />
-    </path>
-
     <path name="deep-buffer-playback">
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia1" value="1" />
     </path>
@@ -756,6 +752,25 @@
 
     <path name="compress-offload-playback display-port">
         <ctl name="DISPLAY_PORT Mixer MultiMedia4" value="1" />
+    </path>
+
+    <path name="silence-playback">
+        <ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_RX" />
+        <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia9" value="1" />
+    </path>
+
+    <path name="ec-ref-audio-capture">
+        <ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_RX" />
+        <ctl name="MultiMedia9 Mixer AFE_LOOPBACK_TX" value="1" />
+    </path>
+
+    <path name="ec-ref-loopback-mono">
+    </path>
+
+    <path name="ec-ref-loopback-stereo">
+    </path>
+
+    <path name="ec-ref-loopback-quad">
     </path>
 
     <path name="silence-playback display-port">
@@ -1374,6 +1389,26 @@
         <ctl name="MultiMedia8 Mixer SLIM_0_TX" value="1" />
     </path>
 
+    <path name="audio-record-compress2">
+        <ctl name="MultiMedia17 Mixer SLIM_0_TX" value="1" />
+    </path>
+
+    <path name="audio-record-compress3">
+        <ctl name="MultiMedia18 Mixer SLIM_0_TX" value="1" />
+    </path>
+
+    <path name="audio-record-compress4">
+        <ctl name="MultiMedia19 Mixer SLIM_0_TX" value="1" />
+    </path>
+
+    <path name="audio-record-compress5">
+        <ctl name="MultiMedia28 Mixer SLIM_0_TX" value="1" />
+    </path>
+
+    <path name="audio-record-compress6">
+        <ctl name="MultiMedia29 Mixer SLIM_0_TX" value="1" />
+    </path>
+
     <path name="audio-record-compress bt-sco">
         <ctl name="MultiMedia8 Mixer SLIM_7_TX" value="1" />
     </path>
@@ -1975,10 +2010,8 @@
         <ctl name="EAR PA Gain" value="G_6_DB" />
     </path>
 
-    <!-- TX Main-mic D:0 dB -->
     <path name="handset-mic">
         <path name="dmic3" />
-		<ctl name="DEC7 Volume" value="84"/>
     </path>
 
     <path name="handset-mic-db">
@@ -2223,15 +2256,12 @@
         <path name="display-port" />
     </path>
 
-    <!-- VR MIC 1st D:22 dB -->
     <path name="voice-rec-mic">
         <path name="handset-mic" />
-	    <ctl name="DEC7 Volume" value="106"/>
     </path>
 
     <path name="camcorder-mic">
         <path name="handset-mic" />
-		<ctl name="DEC7 Volume" value="89"/>
     </path>
 
     <path name="bt-sco-headset">
@@ -2304,12 +2334,9 @@
         <ctl name="SLIM_0_TX Channels" value="Two" />
     </path>
 
-    <!-- TX Dual-mic 1st MIC D:0 dB, 2nd MIC:0 dB -->
     <path name="dmic-endfire">
         <path name="handset-dmic-endfire" />
         <ctl name="IIR0 INP0 MUX" value="DEC7" />
-        <ctl name="DEC7 Volume" value="88"/>
-        <ctl name="DEC8 Volume" value="88"/>
     </path>
 
     <path name="dmic-endfire-liquid">
@@ -2325,29 +2352,20 @@
         <path name="speaker-dmic-endfire" />
     </path>
 
-    <!-- Phone RCV TX Dual-mic 1st MIC D:13 dB, 2nd MIC:13 dB -->
     <path name="voice-dmic-ef-tmus">
         <path name="dmic-endfire" />
-		<ctl name="DEC7 Volume" value="97"/>
-        <ctl name="DEC8 Volume" value="97"/>
     </path>
 
-    <!-- Phone RCV TX Dual-mic 1st MIC D:13 dB, 2nd MIC:13 dB -->
     <path name="voice-dmic-ef">
         <path name="dmic-endfire" />
-        <ctl name="DEC7 Volume" value="97"/>
-        <ctl name="DEC8 Volume" value="97"/>
     </path>
 
     <path name="voice-speaker-dmic-ef">
         <path name="speaker-dmic-endfire" />
     </path>
 
-    <!-- VR Dual-MIC 1st D:22 dB -->
     <path name="voice-rec-dmic-ef">
         <path name="dmic-endfire" />
-	    <ctl name="DEC7 Volume" value="106"/>
-        <ctl name="DEC8 Volume" value="106"/>
     </path>
 
     <path name="voice-rec-dmic-ef-fluence">
@@ -2484,36 +2502,24 @@
         <path name="handset-mic" />
     </path>
 
-    <!-- Unprocessed MIC 1st D:5 dB -->
     <path name="unprocessed-mic">
         <path name="unprocessed-handset-mic" />
-        <ctl name="DEC7 Volume" value="89"/>
     </path>
 
-    <!-- Unprocessed-stereo-mic 1st D:5 dB, 2nd D:5 dB -->
     <path name="unprocessed-stereo-mic">
         <path name="voice-rec-dmic-ef" />
-        <ctl name="DEC7 Volume" value="89"/>
-        <ctl name="DEC8 Volume" value="89"/>
     </path>
 
     <path name="unprocessed-three-mic">
         <path name="three-mic" />
     </path>
 
-    <!-- Ch1: 3rd mic DEC7/TX7, Ch2: 2nd mic DEC6/TX6, Ch3: 1st mic DEC5/TX5, Ch4 4th mic DEC8/TX8 -->
     <path name="unprocessed-quad-mic">
         <path name="quad-mic" />
-        <ctl name="DEC5 Volume" value="89"/>
-        <ctl name="DEC6 Volume" value="89"/>
-        <ctl name="DEC7 Volume" value="89"/>
-        <ctl name="DEC8 Volume" value="89"/>
     </path>
 
-    <!-- Unprocessed Handset MIC 1st D:5 dB -->
     <path name="unprocessed-headset-mic">
         <path name="headset-mic" />
-        <ctl name="DEC7 Volume" value="89"/>
     </path>
 
     <!-- USB TTY start -->

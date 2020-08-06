@@ -69,6 +69,9 @@
         <usecase name="USECASE_AUDIO_RECORD_COMPRESS5" type="in" id="44"/>
         <usecase name="USECASE_AUDIO_RECORD_COMPRESS6" type="in" id="45"/>
         <usecase name="USECASE_AUDIO_A2DP_ABR_FEEDBACK" type="in" id="12"/>
+        <usecase name="USECASE_INCALL_REC_UPLINK" type="in" id="27" />
+        <usecase name="USECASE_INCALL_REC_DOWNLINK" type="in" id="27" />
+        <usecase name="USECASE_INCALL_REC_UPLINK_AND_DOWNLINK" type="in" id="27" />
     </pcm_ids>
     <config_params>
         <!-- In the below value string, the value indicates default mono -->
@@ -107,6 +110,7 @@
         <!--#Jianfeng.Qiu@PSW.MM.AudioDriver.HAL, 2017/09/22, Add for oppo config-->
         <device name="SND_DEVICE_OUT_VOICE_HEADPHONES" acdb_id="9"/>
         <device name="SND_DEVICE_IN_HEADSET_MIC" acdb_id="23"/>
+        <device name="SND_DEVICE_IN_VOICE_REC_HEADSET_MIC" acdb_id="23"/>
         <device name="SND_DEVICE_IN_HANDSET_MIC_LOWLATENCY" acdb_id="81"/>
         <device name="SND_DEVICE_IN_SPEAKER_MIC_LOWLATENCY" acdb_id="82"/>
         <device name="SND_DEVICE_IN_HEADSET_MIC_LOWLATENCY" acdb_id="83"/>
@@ -119,6 +123,7 @@
         <device name="SND_DEVICE_IN_ANC_MIC_RECORD" acdb_id="104"/>
         <device name="SND_DEVICE_IN_MMI_MIC_RECORD" acdb_id="144"/>
         <device name="SND_DEVICE_IN_HEADSET_MIC_KTV" acdb_id="98"/>
+        <device name="SND_DEVICE_IN_UNPROCESSED_USB_HEADSET_MIC" acdb_id="133"/>
         <!--#Jianfeng.Qiu@PSW.MM.AudioDriver.HAL, 2017/09/22, Add for oppo config end-->
     </acdb_ids>
     <backend_names>
@@ -252,6 +257,7 @@
         <device name="SND_DEVICE_IN_ANC_MIC_RECORD" interface="INT3_MI2S_TX"/>
         <device name="SND_DEVICE_IN_MMI_MIC_RECORD" interface="INT3_MI2S_TX"/>
         <device name="SND_DEVICE_IN_HEADSET_MIC_KTV" interface="INT3_MI2S_TX"/>
+        <device name="SND_DEVICE_IN_UNPROCESSED_USB_HEADSET_MIC" interface="USB_AUDIO_TX"/>
         <!--#Jianfeng.Qiu@PSW.MM.AudioDriver.HAL, 2017/09/22, Add for oppo config end-->
     </backend_names>
     <!-- below values are for ref purpose to OEM, doesn't contain actual hardware info on MTP -->
