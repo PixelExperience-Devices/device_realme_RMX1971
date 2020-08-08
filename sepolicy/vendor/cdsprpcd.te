@@ -1,0 +1,1 @@
+allow cdsprpcd mnt_vendor_file:dir { getattr search };

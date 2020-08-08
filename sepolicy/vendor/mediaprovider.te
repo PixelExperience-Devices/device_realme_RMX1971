@@ -1,0 +1,2 @@
+allow mediaprovider tmpfs:file { getattr setattr };
+allow mediaprovider hal_perf_default:binder { call };

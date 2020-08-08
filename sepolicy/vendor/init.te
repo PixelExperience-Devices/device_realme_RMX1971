@@ -1,2 +1,5 @@
-allow init vendor_file:file { execute execute_no_trans };
-allow init socket_device:sock_file { create };
+allow init socket_device:sock_file { create setattr unlink };
+allow init hal_display_postproc_hwservice:hwservice_manager { find };
+allow init hwservicemanager:binder { transfer };
+allow init proc_oppoversion:file { read };
+allow init vendor_file:file { execute };

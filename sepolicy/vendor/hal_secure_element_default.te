@@ -1,1 +1,2 @@
 add_hwservice(hal_secure_element_default, nfc_hwservice);
+allow hal_secure_element_default mnt_vendor_file:dir { getattr search };

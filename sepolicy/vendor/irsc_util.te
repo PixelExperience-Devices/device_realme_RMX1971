@@ -1,0 +1,1 @@
+allow irsc_util mnt_vendor_file:dir { getattr search };

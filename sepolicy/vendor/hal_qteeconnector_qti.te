@@ -1,0 +1,1 @@
+allow hal_qteeconnector_qti mnt_vendor_file:dir { getattr search };

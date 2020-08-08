@@ -1,1 +1,2 @@
 get_prop(mediacodec, vendor_mpctl_prop);
+allow mediacodec mnt_vendor_file:dir { getattr search };

@@ -1,1 +1,2 @@
 allow cnd diag_device:chr_file { read write };
+allow cnd mnt_vendor_file:dir { getattr search };

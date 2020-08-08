@@ -1,3 +1,7 @@
 allow qti_init_shell persist_file:lnk_file { read };
-allow qti_init_shell oppo_debug_prop:file { read };
-allow qti_init_shell configfs:dir { write };
+allow qti_init_shell oppo_debug_prop:file { read open getattr };
+allow qti_init_shell configfs:dir { write add_name create };
+allow qti_init_shell proc_devinfo:dir { search };
+allow qti_init_shell sysfs:file { write };
+allow qti_init_shell configfs:file { create };
+allow qti_init_shell configfs:lnk_file { create };

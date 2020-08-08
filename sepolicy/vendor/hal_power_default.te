@@ -1,4 +1,5 @@
 allow hal_power_default proc_touchpanel:dir search;
 allow hal_power_default proc_touchpanel:file rw_file_perms;
+allow hal_power_default mnt_vendor_file:dir { getattr search };
 
 get_prop(hal_power_default, vendor_mpctl_prop);

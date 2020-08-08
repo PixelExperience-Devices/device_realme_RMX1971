@@ -1,8 +1,11 @@
 allow hal_camera_default persist_camera_file:file { read write open setattr};
 allow hal_camera_default persist_camera_file:dir { write search };
 
-allow hal_camera_default proc:file { read write open };
+allow hal_camera_default proc:file { read write open getattr };
 allow hal_camera_default proc_oppoversion:dir { search };
+allow hal_camera_default proc_oppoversion:file { read open };
+allow hal_camera_default persist_camera_file:dir { add_name };
+allow hal_camera_default persist_camera_file:file { getattr create };
 
 get_prop(hal_camera_default, vendor_camera_prop)
 get_prop(hal_camera_default, oppo_debug_prop)

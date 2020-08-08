@@ -1,0 +1,1 @@
+allow hal_drm_clearkey mnt_vendor_file:dir { getattr search };

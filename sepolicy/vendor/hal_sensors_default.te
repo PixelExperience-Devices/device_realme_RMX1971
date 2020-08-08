@@ -1,5 +1,5 @@
 allow hal_sensors_default diag_device:chr_file { read write };
-allow hal_sensors_default sensors_dbg_prop:file { read };
+allow hal_sensors_default sensors_prop:file { read open getattr };
 
 get_prop(hal_sensors_default, oppo_debug_prop);
 

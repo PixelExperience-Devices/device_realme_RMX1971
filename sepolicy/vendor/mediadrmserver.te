@@ -1,0 +1,1 @@
+allow mediadrmserver vendor_audio_prop:file { read open };

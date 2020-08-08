@@ -1,0 +1,1 @@
+allow hal_dpmQmiMgr mnt_vendor_file:dir { getattr search };
