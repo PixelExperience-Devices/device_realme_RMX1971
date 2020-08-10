@@ -237,7 +237,6 @@ vendor/lib/libcom.qti.chinodeutils.so
 vendor/lib/libcvface_api.so
 vendor/lib/libdepthmap.so
 vendor/lib/libgui_vendor.so
-vendor/lib/libmegface.so
 vendor/lib/libmpbase.so
 vendor/lib/libSNPE.so
 vendor/lib/libSNPE_G.so
@@ -1169,13 +1168,10 @@ vendor/lib64/libhexagon_nn_stub.so
 
 # Oppo HIDL hals
 vendor/bin/hw/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-service
-vendor/bin/hw/vendor.oppo.hardware.mmdisplayfeature@1.0-service
 vendor/etc/audio_platform_info_oppo.xml
 vendor/etc/init/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-service.rc
-vendor/etc/init/vendor.oppo.hardware.mmdisplayfeature@1.0-service.rc
 vendor/lib/hw/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-impl.so
 vendor/lib/hw/vendor.oppo.hardware.camera.oppoHalAssist@1.0-impl.so
-vendor/lib/hw/vendor.oppo.hardware.mmdisplayfeature@1.0-impl.so
 vendor/lib/libhypnusclient.so
 vendor/lib/libOppoAlgoClient.so
 vendor/lib/liboppoalgolib.so
@@ -1190,10 +1186,8 @@ vendor/lib/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0.so
 vendor/lib/vendor.oppo.hardware.camera.oppoHalAssist@1.0.so
 vendor/lib/vendor.oppo.hardware.commondcs@1.0.so
 vendor/lib/vendor.oppo.hardware.hypnus@1.0.so
-vendor/lib/vendor.oppo.hardware.mmdisplayfeature@1.0.so
 vendor/lib64/hw/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-impl.so
 vendor/lib64/hw/vendor.oppo.hardware.camera.oppoHalAssist@1.0-impl.so
-vendor/lib64/hw/vendor.oppo.hardware.mmdisplayfeature@1.0-impl.so
 vendor/lib64/libhypnusclient.so
 vendor/lib64/libOppoAlgoClient.so
 vendor/lib64/liboppoalgolib.so
@@ -1206,7 +1200,6 @@ vendor/lib64/liboppo_platform_hwi.so
 vendor/lib64/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0.so
 vendor/lib64/vendor.oppo.hardware.camera.oppoHalAssist@1.0.so
 vendor/lib64/vendor.oppo.hardware.commondcs@1.0.so
-vendor/lib64/vendor.oppo.hardware.mmdisplayfeature@1.0.so
 vendor/lib64/vendor.oppo.hardware.radio.oppoappradio@1.0.so
 vendor/lib64/vendor.oppo.hardware.radio.opporadio@1.0.so
 vendor/lib64/vendor.oppo.hardware.hypnus@1.0.so
