@@ -1,2 +1,2 @@
 allow hal_wifi_hostapd_default wifi_vendor_data_file:dir { rw_dir_perms remove_name };
-allow hal_wifi_hostapd_default mnt_vendor_file:dir { getattr };
+allow hal_wifi_hostapd_default mnt_vendor_file:dir { getattr search };
