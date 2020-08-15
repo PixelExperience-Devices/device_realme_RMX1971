@@ -12,7 +12,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
 
-# Inherit some common LineageOS stuff.
+# Inherit some common PixelExperience stuff.
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Inherit from RMX1901 device.
@@ -28,7 +28,7 @@ TARGET_GAPPS_ARCH := arm64
 PRODUCT_DEVICE := RMX1971
 PRODUCT_NAME := aosp_RMX1971
 PRODUCT_BRAND := Realme
-PRODUCT_MODEL := Realme 5 Pro
+PRODUCT_MODEL := 5 Pro
 PRODUCT_MANUFACTURER := Realme
 
 PRODUCT_GMS_CLIENTID_BASE := android-realme
