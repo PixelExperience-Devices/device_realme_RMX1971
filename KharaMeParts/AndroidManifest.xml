@@ -13,8 +13,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
 	
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
-    <protected-broadcast android:name="com.kharame.kharameparts.CUST_UPDATE" 
-/>
+    <protected-broadcast android:name="com.kharame.kharameparts.CUST_UPDATE" />
 
     <uses-sdk
         android:minSdkVersion="27"
@@ -22,7 +21,7 @@
 
     <application
             android:icon="@android:drawable/sym_def_app_icon"
-            android:label="KharaMeParts"
+            android:label="@string/KharaMeParts"
             android:theme="@style/AppTheme"
             >
 
@@ -31,7 +30,7 @@
 
         <activity
             android:name=".KharaMePartsActivity"
-            android:label="@string/kharameparts"
+            android:label="@string/KharaMeParts"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,7 +40,7 @@
 
         <activity-alias
             android:name=".KharaMeParts"
-            android:label="@string/kharameparts"
+            android:label="@string/KharaMeParts"
             android:targetActivity="KharaMePartsActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
@@ -54,7 +53,7 @@
                 android:name="com.android.settings.category"
                 android:value="com.android.settings.category.ia.homepage" />
             <meta-data android:name="com.android.settings.summary"
-                android:resource="@string/kharameparts_summary" />
+                android:resource="@string/KharaMeParts_summary" />
         </activity-alias>
 
         <activity
@@ -72,15 +71,17 @@
           </intent-filter>
         </receiver>
 
-        <service android:name="com.kharame.kharameparts.gestures.SensorsDozeService"
-                 android:permission="SensorsDozeService">
+        <service android:name=".doze.DozeService"
+                 android:permission="RealmeDozeService">
         </service>
 
         <activity
-            android:name="com.kharame.kharameparts.gestures.AmbientGesturePreferenceActivity"
-            android:label="@string/ambient_display_gestures_title">
+            android:name=".doze.DozeSettingsActivity"
+            android:label="@string/ambient_display_title"
+            android:theme="@style/Theme.Main">
             <intent-filter>
-                <action android:name="com.android.settings.action.IA_SETTINGS" />
+                <action android:name="com.kharame.kharameparts.DOZE_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 

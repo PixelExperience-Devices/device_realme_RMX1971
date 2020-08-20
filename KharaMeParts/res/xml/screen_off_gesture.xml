@@ -35,12 +35,6 @@
             android:title="@string/gestures_title" >
 
             <Preference
-                android:key="gesture_double_tap"
-                android:title="@string/gesture_double_tap_title"
-                android:persistent="false"
-                android:dependency="enable_gestures" />
-
-            <Preference
                 android:key="gesture_m"
                 android:title="@string/gesture_m_title"
                 android:persistent="false"

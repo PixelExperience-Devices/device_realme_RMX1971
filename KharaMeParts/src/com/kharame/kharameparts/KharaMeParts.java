@@ -1,6 +1,5 @@
 /*
- *  KharaMeeParts
- *  by SagarMakhar & BabluS
+ *  KharaMeParts
  */
 
 package com.kharame.kharameparts;
@@ -30,7 +29,7 @@ import android.view.MenuInflater;
 import android.app.Fragment;
 
 import com.kharame.kharameparts.settings.ScreenOffGestureSettings;
-import com.kharame.kharameparts.gestures.AmbientGesturePreferenceActivity;
+import com.kharame.kharameparts.doze.DozeSettingsActivity;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -49,7 +48,7 @@ public class KharaMeParts extends PreferenceFragment implements
     private static final boolean DEBUG = true;
     private static final String TAG = "KharaMeParts";
 
-    private Preference mAmbientPref;
+    private Preference mDozePref;
     private Preference mGesturesPref;
     private Context mContext;
     private SharedPreferences mPreferences;
@@ -66,11 +65,11 @@ public class KharaMeParts extends PreferenceFragment implements
                          return true;
                      }
                 });
-	mAmbientPref = findPreference("ambient_display_gestures");
-               mAmbientPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+	mDozePref = findPreference("doze");
+               mDozePref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                      @Override
                      public boolean onPreferenceClick(Preference preference) {
-                         Intent intent = new Intent(getContext(), AmbientGesturePreferenceActivity.class);
+                         Intent intent = new Intent(getContext(), DozeSettingsActivity.class);
                          startActivity(intent);
                          return true;
                      }

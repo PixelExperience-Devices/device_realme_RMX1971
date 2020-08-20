@@ -24,9 +24,9 @@ import java.util.List;
 
 public class Utils {
 
-    public static final String TAG = "LineageActions";
+    public static final String TAG = "KharaMeParts";
 
-    public static final String PREFERENCES = "LineageActionsPreferences";
+    public static final String PREFERENCES = "KharaMePartsPreferences";
     public static final String AMBIENT_GESTURE_HAPTIC_FEEDBACK =
             "AMBIENT_GESTURE_HAPTIC_FEEDBACK";
     public static final String TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK =

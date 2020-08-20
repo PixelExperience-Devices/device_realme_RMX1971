@@ -26,12 +26,11 @@ import android.content.SharedPreferences;
 import com.kharame.kharameparts.KernelControl;
 import com.kharame.kharameparts.settings.ScreenOffGesture;
 import com.kharame.kharameparts.util.Utils;
-import com.kharame.kharameparts.gestures.SensorsDozeService;
+import com.kharame.kharameparts.doze.DozeUtils;
 import java.io.File;
 import androidx.preference.PreferenceManager;
 
 public class BootReceiver extends BroadcastReceiver {
-
 
 private void restore(String file, boolean enabled) {
         if (file == null) {
@@ -60,7 +59,7 @@ private void restore(String file, String value) {
                         screenOffGestureSharedPreferences.getBoolean(
                         ScreenOffGesture.PREF_GESTURE_ENABLE, true));
             }
-		context.startService(new Intent(context, SensorsDozeService.class));
+		DozeUtils.checkDozeService(context);
     }
 
     private String getPreferenceString(Context context, String key, String defaultValue) {

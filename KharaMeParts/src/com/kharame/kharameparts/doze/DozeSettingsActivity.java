@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2016 The CyanogenMod Project
- *           (C) 2017 The LineageOS Project
+ * Copyright (C) 2015-2016 The CyanogenMod Project
+ *               2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,18 +15,20 @@
  * limitations under the License.
  */
 
-package com.kharame.kharameparts.gestures;
+package com.kharame.kharameparts.doze;
 
 import android.os.Bundle;
-import com.kharame.kharameparts.R;
 import android.preference.PreferenceActivity;
 
-public class AmbientGesturePreferenceActivity extends PreferenceActivity {
+public class DozeSettingsActivity extends PreferenceActivity {
+
+    private static final String TAG_DOZE = "doze";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getFragmentManager().beginTransaction()
-                .replace(android.R.id.content, new AmbientGesturePreferenceFragment()).commit();
+
+        getFragmentManager().beginTransaction().replace(android.R.id.content,
+                new DozeSettingsFragment(), TAG_DOZE).commit();
     }
 }

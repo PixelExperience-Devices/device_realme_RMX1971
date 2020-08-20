@@ -59,35 +59,18 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final boolean DEBUG = true;
 
     // Supported scancodes
-    private static final int GESTURE_DOUBLE_TAP_SCANCODE = 248;
-    private static final int GESTURE_M_SCANCODE = 247;
     private static final int GESTURE_W_SCANCODE = 246;
+    private static final int GESTURE_M_SCANCODE = 247;
     private static final int GESTURE_CIRCLE_SCANCODE = 249;
     private static final int GESTURE_TWO_SWIPE_SCANCODE = 250;
-    private static final int GESTURE_RIGHT_ARROW_SCANCODE = 253;
-    private static final int GESTURE_LEFT_ARROW_SCANCODE = 254;
     private static final int GESTURE_UP_ARROW_SCANCODE = 252;
     private static final int GESTURE_DOWN_ARROW_SCANCODE = 251;
+    private static final int GESTURE_LEFT_ARROW_SCANCODE = 254;
+    private static final int GESTURE_RIGHT_ARROW_SCANCODE = 253;
     private static final int GESTURE_SWIPE_UP_SCANCODE = 256;
     private static final int GESTURE_SWIPE_DOWN_SCANCODE = 255;
     private static final int GESTURE_SWIPE_LEFT_SCANCODE = 258;
     private static final int GESTURE_SWIPE_RIGHT_SCANCODE = 257;
-
-     private static final int[] sSupportedGestures = new int[]{
-        GESTURE_DOUBLE_TAP_SCANCODE,
-        GESTURE_M_SCANCODE,
-        GESTURE_W_SCANCODE,
-        GESTURE_CIRCLE_SCANCODE,
-        GESTURE_TWO_SWIPE_SCANCODE,
-        GESTURE_RIGHT_ARROW_SCANCODE,
-        GESTURE_LEFT_ARROW_SCANCODE,
-        GESTURE_UP_ARROW_SCANCODE,
-        GESTURE_DOWN_ARROW_SCANCODE,
-        GESTURE_SWIPE_UP_SCANCODE,
-	GESTURE_SWIPE_DOWN_SCANCODE,
-	GESTURE_SWIPE_LEFT_SCANCODE,
-	GESTURE_SWIPE_RIGHT_SCANCODE
-    };
 
     private final Context mContext;
     private final AudioManager mAudioManager;
@@ -103,7 +86,6 @@ public class KeyHandler implements DeviceKeyHandler {
     private int mCurrentPosition;
     private boolean mUseProxiCheck;
     private Sensor mProximitySensor;
-    private SettingsObserver mSettingsObserver;
 
     private BroadcastReceiver mScreenStateReceiver = new BroadcastReceiver() {
          @Override
@@ -123,20 +105,17 @@ public class KeyHandler implements DeviceKeyHandler {
 
     public KeyHandler(Context context) {
         mContext = context;
-        mSettingsObserver = new SettingsObserver(mHandler);
-        mSettingsObserver.observe();
         mEventHandler = new EventHandler();
         mPowerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         mAudioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
         mNoMan = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         mSensorManager = context.getSystemService(SensorManager.class);
-        mProximitySensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
         IntentFilter screenStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         screenStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
         mContext.registerReceiver(mScreenStateReceiver, screenStateFilter);
         mProximityWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
                 "ProximityWakeLock");
-        mHandler = new Handler();
+        mHandler = new Handler(); 
         mGestureWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
                 "GestureWakeLock");
 
@@ -158,47 +137,40 @@ public class KeyHandler implements DeviceKeyHandler {
             KeyEvent event = (KeyEvent) msg.obj;
             String action = null;
             switch(event.getScanCode()) {
-            case GESTURE_DOUBLE_TAP_SCANCODE:
+            case GESTURE_W_SCANCODE:
                 action = getGestureSharedPreferences()
-                        .getString(ScreenOffGesture.PREF_GESTURE_DOUBLE_TAP,
-                        ActionConstants.ACTION_WAKE_DEVICE);
+                        .getString(ScreenOffGesture.PREF_GESTURE_W,
+                        ActionConstants.ACTION_CAMERA);
                         doHapticFeedback();
                 break;
-
             case GESTURE_M_SCANCODE:
                 action = getGestureSharedPreferences()
                         .getString(ScreenOffGesture.PREF_GESTURE_M,
                         ActionConstants.ACTION_MEDIA_PLAY_PAUSE);
                         doHapticFeedback();
                 break;
-            case GESTURE_W_SCANCODE:
-                action = getGestureSharedPreferences()
-                        .getString(ScreenOffGesture.PREF_GESTURE_W,
-                        ActionConstants.ACTION_MEDIA_PREVIOUS);
-                        doHapticFeedback();
-                break;
             case GESTURE_CIRCLE_SCANCODE:
                 action = getGestureSharedPreferences()
                         .getString(ScreenOffGesture.PREF_GESTURE_CIRCLE,
-                        ActionConstants.ACTION_CAMERA);
+                        ActionConstants.ACTION_TORCH);
                         doHapticFeedback();
                 break;
             case GESTURE_TWO_SWIPE_SCANCODE:
                 action = getGestureSharedPreferences()
                         .getString(ScreenOffGesture.PREF_GESTURE_TWO_SWIPE,
-                        ActionConstants.ACTION_MEDIA_PLAY_PAUSE);
+                        ActionConstants.ACTION_MEDIA_PREVIOUS);
+                        doHapticFeedback();
+                break;
+            case GESTURE_UP_ARROW_SCANCODE:
+                action = getGestureSharedPreferences()
+                        .getString(ScreenOffGesture.PREF_GESTURE_UP_ARROW,
+                        ActionConstants.ACTION_WAKE_DEVICE);
                         doHapticFeedback();
                 break;
             case GESTURE_DOWN_ARROW_SCANCODE:
                 action = getGestureSharedPreferences()
                         .getString(ScreenOffGesture.PREF_GESTURE_DOWN_ARROW,
                         ActionConstants.ACTION_VIB_SILENT);
-                        doHapticFeedback();
-                break;
-            case GESTURE_UP_ARROW_SCANCODE:
-                action = getGestureSharedPreferences()
-                        .getString(ScreenOffGesture.PREF_GESTURE_UP_ARROW,
-                        ActionConstants.ACTION_TORCH);
                         doHapticFeedback();
                 break;
             case GESTURE_LEFT_ARROW_SCANCODE:
@@ -213,7 +185,7 @@ public class KeyHandler implements DeviceKeyHandler {
                         ActionConstants.ACTION_MEDIA_NEXT);
                         doHapticFeedback();
                 break;
-           case GESTURE_SWIPE_UP_SCANCODE:
+			case GESTURE_SWIPE_UP_SCANCODE:
                 action = getGestureSharedPreferences()
                         .getString(ScreenOffGesture.PREF_GESTURE_UP,
                         ActionConstants.ACTION_WAKE_DEVICE);
@@ -237,7 +209,7 @@ public class KeyHandler implements DeviceKeyHandler {
                         ActionConstants.ACTION_MEDIA_NEXT);
                         doHapticFeedback();
                 break;
-    }
+            }
 
             if (action == null || action != null && action.equals(ActionConstants.ACTION_NULL)) {
                 return;
@@ -249,24 +221,6 @@ public class KeyHandler implements DeviceKeyHandler {
             Action.processAction(mContext, action, false);
         }
     }
-
-    private class SettingsObserver extends ContentObserver {
-        SettingsObserver(Handler handler) {
-            super(handler);
-        }
-
-        void observe() {
-            update();
-        }
-
-        @Override
-        public void onChange(boolean selfChange) {
-            update();
-        }
-
-        public void update() {
-        }
-}
 
     private void doHapticFeedback() {
         if (mVibrator == null) {
@@ -291,12 +245,7 @@ public class KeyHandler implements DeviceKeyHandler {
         int scanCode = event.getScanCode();
         if (!mEventHandler.hasMessages(GESTURE_REQUEST)) {
             Message msg = getMessageForKeyEvent(event);
-            if (mProximitySensor != null) {
-                mEventHandler.sendMessageDelayed(msg, 200);
-                processEvent(event);
-            } else {
-                mEventHandler.sendMessage(msg);
-            }
+            mEventHandler.sendMessage(msg);
         }
 
         return event;
@@ -306,31 +255,6 @@ public class KeyHandler implements DeviceKeyHandler {
         Message msg = mEventHandler.obtainMessage(GESTURE_REQUEST);
         msg.obj = keyEvent;
         return msg;
-    }
-
-    private void processEvent(final KeyEvent keyEvent) {
-        mProximityWakeLock.acquire();
-        mSensorManager.registerListener(new SensorEventListener() {
-
-            @Override
-            public void onSensorChanged(SensorEvent event) {
-                mProximityWakeLock.release();
-                mSensorManager.unregisterListener(this);
-                if (!mEventHandler.hasMessages(GESTURE_REQUEST)) {
-                    // The sensor took to long, ignoring.
-                    return;
-                }
-                mEventHandler.removeMessages(GESTURE_REQUEST);
-                if (event.values[0] == mProximitySensor.getMaximumRange()) {
-                    Message msg = getMessageForKeyEvent(keyEvent);
-                    mEventHandler.sendMessage(msg);
-                }
-            }
-
-            @Override
-            public void onAccuracyChanged(Sensor sensor, int accuracy) {}
-
-        }, mProximitySensor, SensorManager.SENSOR_DELAY_FASTEST);
     }
 
 }
