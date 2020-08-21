@@ -105,9 +105,6 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
-# Enable stats logging in LMKD
-TARGET_LMKD_STATS_LOG := true
-
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
