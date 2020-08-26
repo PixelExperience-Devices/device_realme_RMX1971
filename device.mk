@@ -412,12 +412,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
-# Secure Element
-PRODUCT_PACKAGES += \
-    android.hardware.secure_element@1.0-service \
-    android.hardware.secure_element@1.0 \
-    android.hardware.secure_element@1.0-impl
-
 # Recovery
 PRODUCT_PACKAGES += \
     librecovery_updater_RMX1971
