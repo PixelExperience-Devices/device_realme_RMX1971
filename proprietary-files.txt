@@ -70,7 +70,6 @@ vendor/lib/libaudioEngineerTest.so
 vendor/lib64/libaudioEngineerTest.so
 
 # Camera
-
 vendor/etc/camera/Charming.cng
 vendor/etc/camera/M_Verify_Faster_Common_4.0.0_wp.model
 vendor/etc/camera/arc_golden.bin
@@ -312,6 +311,7 @@ vendor/lib64/libarcsoft_relighting_pro_image.so
 vendor/lib64/libarcsoft_smart_denoise.so
 vendor/lib64/libarcsoft_super_night_raw.so
 vendor/lib64/libcamera_nn_stub.so
+vendor/lib64/libcamera_core_hwi.so
 vendor/lib64/libcamhidlsensor.so
 vendor/lib64/libcamxfdalgov7.so
 vendor/lib64/libcamxfdalgov8.so
@@ -417,6 +417,9 @@ vendor/lib64/hw/vendor.oppo.hardware.camera.oppoHalAssist@1.0-impl.so
 vendor/lib64/hw/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-impl.so
 vendor/lib64/liboppoalgolib.so
 vendor/lib64/liboppo_log_print.so
+vendor/lib64/liboppo_aisd.so
+vendor/lib64/liboppo_platform_hwi.so
+vendor/lib64/libopposfr.so
 vendor/lib64/vendor.oppo.hardware.biometrics.fingerprint@2.1.so
 vendor/lib64/vendor.oppo.hardware.commondcs@1.0.so
 vendor/lib64/vendor.oppo.hardware.hypnus@1.0.so
