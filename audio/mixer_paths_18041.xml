@@ -305,11 +305,11 @@
     <ctl name="EAR PA Gain" value="POS_1P5_DB" />
     <ctl name="EAR PA Boost" value="DISABLE" />
 
-    <ctl name="RX1 Digital Volume" value="84" />
-    <ctl name="RX2 Digital Volume" value="84" />
-    <ctl name="RX3 Digital Volume" value="84" />
-    <ctl name="RX4 Digital Volume" value="84" />
-    <ctl name="RX5 Digital Volume" value="84" />
+    <ctl name="RX1 Digital Volume" value="94" />
+    <ctl name="RX2 Digital Volume" value="94" />
+    <ctl name="RX3 Digital Volume" value="94" />
+    <ctl name="RX4 Digital Volume" value="94" />
+    <ctl name="RX5 Digital Volume" value="94" />
     <!--
     #ifndef VENDOR_EDIT
     //Jianfeng.Qiu@PSW.MM.AudioDriver.HAL, 2016/02/27, Modify for avoid initial value not correct
@@ -2083,14 +2083,23 @@
     <path name="handset">
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RDAC2 MUX" value="RX1" />
-        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="RX1 Digital Volume" value="94" />
         <ctl name="EAR PA Gain" value="POS_6_DB" />
         <ctl name="EAR_S" value="Switch" />
     </path>
 
     <path name="handset-mic">
         <ctl name="MicBias_V_Switch" value="V_1P80" />
-        <ctl name="ADC3 Volume" value="6" />
+        <ctl name="ADC1 Volume" value="4" />
+        <ctl name="DEC1 MUX" value="ADC1" />
+        <ctl name="ADC1_INP1 Switch" value="1" />
+        <ctl name="IIR1 INP1 MUX" value="DEC1" />
+        <ctl name="INT3_MI2S_TX Channels" value="One" />
+    </path>
+
+    <path name="handset-single-mic">
+        <ctl name="MicBias_V_Switch" value="V_1P80" />
+        <ctl name="ADC1 Volume" value="4" />
         <ctl name="DEC1 MUX" value="ADC2" />
         <ctl name="ADC2 MUX" value="INP3" />
         <ctl name="IIR1 INP1 MUX" value="DEC1" />
@@ -2126,8 +2135,8 @@
         <ctl name="RX HPH Mode" value="HD2" />
         <ctl name="COMP0 RX1" value="0" />
         <ctl name="COMP0 RX2" value="0" />
-        <ctl name="RX1 Digital Volume" value="83" />
-        <ctl name="RX2 Digital Volume" value="83" />
+        <ctl name="RX1 Digital Volume" value="93" />
+        <ctl name="RX2 Digital Volume" value="93" />
         <ctl name="EAR PA Gain" value="POS_3_DB" />
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
@@ -2193,8 +2202,8 @@
         <ctl name="RX HPH Mode" value="HD2" />
         <ctl name="COMP0 RX1" value="0" />
         <ctl name="COMP0 RX2" value="0" />
-        <ctl name="RX1 Digital Volume" value="84" />
-        <ctl name="RX2 Digital Volume" value="84" />
+        <ctl name="RX1 Digital Volume" value="94" />
+        <ctl name="RX2 Digital Volume" value="94" />
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
     </path>
@@ -2205,6 +2214,10 @@
 
     <path name="voice-headset-mic">
         <path name="headset-mic" />
+    </path>
+
+    <path name="voice-headset">
+    	<path name="headphones" />
     </path>
 
     <path name="speaker-and-headphones">
@@ -2378,17 +2391,21 @@
     </path>
 
     <!--//Jianfeng.Qiu@PSW.MM.AudioDriver.HAL.1065630, 2016/10/14, Add for use two mic for Wechat -->
-    <path name="handset-stereo-dmic-ef-weixin">
+    <path name="handset-dmic-weixin-voice-rec">
         <path name="handset-stereo-dmic-ef" />
     </path>
 
     <!--#ifdef VENDOR_EDIT-->
     <!--//Jianfeng.Qiu@PSW.MM.AudioDriver.HAL, 2017/06/21, Add voicescene -->
-    <path name="speaker-stereo-dmic-ef-tmgp">
+    <path name="speaker-stereo-dmic-tmgp">
         <path name="speaker-dmic-endfire" />
     </path>
 
-    <path name="speaker-stereo-dmic-ef-weixin">
+    <path name="speaker-stereo-dmic-weixin">
+        <path name="speaker-dmic-endfire" />
+    </path>
+
+    <path name="speaker-stereo-dmic-effect">
         <path name="speaker-dmic-endfire" />
     </path>
     <!--#endif /* VENDOR_EDIT */-->
@@ -2693,6 +2710,121 @@
         <path name="audio-ull-playback bt-a2dp" />
         <path name="audio-ull-playback speaker" />
     </path>
+
+    <!-- Hefeng.Wu@RM.MM.AudioDriver.HAL, 2019/10/26, dual headset start -->
+    <path name="headphones-and-bt-a2dp">
+        <path name="headphones" />
+        <path name="bt-a2dp" />
+    </path>
+
+    <path name="headphones-and-bt-sco-headset">
+        <path name="headphones" />
+        <path name="bt-sco-headset" />
+    </path>
+
+    <path name="speaker-and-headphones-and-bt-sco-headset">
+        <path name="speaker" />
+        <path name="headphones" />
+        <path name="bt-sco-headset" />
+    </path>
+
+    <path name="speaker-and-headphones-and-bt-sco-headset-wb">
+        <path name="speaker" />
+        <path name="headphones" />
+        <path name="bt-sco-headset-wb" />
+    </path>
+
+    <path name="headphones-and-bt-sco-headset-wb">
+        <path name="headphones" />
+        <path name="bt-sco-headset-wb" />
+    </path>
+    <!-- Hefeng.Wu@RM.MM.AudioDriver.HAL, 2019/10/26, dual headset end -->
+
+    <!-- Hefeng.Wu@RM.MM.AudioDriver.HAL, 2019/10/26, dual headset start -->
+    <path name="deep-buffer-playback headphones-and-bt-a2dp">
+        <path name="deep-buffer-playback headphones" />
+        <path name="deep-buffer-playback bt-a2dp" />
+    </path>
+
+    <path name="compress-offload-playback headphones-and-bt-a2dp">
+        <path name="compress-offload-playback headphones" />
+        <path name="compress-offload-playback bt-a2dp" />
+    </path>
+
+    <path name="low-latency-playback headphones-and-bt-a2dp">
+        <path name="low-latency-playback headphones" />
+        <path name="low-latency-playback bt-a2dp" />
+    </path>
+
+    <path name="audio-ull-playback headphones-and-bt-a2dp">
+        <path name="audio-ull-playback headphones" />
+        <path name="audio-ull-playback bt-a2dp" />
+    </path>
+
+    <path name="deep-buffer-playback headphones-and-bt-sco-headset">
+        <path name="deep-buffer-playback headphones" />
+        <path name="deep-buffer-playback bt-sco" />
+    </path>
+
+    <path name="low-latency-playback headphones-and-bt-sco-headset">
+        <path name="low-latency-playback headphones" />
+        <path name="low-latency-playback bt-sco" />
+    </path>
+
+    <path name="compress-offload-playback headphones-and-bt-sco-headset">
+        <path name="compress-offload-playback headphones" />
+        <path name="compress-offload-playback bt-sco" />
+    </path>
+
+    <path name="audio-ull-playback headphones-and-bt-sco-headset">
+        <path name="audio-ull-playback headphones" />
+        <path name="audio-ull-playback bt-sco" />
+    </path>
+
+    <path name="deep-buffer-playback speaker-and-headphones-and-bt-sco-headset">
+        <path name="deep-buffer-playback speaker" />
+        <path name="deep-buffer-playback headphones" />
+        <path name="deep-buffer-playback bt-sco" />
+    </path>
+
+    <path name="low-latency-playback speaker-and-headphones-and-bt-sco-headset">
+        <path name="low-latency-playback speaker" />
+        <path name="low-latency-playback headphones" />
+        <path name="low-latency-playback bt-sco" />
+    </path>
+
+    <path name="compress-offload-playback speaker-and-headphones-and-bt-sco-headset">
+        <path name="compress-offload-playback speaker" />
+        <path name="compress-offload-playback headphones" />
+        <path name="compress-offload-playback bt-sco" />
+    </path>
+
+    <path name="audio-ull-playback speaker-and-headphones-and-bt-sco-headset">
+        <path name="audio-ull-playback speaker" />
+        <path name="audio-ull-playback headphones" />
+        <path name="audio-ull-playback bt-sco" />
+    </path>
+
+    <path name="deep-buffer-playback headphones-and-bt-sco-headset-wb">
+        <path name="deep-buffer-playback headphones" />
+        <path name="deep-buffer-playback bt-sco-wb" />
+    </path>
+
+    <path name="low-latency-playback headphones-and-bt-sco-headset-wb">
+        <path name="low-latency-playback headphones" />
+        <path name="low-latency-playback bt-sco-wb" />
+    </path>
+
+    <path name="audio-ull-playback headphones-and-bt-sco-headset-wb">
+        <path name="audio-ull-playback headphones" />
+        <path name="audio-ull-playback bt-sco-wb" />
+    </path>
+
+    <path name="compress-offload-playback headphones-and-bt-sco-headset-wb">
+        <path name="compress-offload-playback headphones" />
+        <path name="compress-offload-playback bt-sco-wb" />
+    </path>
+    <!-- Hefeng.Wu@RM.MM.AudioDriver.HAL, 2019/10/26, dual headset end -->
 
     <path name="mmap-playback">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia16" value="1" />
