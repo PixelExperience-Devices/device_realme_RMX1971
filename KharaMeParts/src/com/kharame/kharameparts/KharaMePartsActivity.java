@@ -23,11 +23,11 @@ import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import androidx.preference.PreferenceFragment;
-import androidx.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceManager;
 
 public class KharaMePartsActivity extends Activity {
 

@@ -98,6 +98,7 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         mPocketPreference.setOnPreferenceChangeListener(this);
 
         // Hide proximity sensor related features if the device doesn't support them
+
         if (!DozeUtils.getProxCheckBeforePulse(getActivity())) {
             getPreferenceScreen().removePreference(proximitySensorCategory);
         }
@@ -107,9 +108,9 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
             getPreferenceScreen().removePreference(mAlwaysOnDisplayPreference);
         } else {
             pickupSensorCategory.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
-            proximitySensorCategory.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
             mPickUpPreference.setDependency(DozeUtils.GESTURE_RAISE_TO_WAKE_KEY);
             mPocketPreference.setDependency(DozeUtils.GESTURE_RAISE_TO_WAKE_KEY);
+            proximitySensorCategory.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
         }
     }
 
@@ -168,8 +169,8 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         }
         mAlwaysOnDisplayPreference.setEnabled(isChecked);
 
-        mPickUpPreference.setEnabled(isChecked);
         mRaiseToWakePreference.setEnabled(isChecked);
+        mPickUpPreference.setEnabled(isChecked);
         mHandwavePreference.setEnabled(isChecked);
         mPocketPreference.setEnabled(isChecked);
     }

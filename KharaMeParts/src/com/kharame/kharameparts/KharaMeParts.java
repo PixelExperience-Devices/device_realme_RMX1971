@@ -14,22 +14,23 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.preference.PreferenceFragment;
-import androidx.preference.ListPreference;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceManager;
-import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
-import androidx.preference.TwoStatePreference;
 import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuInflater;
 import android.app.Fragment;
+import androidx.preference.PreferenceFragment;
+import androidx.preference.Preference;
+import androidx.preference.ListPreference;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceManager;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.SwitchPreference;
+import androidx.preference.TwoStatePreference;
 
 import com.kharame.kharameparts.settings.ScreenOffGestureSettings;
 import com.kharame.kharameparts.doze.DozeSettingsActivity;
+import com.kharame.kharameparts.vibration.VibratorStrengthPreference;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -52,10 +53,11 @@ public class KharaMeParts extends PreferenceFragment implements
     private Preference mGesturesPref;
     private Context mContext;
     private SharedPreferences mPreferences;
+    private VibratorStrengthPreference mVibratorStrength;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        setPreferencesFromResource(R.xml.kharameparts, rootKey);
+        setPreferencesFromResource(R.xml.KharaMeParts, rootKey);
         mGesturesPref = findPreference("screen_gestures");
                 mGesturesPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                      @Override
@@ -74,7 +76,10 @@ public class KharaMeParts extends PreferenceFragment implements
                          return true;
                      }
                 });
-}
+
+        mVibratorStrength = (VibratorStrengthPreference) findPreference(VibratorStrengthPreference.KEY_VIBSTRENGTH);
+        mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
+    }
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {

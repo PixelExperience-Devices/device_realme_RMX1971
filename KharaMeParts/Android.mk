@@ -19,6 +19,7 @@ include $(CLEAR_VARS)
 
 
 LOCAL_MODULE_TAGS := optional
+
 LOCAL_STATIC_ANDROID_LIBRARIES := \
     androidx.appcompat_appcompat \
     androidx.legacy_legacy-support-v13 \

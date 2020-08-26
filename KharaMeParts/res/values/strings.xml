@@ -23,10 +23,11 @@
     <string name="reset_message">Reset all entries to default?</string>
     <string name="group_applications">Applications</string>
     <string name="select_custom_app_title">Select custom application</string>
+    <string name="gestures_dashboard_summary">Simple touchscreen gestures on locked screen</string>
     <string name="enable_gestures_title">Enable gestures</string>
     <string name="enable_gestures_summary">Enable screen off gestures</string>
-    <string name="gestures_dashboard_summary">Touchscreen gestures on Screen-Off</string>
     <string name="gestures_title">Gestures</string>
+    <string name="gesture_double_tap_title">Gesture Double Tap</string>
     <string name="gesture_w_title">Gesture W</string>	
     <string name="gesture_m_title">Gesture M</string>
     <string name="gesture_s_title">Gesture S</string>
@@ -36,14 +37,18 @@
     <string name="gesture_down_arrow_title">Gesture Down Arrow</string>
     <string name="gesture_left_arrow_title">Gesture Left Arrow</string>
     <string name="gesture_right_arrow_title">Gesture Right Arrow</string>
-    <string name="gesture_up_title">Gesture Swipe Up</string>
-    <string name="gesture_down_title">Gesture Swipe Down</string>
-    <string name="gesture_left_title">Gesture Swipe Left</string>
-    <string name="gesture_right_title">Gesture Swipe Right</string>
+    <string name="gesture_swipe_up_title">Gesture Swipe Up</string>
+    <string name="gesture_swipe_down_title">Gesture Swipe Down</string>
+    <string name="gesture_swipe_left_title">Gesture Swipe Left</string>
+    <string name="gesture_swipe_right_title">Gesture Swipe Right</string>
     <string name="KharaMeParts">KharaMeParts</string>
     <string name="KharaMeParts_summary">Gestures and Tweaks</string>
     <string name="screen_off_gestures">Screen-off gestures</string>
     <string name="gestures">Gestures</string>
+    <string name="enable_dt2w_title">Enable Double Tap</string>
+    <string name="enable_dt2w_summary">Enable Double Tap Gestures</string>
+    <string name="dt2w_title">Double Tap</string>
+    <string name="haptic_feedback_title">Haptic Feedback</string>
 
     <!-- Shortcut actions -->
     <string name="shortcut_action_none">None</string>
@@ -166,5 +171,8 @@
     <!-- Touchscreen gesture haptic feedback -->
     <string name="touchscreen_gesture_haptic_feedback">Haptic feedback</string>
     <string name="touchscreen_gesture_haptic_feedback_summary">Vibrate when a Touchscreen gesture is detected</string>
+
+    <!-- Vibration Slider -->
+    <string name="vibrator_intensity_control">Vibration control</string>
 
 </resources>

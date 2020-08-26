@@ -27,30 +27,31 @@ import com.kharame.kharameparts.KernelControl;
 import com.kharame.kharameparts.settings.ScreenOffGesture;
 import com.kharame.kharameparts.util.Utils;
 import com.kharame.kharameparts.doze.DozeUtils;
+import com.kharame.kharameparts.vibration.VibratorStrengthPreference;
 import java.io.File;
 import androidx.preference.PreferenceManager;
 
 public class BootReceiver extends BroadcastReceiver {
 
-private void restore(String file, boolean enabled) {
+    private void restore(String file, boolean enabled) {
         if (file == null) {
             return;
         }
-if (enabled) {
+        if (enabled) {
             Utils.writeValue(file, "1");
         }
     }
 
-private void restore(String file, String value) {
+    private void restore(String file, String value) {
         if (file == null) {
             return;
         }
-      Utils.writeValue(file, value);
-  }
+        Utils.writeValue(file, value);
+    }
 
 
     @Override
-       public void onReceive(final Context context, Intent intent) {
+    public void onReceive(final Context context, Intent intent) {
         if (intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
                 enableComponent(context, ScreenOffGesture.class.getName());
                 SharedPreferences screenOffGestureSharedPreferences = context.getSharedPreferences(
@@ -58,8 +59,12 @@ private void restore(String file, String value) {
                 KernelControl.enableGestures(
                         screenOffGestureSharedPreferences.getBoolean(
                         ScreenOffGesture.PREF_GESTURE_ENABLE, true));
-            }
+                KernelControl.enableDt2w(
+                        screenOffGestureSharedPreferences.getBoolean(
+                        ScreenOffGesture.PREF_DT2W_ENABLE, true));
+        }
 		DozeUtils.checkDozeService(context);
+                VibratorStrengthPreference.restore(context);
     }
 
     private String getPreferenceString(Context context, String key, String defaultValue) {

@@ -59,6 +59,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final boolean DEBUG = true;
 
     // Supported scancodes
+    private static final int GESTURE_DOUBLE_TAP_SCANCODE = 248;
     private static final int GESTURE_W_SCANCODE = 246;
     private static final int GESTURE_M_SCANCODE = 247;
     private static final int GESTURE_CIRCLE_SCANCODE = 249;
@@ -137,6 +138,13 @@ public class KeyHandler implements DeviceKeyHandler {
             KeyEvent event = (KeyEvent) msg.obj;
             String action = null;
             switch(event.getScanCode()) {
+            case GESTURE_DOUBLE_TAP_SCANCODE:
+                action = getGestureSharedPreferences()
+                        .getString(ScreenOffGesture.PREF_GESTURE_DOUBLE_TAP,
+                        ActionConstants.ACTION_WAKE_DEVICE);
+                        doHapticFeedback();
+                break;
+
             case GESTURE_W_SCANCODE:
                 action = getGestureSharedPreferences()
                         .getString(ScreenOffGesture.PREF_GESTURE_W,
@@ -187,25 +195,25 @@ public class KeyHandler implements DeviceKeyHandler {
                 break;
 			case GESTURE_SWIPE_UP_SCANCODE:
                 action = getGestureSharedPreferences()
-                        .getString(ScreenOffGesture.PREF_GESTURE_UP,
+                        .getString(ScreenOffGesture.PREF_GESTURE_SWIPE_UP,
                         ActionConstants.ACTION_WAKE_DEVICE);
                         doHapticFeedback();
                 break;
             case GESTURE_SWIPE_DOWN_SCANCODE:
                 action = getGestureSharedPreferences()
-                        .getString(ScreenOffGesture.PREF_GESTURE_DOWN,
+                        .getString(ScreenOffGesture.PREF_GESTURE_SWIPE_DOWN,
                         ActionConstants.ACTION_VIB_SILENT);
                         doHapticFeedback();
                 break;
             case GESTURE_SWIPE_LEFT_SCANCODE:
                 action = getGestureSharedPreferences()
-                        .getString(ScreenOffGesture.PREF_GESTURE_LEFT,
+                        .getString(ScreenOffGesture.PREF_GESTURE_SWIPE_LEFT,
                         ActionConstants.ACTION_MEDIA_PREVIOUS);
                         doHapticFeedback();
                 break;
             case GESTURE_SWIPE_RIGHT_SCANCODE:
                 action = getGestureSharedPreferences()
-                        .getString(ScreenOffGesture.PREF_GESTURE_RIGHT,
+                        .getString(ScreenOffGesture.PREF_GESTURE_SWIPE_RIGHT,
                         ActionConstants.ACTION_MEDIA_NEXT);
                         doHapticFeedback();
                 break;

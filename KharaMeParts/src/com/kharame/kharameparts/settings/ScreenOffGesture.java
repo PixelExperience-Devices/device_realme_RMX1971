@@ -27,15 +27,15 @@ import android.content.res.Resources;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.Preference.OnPreferenceClickListener;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 
 import com.kharame.kharameparts.util.AppHelper;
 import com.kharame.kharameparts.util.ActionConstants;
@@ -52,7 +52,10 @@ public class ScreenOffGesture extends PreferenceFragment implements
 
     private static final String SETTINGS_METADATA_NAME = "com.android.settings";
 
+    public static final String PREF_DT2W_ENABLE = "enable_dt2w";
     public static final String PREF_GESTURE_ENABLE = "enable_gestures";
+
+    public static final String PREF_GESTURE_DOUBLE_TAP = "gesture_double_tap";
     public static final String PREF_GESTURE_W = "gesture_w";
     public static final String PREF_GESTURE_M = "gesture_m";
     public static final String PREF_GESTURE_CIRCLE = "gesture_circle";
@@ -61,10 +64,10 @@ public class ScreenOffGesture extends PreferenceFragment implements
     public static final String PREF_GESTURE_DOWN_ARROW = "gesture_down_arrow";
     public static final String PREF_GESTURE_LEFT_ARROW = "gesture_left_arrow";
     public static final String PREF_GESTURE_RIGHT_ARROW = "gesture_right_arrow";
-    public static final String PREF_GESTURE_UP = "gesture_up";
-    public static final String PREF_GESTURE_DOWN = "gesture_down";
-    public static final String PREF_GESTURE_LEFT = "gesture_left";
-    public static final String PREF_GESTURE_RIGHT = "gesture_right";
+    public static final String PREF_GESTURE_SWIPE_UP = "gesture_swipe_up";
+    public static final String PREF_GESTURE_SWIPE_DOWN = "gesture_swipe_down";
+    public static final String PREF_GESTURE_SWIPE_LEFT = "gesture_swipe_left";
+    public static final String PREF_GESTURE_SWIPE_RIGHT = "gesture_swipe_right";
 
     private static final String KEY_GESTURE_HAPTIC_FEEDBACK = "gesture_haptic_feedback";
 
@@ -73,18 +76,21 @@ public class ScreenOffGesture extends PreferenceFragment implements
 
     private static final int MENU_RESET = Menu.FIRST;
 
+    private Preference mGestureDoubleTap;
     private Preference mGestureW;
     private Preference mGestureM;
     private Preference mGestureCircle;
     private Preference mGestureTwoSwipe;
-    private Preference mGestureLeftArrow;
     private Preference mGestureUpArrow;
     private Preference mGestureDownArrow;
+    private Preference mGestureLeftArrow;
     private Preference mGestureRightArrow;
     private Preference mGestureSwipeUp;
     private Preference mGestureSwipeDown;
     private Preference mGestureSwipeLeft;
     private Preference mGestureSwipeRight;
+
+    private SwitchPreference mEnableDt2w;
     private SwitchPreference mEnableGestures;
     private SwitchPreference mHapticFeedback;
 
@@ -125,6 +131,8 @@ public class ScreenOffGesture extends PreferenceFragment implements
         addPreferencesFromResource(R.xml.screen_off_gesture);
         prefs = getPreferenceScreen();
 
+        mEnableDt2w = (SwitchPreference) prefs.findPreference(PREF_DT2W_ENABLE);
+
         mEnableGestures = (SwitchPreference) prefs.findPreference(PREF_GESTURE_ENABLE);
 
         mHapticFeedback = (SwitchPreference) findPreference(KEY_GESTURE_HAPTIC_FEEDBACK);
@@ -132,19 +140,22 @@ public class ScreenOffGesture extends PreferenceFragment implements
                 getContentResolver(), Utils.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK, 1) != 0);
         mHapticFeedback.setOnPreferenceChangeListener(this);
 
+        mGestureDoubleTap = (Preference) prefs.findPreference(PREF_GESTURE_DOUBLE_TAP);
         mGestureW = (Preference) prefs.findPreference(PREF_GESTURE_W);
         mGestureM = (Preference) prefs.findPreference(PREF_GESTURE_M);
         mGestureCircle = (Preference) prefs.findPreference(PREF_GESTURE_CIRCLE);
         mGestureTwoSwipe = (Preference) prefs.findPreference(PREF_GESTURE_TWO_SWIPE);
-        mGestureDownArrow = (Preference) prefs.findPreference(PREF_GESTURE_DOWN_ARROW);
         mGestureUpArrow = (Preference) prefs.findPreference(PREF_GESTURE_UP_ARROW);
+        mGestureDownArrow = (Preference) prefs.findPreference(PREF_GESTURE_DOWN_ARROW);
         mGestureLeftArrow = (Preference) prefs.findPreference(PREF_GESTURE_LEFT_ARROW);
         mGestureRightArrow = (Preference) prefs.findPreference(PREF_GESTURE_RIGHT_ARROW);
-        mGestureSwipeUp = (Preference) prefs.findPreference(PREF_GESTURE_UP);
-        mGestureSwipeDown = (Preference) prefs.findPreference(PREF_GESTURE_DOWN);
-        mGestureSwipeLeft = (Preference) prefs.findPreference(PREF_GESTURE_LEFT);
-        mGestureSwipeRight = (Preference) prefs.findPreference(PREF_GESTURE_RIGHT);
+        mGestureSwipeUp = (Preference) prefs.findPreference(PREF_GESTURE_SWIPE_UP);
+        mGestureSwipeDown = (Preference) prefs.findPreference(PREF_GESTURE_SWIPE_DOWN);
+        mGestureSwipeLeft = (Preference) prefs.findPreference(PREF_GESTURE_SWIPE_LEFT);
+        mGestureSwipeRight = (Preference) prefs.findPreference(PREF_GESTURE_SWIPE_RIGHT);
 
+        setupOrUpdatePreference(mGestureDoubleTap, mScreenOffGestureSharedPreferences
+                .getString(PREF_GESTURE_DOUBLE_TAP, ActionConstants.ACTION_WAKE_DEVICE));
         setupOrUpdatePreference(mGestureW, mScreenOffGestureSharedPreferences
                 .getString(PREF_GESTURE_W, ActionConstants.ACTION_CAMERA));
         setupOrUpdatePreference(mGestureM, mScreenOffGestureSharedPreferences
@@ -162,13 +173,18 @@ public class ScreenOffGesture extends PreferenceFragment implements
         setupOrUpdatePreference(mGestureRightArrow, mScreenOffGestureSharedPreferences
                 .getString(PREF_GESTURE_RIGHT_ARROW, ActionConstants.ACTION_MEDIA_NEXT));
         setupOrUpdatePreference(mGestureSwipeUp, mScreenOffGestureSharedPreferences
-                    .getString(PREF_GESTURE_UP, ActionConstants.ACTION_WAKE_DEVICE));
+                    .getString(PREF_GESTURE_SWIPE_UP, ActionConstants.ACTION_WAKE_DEVICE));
         setupOrUpdatePreference(mGestureSwipeDown, mScreenOffGestureSharedPreferences
-                .getString(PREF_GESTURE_DOWN, ActionConstants.ACTION_VIB_SILENT));
+                .getString(PREF_GESTURE_SWIPE_DOWN, ActionConstants.ACTION_VIB_SILENT));
         setupOrUpdatePreference(mGestureSwipeLeft, mScreenOffGestureSharedPreferences
-                .getString(PREF_GESTURE_LEFT, ActionConstants.ACTION_MEDIA_PREVIOUS));
+                .getString(PREF_GESTURE_SWIPE_LEFT, ActionConstants.ACTION_MEDIA_PREVIOUS));
         setupOrUpdatePreference(mGestureSwipeRight, mScreenOffGestureSharedPreferences
-                .getString(PREF_GESTURE_RIGHT, ActionConstants.ACTION_MEDIA_NEXT));
+                .getString(PREF_GESTURE_SWIPE_RIGHT, ActionConstants.ACTION_MEDIA_NEXT));
+
+        boolean enableDt2w =
+                mScreenOffGestureSharedPreferences.getBoolean(PREF_DT2W_ENABLE, true);
+        mEnableDt2w.setChecked(enableDt2w);
+        mEnableDt2w.setOnPreferenceChangeListener(this);
 
         boolean enableGestures =
                 mScreenOffGestureSharedPreferences.getBoolean(PREF_GESTURE_ENABLE, true);
@@ -211,7 +227,10 @@ public class ScreenOffGesture extends PreferenceFragment implements
     public boolean onPreferenceClick(Preference preference) {
         String settingsKey = null;
         int dialogTitle = 0;
-	if (preference == mGestureW) {
+	    if (preference == mGestureDoubleTap) {
+            settingsKey = PREF_GESTURE_DOUBLE_TAP;
+            dialogTitle = R.string.gesture_double_tap_title;
+        } else if (preference == mGestureW) {
             settingsKey = PREF_GESTURE_W;
             dialogTitle = R.string.gesture_w_title;
         } else if (preference == mGestureM) {
@@ -236,17 +255,17 @@ public class ScreenOffGesture extends PreferenceFragment implements
             settingsKey = PREF_GESTURE_RIGHT_ARROW;
             dialogTitle = R.string.gesture_right_arrow_title;
         } else if (preference == mGestureSwipeUp) {
-            settingsKey = PREF_GESTURE_UP;
-            dialogTitle = R.string.gesture_up_title;
+            settingsKey = PREF_GESTURE_SWIPE_UP;
+            dialogTitle = R.string.gesture_swipe_up_title;
         } else if (preference == mGestureSwipeDown) {
-            settingsKey = PREF_GESTURE_DOWN;
-            dialogTitle = R.string.gesture_down_title;
+            settingsKey = PREF_GESTURE_SWIPE_DOWN;
+            dialogTitle = R.string.gesture_swipe_down_title;
         } else if (preference == mGestureSwipeLeft) {
-            settingsKey = PREF_GESTURE_LEFT;
-            dialogTitle = R.string.gesture_left_title;
+            settingsKey = PREF_GESTURE_SWIPE_LEFT;
+            dialogTitle = R.string.gesture_swipe_left_title;
         } else if (preference == mGestureSwipeRight) {
-            settingsKey = PREF_GESTURE_RIGHT;
-            dialogTitle = R.string.gesture_right_title;
+            settingsKey = PREF_GESTURE_SWIPE_RIGHT;
+            dialogTitle = R.string.gesture_swipe_right_title;
         }
         if (settingsKey != null) {
             showDialogInner(DLG_SHOW_ACTION_DIALOG, settingsKey, dialogTitle);
@@ -259,6 +278,12 @@ public class ScreenOffGesture extends PreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (!mCheckPreferences) {
             return false;
+        }
+        if (preference == mEnableDt2w) {
+            mScreenOffGestureSharedPreferences.edit()
+                    .putBoolean(PREF_DT2W_ENABLE, (Boolean) newValue).commit();
+            KernelControl.enableDt2w((Boolean) newValue);
+            return true;
         }
         if (preference == mEnableGestures) {
             mScreenOffGestureSharedPreferences.edit()
@@ -281,8 +306,12 @@ public class ScreenOffGesture extends PreferenceFragment implements
         SharedPreferences.Editor editor = mScreenOffGestureSharedPreferences.edit();
 
         mScreenOffGestureSharedPreferences.edit()
+                .putBoolean(PREF_DT2W_ENABLE, true).commit();
+        mScreenOffGestureSharedPreferences.edit()
                 .putBoolean(PREF_GESTURE_ENABLE, true).commit();
 
+        editor.putString(PREF_GESTURE_DOUBLE_TAP,
+                ActionConstants.ACTION_WAKE_DEVICE).commit();
         editor.putString(PREF_GESTURE_W,
                 ActionConstants.ACTION_CAMERA).commit();
         editor.putString(PREF_GESTURE_M,
@@ -299,16 +328,17 @@ public class ScreenOffGesture extends PreferenceFragment implements
                 ActionConstants.ACTION_MEDIA_PREVIOUS).commit();
         editor.putString(PREF_GESTURE_RIGHT_ARROW,
                 ActionConstants.ACTION_MEDIA_NEXT).commit();
-		editor.putString(PREF_GESTURE_UP,
+		editor.putString(PREF_GESTURE_SWIPE_UP,
                 ActionConstants.ACTION_WAKE_DEVICE).commit();
-        editor.putString(PREF_GESTURE_DOWN,
+        editor.putString(PREF_GESTURE_SWIPE_DOWN,
                 ActionConstants.ACTION_VIB_SILENT).commit();
-        editor.putString(PREF_GESTURE_LEFT,
+        editor.putString(PREF_GESTURE_SWIPE_LEFT,
                 ActionConstants.ACTION_MEDIA_PREVIOUS).commit();
-        editor.putString(PREF_GESTURE_RIGHT,
+        editor.putString(PREF_GESTURE_SWIPE_RIGHT,
                 ActionConstants.ACTION_MEDIA_NEXT).commit();
         mHapticFeedback.setChecked(true);
         editor.commit();
+        KernelControl.enableDt2w(true);
         KernelControl.enableGestures(true);
         reloadSettings();
     }
