@@ -23,9 +23,7 @@
 #include <cmath>
 
 #define FP_PRESS_PATH "/sys/kernel/oppo_display/notify_fppress"
-
-#define HBM_PATH "/sys/kernel/oppo_display/hbm"
-#define DIM_AMOUNT_PATH "/sys/kernel/oppo_display/dim_alpha"
+#define DIMLAYER_PATH "/sys/kernel/oppo_display/dimlayer_hbm"
 
 namespace {
 
@@ -79,24 +77,22 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
 }
 
 Return<void> FingerprintInscreen::onPress() {
-    set(HBM_PATH, 1);
     set(FP_PRESS_PATH, 1);
     return Void();
 }
 
 Return<void> FingerprintInscreen::onRelease() {
-    set(HBM_PATH, 0);
     set(FP_PRESS_PATH, 0);
     return Void();
 }
 
 Return<void> FingerprintInscreen::onShowFODView() {
+    set(DIMLAYER_PATH, 1);
     return Void();
 }
 
 Return<void> FingerprintInscreen::onHideFODView() {
-    set(HBM_PATH, 0);
-    set(FP_PRESS_PATH, 0);
+    set(DIMLAYER_PATH, 0);
     return Void();
 }
 
@@ -115,10 +111,7 @@ Return<void> FingerprintInscreen::setLongPressEnabled(bool) {
 }
 
 Return<int32_t> FingerprintInscreen::getDimAmount(int32_t) {
-    int dimAmount = get(DIM_AMOUNT_PATH, 0);
-    LOG(INFO) << "dimAmount = " << dimAmount;
-
-    return dimAmount;
+    return 0;
 }
 
 Return<bool> FingerprintInscreen::shouldBoostBrightness() {
