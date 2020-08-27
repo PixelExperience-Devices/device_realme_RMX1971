@@ -57,7 +57,7 @@ public class KharaMeParts extends PreferenceFragment implements
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        setPreferencesFromResource(R.xml.KharaMeParts, rootKey);
+        setPreferencesFromResource(R.xml.kharameparts, rootKey);
         mGesturesPref = findPreference("screen_gestures");
                 mGesturesPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                      @Override

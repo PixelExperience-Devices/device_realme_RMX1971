@@ -156,18 +156,12 @@ on early-boot
     chmod 0775 /mnt/vendor/persist/data/pfm/licenses
 
 on boot
-    chmod 0660 /proc/touchpanel/double_tap_enable
-    chmod 0660 /proc/touchpanel/oppo_tp_limit_enable
-    chmod 0660 /proc/touchpanel/oppo_tp_direction
-    chmod 0660 /proc/touchpanel/game_switch_enable
-    chown system system /proc/touchpanel/double_tap_enable
     chown system system /proc/touchpanel/oppo_tp_limit_enable
     chown system system /proc/touchpanel/oppo_tp_direction
-    chown system system /proc/touchpanel/game_switch_enable
-    write /proc/touchpanel/double_tap_enable 1
+    chmod 0660 /proc/touchpanel/oppo_tp_limit_enable
+    chmod 0660 /proc/touchpanel/oppo_tp_direction
     write /proc/touchpanel/oppo_tp_limit_enable 0
     write /proc/touchpanel/oppo_tp_direction 1
-    write /proc/touchpanel/game_switch_enable 1
 
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
