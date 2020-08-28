@@ -125,7 +125,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.fm.use_audio_session=true
+    ro.vendor.fm.use_audio_session=true \
+    vendor.hw.fm.init=0
 
 # FRP
 PRODUCT_PROPERTY_OVERRIDES += \
