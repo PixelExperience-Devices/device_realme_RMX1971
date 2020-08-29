@@ -24,6 +24,8 @@
 
 #define FP_PRESS_PATH "/sys/kernel/oppo_display/notify_fppress"
 #define DIMLAYER_PATH "/sys/kernel/oppo_display/dimlayer_hbm"
+#define POWER_STATUS_PATH "/sys/kernel/oppo_display/power_status"
+#define NOTIFY_BLANK_PATH "/sys/kernel/oppo_display/notify_panel_blank"
 
 namespace {
 
@@ -40,6 +42,7 @@ static T get(const std::string& path, const T& def) {
     T result;
 
     file >> result;
+    LOG(INFO) << "read path: " << path << ", value: " << result << "\n";
     return file.fail() ? def : result;
 }
 
@@ -87,6 +90,8 @@ Return<void> FingerprintInscreen::onRelease() {
 }
 
 Return<void> FingerprintInscreen::onShowFODView() {
+    if (isDozeMode())
+        set(NOTIFY_BLANK_PATH, 1);
     set(DIMLAYER_PATH, 1);
     return Void();
 }
@@ -118,6 +123,10 @@ Return<bool> FingerprintInscreen::shouldBoostBrightness() {
     return false;
 }
 
+Return<bool> FingerprintInscreen::isDozeMode() {
+    return (get(POWER_STATUS_PATH, 0) == 1) || (get(POWER_STATUS_PATH, 0) == 3);
+}
+
 Return<void> FingerprintInscreen::setCallback(const sp<::vendor::lineage::biometrics::fingerprint::inscreen::V1_0::IFingerprintInscreenCallback>& callback) {
     {
         std::lock_guard<std::mutex> _lock(mCallbackLock);
@@ -133,3 +142,4 @@ Return<void> FingerprintInscreen::setCallback(const sp<::vendor::lineage::biomet
 }  // namespace biometrics
 }  // namespace lineage
 }  // namespace vendor
+
