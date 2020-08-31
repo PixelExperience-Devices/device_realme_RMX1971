@@ -92,8 +92,6 @@ vendor/lib64/libaudioEngineerTest.so
 vendor/lib64/libtinycompress.so
 
 # Audio
-etc/permissions/audiosphere.xml
-framework/audiosphere.jar
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
@@ -102,15 +100,17 @@ vendor/lib/libadm.so
 vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
 vendor/lib/libaudio_log_utils.so
+vendor/lib/libdrc.so
 vendor/lib/libqtigef.so
 vendor/lib/liba2dpoffload.so
+vendor/lib/libsurround_3mic_proc.so
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libshoebox.so
-vendor/lib/soundfx/libdiraceffect.so
 vendor/lib64/liba2dpoffload.so
+vendor/lib/soundfx/libswdap.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
 vendor/lib64/libacdbrtac.so
@@ -124,11 +124,10 @@ vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
 vendor/lib64/soundfx/libshoebox.so
+vendor/lib64/soundfx/libswdap.so
 
 # Audio module firmware
-vendor/firmware/dbmd4_va_fw.bin
 vendor/firmware/tfa98xx_19691.cnt
-vendor/firmware/voice_amodel.bin
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
