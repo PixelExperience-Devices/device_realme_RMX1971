@@ -158,6 +158,8 @@ product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 product/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 
 # Camera
+lib/libchromaflash.so
+lib64/libseemore.so
 vendor/lib/camera/com.qti.sensor.gc2375h.so
 vendor/lib/camera/com.qti.sensor.gc5035.so
 vendor/lib/camera/com.qti.sensor.hi846.so
@@ -230,8 +232,12 @@ vendor/lib/libcamxfdengine.so
 vendor/lib/libcamxstatscore.so
 vendor/lib/libcamxswprocessalgo.so
 vendor/lib/libcamxtintlessalgo.so
+vendor/lib/libcapiv2svacnn.so
+vendor/lib/libcapiv2vop.so
 vendor/lib/libcom.qti.chinodeutils.so
 vendor/lib/libcvface_api.so
+vendor/lib/libdepthmap.so
+vendor/lib/libmegface.so
 vendor/lib/libmpbase.so
 vendor/lib/libSNPE.so
 vendor/lib/libSNPE_G.so
@@ -243,6 +249,9 @@ vendor/lib/libsns_low_lat_stream_stub.so
 vendor/lib/libSonyIMX471RmscLibrary.so
 vendor/lib/libSonyIMX519MbrLibrary.so
 vendor/lib/libstblur_capture_api.so
+vendor/lib/libSTdisp.so
+vendor/lib/libSTDualCamCaptureBokeh.so
+vendor/lib/libSTDualCamPreviewBokeh.so
 vendor/lib/libswregistrationalgo.so
 vendor/lib/libswvdec.so
 vendor/lib/libmm-omxcore.so
@@ -268,9 +277,13 @@ vendor/lib/libsdk_3d.so
 vendor/lib/libsdk_common.so
 vendor/lib/libOccluDetect.so
 vendor/lib/libPolarrRender.so
+vendor/lib/libsymphony-cpu.so
+vendor/lib/libsymphonypower.so
 vendor/lib/libtriplecam_image_optical_zoom.so
 vendor/lib/libtriplecam_optical_zoom_control.so
 vendor/lib/libtriplecam_video_optical_zoom.so
+vendor/lib/libVDImageAdjustment.so
+vendor/lib/libVDRTImageAdjustment.so
 vendor/lib/libvideoutils.so
 vendor/lib/libvidhance.so
 vendor/lib/libcomprcapture.so
@@ -359,6 +372,8 @@ vendor/lib64/libcamxfdengine.so
 vendor/lib64/libcamxstatscore.so
 vendor/lib64/libcamxswprocessalgo.so
 vendor/lib64/libcamxtintlessalgo.so
+vendor/lib64/libcapiv2svacnn.so
+vendor/lib64/libcapiv2vop.so
 vendor/lib64/libcom.qti.chinodeutils.so
 vendor/lib64/libcvface_api.so
 vendor/lib64/libmpbase.so
@@ -372,6 +387,8 @@ vendor/lib64/libsns_fastRPC_util.so
 vendor/lib64/libsns_low_lat_stream_stub.so
 vendor/lib64/libSonyIMX471RmscLibrary.so
 vendor/lib64/libswregistrationalgo.so
+vendor/lib64/libsymphony-cpu.so
+vendor/lib64/libsymphonypower.so
 vendor/lib64/libtriplecam_image_optical_zoom.so
 vendor/lib64/libtriplecam_optical_zoom_control.so
 vendor/lib64/libtriplecam_video_optical_zoom.so
@@ -1128,7 +1145,6 @@ vendor/lib/libOmxVideoDSMode.so|6b5d4e8ae108cff5161879f6e88940d2823e2648
 vendor/lib/libOmxVpp.so|09483e96c8d0291284ade6177301d29602d7e74f
 vendor/lib/libOmxWmaDec.so|b9917a296871370e65f9403e6b4917af62efa577
 vendor/lib/libstagefright_soft_qtiflacdec.so|9a51e5915bdee3aee006891cb3ae4ddd433c7aa4
-vendor/lib/libswvdec.so|e3f0bc2d0893e04d17a82643055b68a5a61939e0
 vendor/lib/libvppclient.so|fc876b034dbaa3fe487ad2b8ff3674c0baa4efb6
 vendor/lib/libvpphvx.so|bd54e9303c394476d0dd7dda4c98d22e84b11da4
 vendor/lib/libvpplibrary.so|4694d42256a486e762dc9a854fd8e6d35c5db043
@@ -1163,7 +1179,6 @@ vendor/lib64/libOmxVpp.so|086c7b8b6657c78eba5ecfb870a8bdd2102b87bc
 vendor/lib64/libOmxWmaDec.so|cc91de9740c646dfb212c4b6c8af30a51d6675d4
 vendor/lib64/libstagefright_soft_qtiflacdec.so|f3d09182a3dd05e44912b5c50b1a345d723d8a3f
 vendor/lib64/libstagefright_soft_voh264enc.so|8b8a9e6ab6a07d31b511c2c214243832e298eff4
-vendor/lib64/libswvdec.so|b7864178dd73448e314dd15b3db75bbab8c10b05
 vendor/lib64/libvoh264enc.so|cf42a1fc0011e7cf173fee2b759cfafe3a44a3a1
 vendor/lib64/libvppclient.so|e14ea920bd2d436410a41ba717197262c4ad87bb
 vendor/lib64/libvpphvx.so|3f92603b486edbd489ee8040897e751a96af83f4
