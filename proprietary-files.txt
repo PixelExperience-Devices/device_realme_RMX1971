@@ -1,11 +1,11 @@
 # ACDB
-vendor/etc/acdbdata/18041/Hdmi_cal.acdb
-vendor/etc/acdbdata/18041/Speaker_cal.acdb
-vendor/etc/acdbdata/18041/Headset_cal.acdb
-vendor/etc/acdbdata/18041/General_cal.acdb
-vendor/etc/acdbdata/18041/Global_cal.acdb
-vendor/etc/acdbdata/18041/Bluetooth_cal.acdb
-vendor/etc/acdbdata/18041/Handset_cal.acdb
+vendor/etc/acdbdata/19691/Bluetooth_cal.acdb
+vendor/etc/acdbdata/19691/General_cal.acdb
+vendor/etc/acdbdata/19691/Global_cal.acdb
+vendor/etc/acdbdata/19691/Handset_cal.acdb
+vendor/etc/acdbdata/19691/Hdmi_cal.acdb
+vendor/etc/acdbdata/19691/Headset_cal.acdb
+vendor/etc/acdbdata/19691/Speaker_cal.acdb
 
 # ADSP
 vendor/bin/adsprpcd
@@ -59,15 +59,15 @@ vendor/lib/libdepthmap.so
 vendor/lib64/libsysmon_cdsp_skel.so
 
 # Audio amplifier firmware
-vendor/firmware/tfa98xx_18041.cnt
+vendor/firmware/tfa98xx_19691.cnt
 
 # Audio Hal
 vendor/lib/hw/audio.primary.sdm710.so
-vendor/lib64/hw/audio.primary.sdm710.so
-vendor/lib/libtinycompress.so
-vendor/lib64/libtinycompress.so
 vendor/lib/libaudioEngineerTest.so
+vendor/lib/libtinycompress.so
+vendor/lib64/hw/audio.primary.sdm710.so
 vendor/lib64/libaudioEngineerTest.so
+vendor/lib64/libtinycompress.so
 
 # Camera
 vendor/etc/camera/Charming.cng
