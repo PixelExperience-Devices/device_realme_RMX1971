@@ -64,4 +64,4 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl.realme_sdm710
 
 # Inherit from proprietary version
-$(call inherit-product-if-exists, vendor/realme/RMX1901/RMX1901-vendor.mk)
+$(call inherit-product-if-exists, vendor/realme/RMX1971/RMX1971-vendor.mk)
