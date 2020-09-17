@@ -30,7 +30,6 @@ import androidx.preference.TwoStatePreference;
 
 import com.kharame.kharameparts.settings.ScreenOffGestureSettings;
 import com.kharame.kharameparts.doze.DozeSettingsActivity;
-import com.kharame.kharameparts.vibration.VibratorStrengthPreference;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -76,9 +75,6 @@ public class KharaMeParts extends PreferenceFragment implements
                          return true;
                      }
                 });
-
-        mVibratorStrength = (VibratorStrengthPreference) findPreference(VibratorStrengthPreference.KEY_VIBSTRENGTH);
-        mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
     }
 
     @Override
