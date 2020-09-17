@@ -1,12 +1,12 @@
 [
   {
     "remote":"github",
-    "branch":"ten-plus",
+    "branch":"ten",
     "repository": "PixelExperience-Devices/kernel_realme_RMX1971",
     "target_path": "kernel/realme/RMX1971"
   },
   {
-    "remote":"pixel-devices-bitbucket",
+    "remote":"pixel-devices-blobs",
     "branch":"ten",
     "repository": "vendor_realme_RMX1971",
     "target_path": "vendor/realme/RMX1971"
