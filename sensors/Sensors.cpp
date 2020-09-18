@@ -130,7 +130,7 @@ Return<void> Sensors::getSensorsList(getSensorsList_cb _hidl_cb) {
             dst->type = SensorType::LIGHT;
             dst->typeAsString = "";
         }
-	if (dst->typeAsString == "qti.sensor.proximity_fake") {
+	if (dst->typeAsString == "android.sensor.tp_proximity") {
             dst->type = SensorType::PROXIMITY;
             dst->typeAsString = "";
         }
