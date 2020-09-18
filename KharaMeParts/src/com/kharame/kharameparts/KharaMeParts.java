@@ -52,7 +52,6 @@ public class KharaMeParts extends PreferenceFragment implements
     private Preference mGesturesPref;
     private Context mContext;
     private SharedPreferences mPreferences;
-    private VibratorStrengthPreference mVibratorStrength;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
