@@ -1,8 +1,7 @@
 # Bluetooth
 ro.bluetooth.wipower=false
 ro.bluetooth.emb_wp_mode=false
-vendor.bluetooth.soc=cherokee
-persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptive
+persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac
 
 # Camera
 ro.camera.hfr.enable=1
@@ -36,6 +35,7 @@ ro.use_data_netmgrd=true
 debug.sf.enable_hwc_vds=1
 debug.sf.latch_unsignaled=1
 persist.debug.wfd.enable=1
+persist.hwc.enable_vds=1
 persist.demo.hdmirotationlock=false
 sdm.debug.disable_dest_scalar=1
 sdm.debug.disable_inline_rotator=1
@@ -44,22 +44,23 @@ sdm.debug.prefersplit=1
 
 # Media
 audio.offload.video=true
+media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 
 # Memory optimizations
 ro.vendor.qti.sys.fw.bservice_enable=true
 
 # Netflix custom property
-ro.netflix.bsp_rev=Q670-14477-1	
+ro.netflix.bsp_rev=Q670-14477
 
 # Perf
 iop.enable_prefetch_ofr=1
 iop.enable_uxe=0
-ro.vendor.qti.core_ctl_min_cpu=4
-ro.vendor.qti.core_ctl_max_cpu=6
+ro.vendor.qti.core_ctl_min_cpu=2
+ro.vendor.qti.core_ctl_max_cpu=4
 
 # RCS and IMS
 persist.data.iwlan.enable=true
-persist.rcs.supported=1
+persist.rcs.supported=0
 persist.vendor.ims.disableUserAgent=0
 persist.dbg.ims_volte_enable=1
 
@@ -77,21 +78,10 @@ ro.telephony.default_network=22,22
 telephony.lteOnCdmaDevice=1
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 persist.sys.fflag.override.settings_network_and_internet_v2=true
-persist.radio.VT_ENABLE=1 
-persist.radio.volte.dan_support=true 
-persist.data.iwlan=1 
-persist.data.iwlan.ipsec.ap=1 
-persist.sys.cust.lte_config=true 
-service.qti.ims.enabled=1 
-persist.vendor.qti.telephony.vt_cam_interface=2
-ro.telephony.iwlan_operation_mode=legacy
 
 # SSR
 persist.vendor.ssr.enable_ramdumps=0
 persist.vendor.ssr.restart_level=ALL_ENABLE
 
-# WFD
-persist.hwc.enable_vds=1
-
-# Zygote preforking
+# Zygote
 persist.device_config.runtime_native.usap_pool_enabled=true

@@ -23,18 +23,12 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#include <stdint.h>
+#pragma push_macro("PROPERTY_VALUE_MAX")
+
+#include <cutils/properties.h>
 #include <string.h>
 
 #include "osi/include/osi.h"
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-	int property_get(const char *key, char *value, const char *default_value);
-#ifdef __cplusplus
-}
-#endif
 
 typedef struct {
     const char *product_device;
@@ -47,7 +41,7 @@ static const device_t devices[] = {
 
 static inline const char *BtmGetDefaultName()
 {
-    char product_device[92];
+    char product_device[PROPERTY_VALUE_MAX];
     property_get("ro.product.device", product_device, "");
 
     for (unsigned int i = 0; i < ARRAY_SIZE(devices); i++) {
@@ -71,4 +65,7 @@ static inline const char *BtmGetDefaultName()
 #define BT_CLEAN_TURN_ON_DISABLED 1
 // Increasing SEPs to 12 from 6 to support SHO/MCast i.e. two streams per codec
 #define AVDT_NUM_SEPS 12
+
+#pragma pop_macro("PROPERTY_VALUE_MAX")
+
 #endif

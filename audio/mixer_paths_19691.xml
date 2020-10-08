@@ -65,6 +65,7 @@
     <ctl name="SLIMBUS_7_RX Audio Mixer MultiMedia15" value="0" />
     <ctl name="SLIMBUS_7_RX Audio Mixer MultiMedia16" value="0" />
     <ctl name="INT0_MI2S_RX Port Mixer INT3_MI2S_TX" value="0" />
+    <ctl name="MultiMedia2 Mixer INT3_MI2S_TX" value="0" />
     <ctl name="MultiMedia5 Mixer INT3_MI2S_TX" value="0" />
     <ctl name="MultiMedia5 Mixer AFE_PCM_TX" value="0" />
     <ctl name="MultiMedia5 Mixer SLIM_8_TX" value="0" />
@@ -303,7 +304,7 @@
     <!-- Volume controls -->
     <ctl name="HPHL Volume" value="9" />
     <ctl name="HPHR Volume" value="9" />
-    <ctl name="EAR PA Gain" value="POS_3_DB" />
+    <ctl name="EAR PA Gain" value="POS_1P5_DB" />
     <ctl name="EAR PA Boost" value="DISABLE" />
 
     <ctl name="RX1 Digital Volume" value="84" />
@@ -446,17 +447,10 @@
     <!--#endif /* VENDOR_EDIT */-->
 
     <!--#ifdef VENDOR_EDIT -->
-    <!--Wang.kun@PSW.MM.AudioDriver.feature.1234017, 2018/12/5, Add for ktv loopback-->
+    <!--Jianfeng.Qiu@PSW.MM.AudioDriver.feature.1234017, 2017/04/05, Add for ktv loopback-->
     <ctl name="INT0_MI2S_RX_DL_HL Switch" value="0" />
     <ctl name="INT0_MI2S_RX Port Mixer INT3_MI2S_TX" value="0" />
     <!--#endif /* VENDOR_EDIT */-->
-
-    <!-- Add for smart mic -->
-    <ctl name="MultiMedia1 Mixer PRI_MI2S_TX" value="0" />
-    <ctl name="INT0_MI2S_RX Port Mixer TERT_MI2S_TX_PRIM" value="0" />
-    <ctl name="INT0_MI2S_RX_DL_HL Switch" value="0" />
-    <ctl name="IA6xx CVQ Stream on I2S" value="OFF" />
-    <!-- Add for smart mic end -->
 
     <!--#ifdef VENDOR_EDIT -->
     <!--Jianfeng.Qiu@PSW.MM.AudioDriver.HAL, 2018/07/31, Add for set micbiase voltage-->
@@ -471,21 +465,27 @@
     <ctl name="MultiMedia5_RX QOS Vote" value="Disable" />
     <!-- mixer control to disable lowlatency qos voting end -->
 
+    <!--#ifdef VENDOR_EDIT -->
+    <!--xiang.fei@PSW.MM.AudioDriver.feature, 2019/01/16, Add for headphone-->
+    <ctl name="INT0_MI2S_RX Format" value="S16_LE" />
+    <!--#endif /* VENDOR_EDIT */-->
+
     <!--Jianfeng.Qiu@PSW.MM.AudioDriver.FTM, 2017/02/22, Add for audio test-->
     <path name="main-mic-test">
         <ctl name="MicBias_V_Switch" value="V_1P80" />
-	<ctl name="DEC1 MUX" value="ADC1" />
-	<ctl name="DEC1 Volume" value="84" />
-	<ctl name="IIR1 INP1 MUX" value="DEC1" />
-	<ctl name="ADC1 Volume" value="6" />
-	<ctl name="ADC1_INP1 Switch" value="1" />
+        <ctl name="DEC1 MUX" value="ADC1" />
+        <ctl name="DEC1 Volume" value="100" />
+        <ctl name="IIR1 INP1 MUX" value="DEC1" />
+        <ctl name="ADC1 Volume" value="6" />
+        <ctl name="ADC1_INP1 Switch" value="1" />
     </path>
 
     <path name="sec-mic-test">
-	<ctl name="DEC1 MUX" value="ADC2" />
-	<ctl name="ADC2 MUX" value="INP3" />
-	<ctl name="DEC1 Volume" value="84" />
-	<ctl name="ADC3 Volume" value="6" />
+        <ctl name="MicBias_V_Switch" value="V_1P80" />
+        <ctl name="DEC1 MUX" value="ADC2" />
+        <ctl name="ADC2 MUX" value="INP3" />
+        <ctl name="DEC1 Volume" value="100" />
+        <ctl name="ADC3 Volume" value="6" />
     </path>
 
     <path name="anc-mic-test">
@@ -495,12 +495,10 @@
         <ctl name="MicBias_V_Switch" value="V_1P80" />
         <ctl name="DEC1 MUX" value="ADC1" />
         <ctl name="DEC2 MUX" value="ADC2" />
-        <ctl name="ADC2 MUX" value="INP3" />
         <ctl name="ADC1_INP1 Switch" value="1" />
+        <ctl name="ADC2 MUX" value="INP3" />
         <ctl name="ADC1 Volume" value="6" />
         <ctl name="ADC3 Volume" value="6" />
-        <ctl name="DEC1 Volume" value="80" />
-        <ctl name="DEC2 Volume" value="80" />
         <ctl name="INT3_MI2S_TX Channels" value="Two" />
     </path>
     <!--Jianfeng.Qiu@PSW.MM.AudioDriver.HAL, 2017/02/22, Add for audio test end-->
@@ -1462,7 +1460,7 @@
     </path>
 
     <!--#ifdef VENDOR_EDIT -->
-    <!--Wang.kun@PSW.MM.AudioDriver.feature.1234017, 2018/12/05, Add for ktv loopback-->
+    <!--xiang.fei@PSW.MM.AudioDriver.feature, 2018/02/19, Add for ktv loopback-->
     <path name="audio-record ktv-afe">
         <ctl name="MultiMedia1 Mixer INT3_MI2S_TX" value="1" />
         <ctl name="INT0_MI2S_RX_DL_HL Switch" value="1" />
@@ -1473,12 +1471,6 @@
     <path name="audio-record">
         <ctl name="MultiMedia1 Mixer INT3_MI2S_TX" value="1" />
     </path>
-
-    <!-- Add for smart mic -->
-    <path name="audio-record-smartmic">
-        <ctl name="MultiMedia1 Mixer PRI_MI2S_TX" value="1" />
-    </path>
-    <!-- Add for smart mic end -->
 
     <path name="audio-record usb-headset-mic">
         <ctl name="MultiMedia1 Mixer USB_AUDIO_TX" value="1" />
@@ -1924,6 +1916,7 @@
 
     <!-- These are actual sound device specific mixer settings -->
     <path name="adc1">
+        <ctl name="MicBias_V_Switch" value="V_1P80" />
         <ctl name="ADC1 Volume" value="6" />
         <ctl name="DEC1 MUX" value="ADC1" />
         <ctl name="ADC1_INP1 Switch" value="1" />
@@ -1936,6 +1929,7 @@
     </path>
 
     <path name="adc3">
+        <ctl name="MicBias_V_Switch" value="V_1P80" />
         <ctl name="ADC3 Volume" value="6" />
         <ctl name="DEC1 MUX" value="ADC2" />
         <ctl name="ADC2 MUX" value="INP3" />
@@ -1956,6 +1950,7 @@
     </path>
 
     <path name="dmic4">
+        <ctl name="MicBias_V_Switch" value="V_1P80" />
         <ctl name="DEC1 MUX" value="DMIC4" />
     </path>
 
@@ -1983,7 +1978,7 @@
     </path>
 
     <path name="mmi-speaker">
-        <ctl name="mono Profile" value="MUSIC_48000" />
+        <ctl name="mono Profile" value="MMITest_48000" />
     </path>
 
     <path name="speaker-mono">
@@ -2038,7 +2033,8 @@
     </path>
 
     <path name="speaker-mic">
-	<path name="adc1" />
+        <path name="adc1" />
+        <ctl name="IIR1 INP1 MUX" value="DEC1" />
     </path>
 
     <path name="speaker-mic-liquid">
@@ -2116,7 +2112,7 @@
     </path>
 
     <path name="handset-mic-cdp">
-        <path name="adc1" />
+        <path name="adc3" />
     </path>
 
     <path name="handset-mic-sbc">
@@ -2134,7 +2130,7 @@
     </path>
 
     <path name="headphones">
-	<ctl name="INT0_MI2S_RX Channels" value="Two" />
+        <ctl name="INT0_MI2S_RX Channels" value="Two" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="RDAC2 MUX" value="RX2" />
@@ -2143,8 +2139,10 @@
         <ctl name="COMP0 RX2" value="0" />
         <ctl name="RX1 Digital Volume" value="83" />
         <ctl name="RX2 Digital Volume" value="83" />
+        <ctl name="EAR PA Gain" value="POS_3_DB" />
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
+        <ctl name="INT0_MI2S_RX Format" value="S24_LE" />
     </path>
 
     <path name="headphones-44.1">
@@ -2160,13 +2158,13 @@
 
     <path name="headset-mic">
         <path name="adc2" />
+        <ctl name="IIR1 INP1 MUX" value="DEC1" />
     </path>
 
     <!--#ifndef VENDOR_EDIT-->
     <!--Jianfeng.Qiu@PSW.MM.AudioDriver.feature.1234017, 2017/04/05, Add for ktv loopback-->
     <path name="headset-mic-ktv">
         <path name="adc2" />
-        <ctl name="ADC2 MUX" value="INP2" />
     </path>
     <!--#endif /* VENDOR_EDIT */-->
 
@@ -2302,8 +2300,22 @@
         <path name="handset-mic" />
     </path>
 
-    <path name="camcorder-mic">
+    <!--#ifdef VENDOR_EDIT-->
+    <!--xiang.fei@PSW.MM.AudioDriver.feature, 2018/08/23, Add for ringing aec -->
+    <path name="handset-mic-ring-aec">
         <path name="handset-mic" />
+    </path>
+    <!--#endif /* VENDOR_EDIT */-->
+
+    <path name="camcorder-mic">
+        <ctl name="MicBias_V_Switch" value="V_1P80" />
+        <ctl name="ADC1 Volume" value="4" />
+        <ctl name="DEC1 MUX" value="ADC2" />
+        <ctl name="ADC3 Volume" value="6" />
+        <ctl name="DEC2 MUX" value="ADC1" />
+        <ctl name="ADC1_INP1 Switch" value="1" />
+        <ctl name="ADC2 MUX" value="INP3" />
+        <ctl name="INT3_MI2S_TX Channels" value="Two" />
     </path>
 
     <path name="hdmi-tx">
@@ -2337,7 +2349,7 @@
     <!-- Dual MIC devices -->
     <path name="handset-dmic-endfire">
         <ctl name="MicBias_V_Switch" value="V_1P80" />
-	<ctl name="DEC1 MUX" value="ADC1" />
+        <ctl name="DEC1 MUX" value="ADC1" />
         <ctl name="DEC2 MUX" value="ADC2" />
         <ctl name="ADC2 MUX" value="INP3" />
         <ctl name="ADC1_INP1 Switch" value="1" />
@@ -2349,16 +2361,14 @@
     </path>
 
     <path name="speaker-dmic-endfire">
-	<ctl name="MicBias_V_Switch" value="V_1P80" />
+        <ctl name="MicBias_V_Switch" value="V_1P80" />
         <ctl name="ADC1 Volume" value="4" />
         <ctl name="DEC1 MUX" value="ADC2" />
-        <ctl name="ADC3 Volume" value="4" />
+        <ctl name="ADC3 Volume" value="6" />
         <ctl name="DEC2 MUX" value="ADC1" />
         <ctl name="ADC1_INP1 Switch" value="1" />
         <ctl name="ADC2 MUX" value="INP3" />
-        <ctl name="DEC1 Volume" value="89" />
-        <ctl name="DEC2 Volume" value="89" />
-	<ctl name="INT3_MI2S_TX Channels" value="Two" />
+        <ctl name="INT3_MI2S_TX Channels" value="Two" />
     </path>
 
     <path name="dmic-endfire">
@@ -2372,7 +2382,16 @@
     </path>
 
     <path name="handset-stereo-dmic-ef">
-        <path name="handset-dmic-endfire" />
+        <ctl name="MicBias_V_Switch" value="V_1P80" />
+        <ctl name="DEC1 MUX" value="ADC1" />
+        <ctl name="DEC2 MUX" value="ADC2" />
+        <ctl name="ADC2 MUX" value="INP3" />
+        <ctl name="ADC1_INP1 Switch" value="1" />
+        <ctl name="ADC1 Volume" value="6" />
+        <ctl name="ADC3 Volume" value="6" />
+        <ctl name="DEC1 Volume" value="80" />
+        <ctl name="DEC2 Volume" value="80" />
+        <ctl name="INT3_MI2S_TX Channels" value="Two" />
     </path>
 
     <!--//Jianfeng.Qiu@PSW.MM.AudioDriver.HAL.1065630, 2016/10/14, Add for use two mic for Wechat -->
@@ -2387,7 +2406,7 @@
     </path>
 
     <path name="speaker-stereo-dmic-weixin">
-	<path name="speaker-dmic-endfire" />
+        <path name="speaker-dmic-endfire" />
     </path>
 
     <path name="speaker-stereo-dmic-effect">
@@ -2397,6 +2416,7 @@
 
     <path name="speaker-stereo-dmic-ef">
         <path name="speaker-dmic-endfire" />
+        <ctl name="ADC1 Volume" value="6" />
     </path>
 
     <path name="voice-dmic-ef-tmus">
@@ -2735,11 +2755,6 @@
         <path name="compress-offload-playback bt-a2dp" />
     </path>
 
-    <path name="compress-offload-playback2 headphones-and-bt-a2dp">
-        <path name="compress-offload-playback2 headphones" />
-        <path name="compress-offload-playback2 bt-a2dp" />
-    </path>
-
     <path name="low-latency-playback headphones-and-bt-a2dp">
         <path name="low-latency-playback headphones" />
         <path name="low-latency-playback bt-a2dp" />
@@ -2763,11 +2778,6 @@
     <path name="compress-offload-playback headphones-and-bt-sco-headset">
         <path name="compress-offload-playback headphones" />
         <path name="compress-offload-playback bt-sco" />
-    </path>
-
-    <path name="compress-offload-playback2 headphones-and-bt-sco-headset">
-        <path name="compress-offload-playback2 headphones" />
-        <path name="compress-offload-playback2 bt-sco" />
     </path>
 
     <path name="audio-ull-playback headphones-and-bt-sco-headset">
@@ -2817,11 +2827,6 @@
     <path name="compress-offload-playback headphones-and-bt-sco-headset-wb">
         <path name="compress-offload-playback headphones" />
         <path name="compress-offload-playback bt-sco-wb" />
-    </path>
-
-    <path name="compress-offload-playback2 headphones-and-bt-sco-headset-wb">
-        <path name="compress-offload-playback2 headphones" />
-        <path name="compress-offload-playback2 bt-sco-wb" />
     </path>
     <!-- Hefeng.Wu@RM.MM.AudioDriver.HAL, 2019/10/26, dual headset end -->
 
@@ -2921,6 +2926,10 @@
 
     <path name="hifi-playback usb-headphones">
         <ctl name="USB_AUDIO_RX Audio Mixer MultiMedia2" value="1" />
+    </path>
+
+    <path name="hifi-record">
+        <ctl name="MultiMedia2 Mixer INT3_MI2S_TX" value="1" />
     </path>
 
     <path name="hifi-record usb-headset-mic">
