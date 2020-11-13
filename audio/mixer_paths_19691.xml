@@ -236,6 +236,8 @@
     <!-- RT Proxy Cal end -->
 
     <!-- Incall Recording -->
+    <ctl name="MultiMedia9 Mixer VOC_REC_UL" value="0" />
+    <ctl name="MultiMedia9 Mixer VOC_REC_DL" value="0" />
     <ctl name="MultiMedia1 Mixer VOC_REC_UL" value="0" />
     <ctl name="MultiMedia1 Mixer VOC_REC_DL" value="0" />
     <ctl name="MultiMedia8 Mixer VOC_REC_UL" value="0" />
@@ -305,11 +307,11 @@
     <ctl name="EAR PA Gain" value="POS_1P5_DB" />
     <ctl name="EAR PA Boost" value="DISABLE" />
 
-    <ctl name="RX1 Digital Volume" value="94" />
-    <ctl name="RX2 Digital Volume" value="94" />
-    <ctl name="RX3 Digital Volume" value="94" />
-    <ctl name="RX4 Digital Volume" value="94" />
-    <ctl name="RX5 Digital Volume" value="94" />
+    <ctl name="RX1 Digital Volume" value="84" />
+    <ctl name="RX2 Digital Volume" value="84" />
+    <ctl name="RX3 Digital Volume" value="84" />
+    <ctl name="RX4 Digital Volume" value="84" />
+    <ctl name="RX5 Digital Volume" value="84" />
     <!--
     #ifndef VENDOR_EDIT
     //Jianfeng.Qiu@PSW.MM.AudioDriver.HAL, 2016/02/27, Modify for avoid initial value not correct
@@ -1562,7 +1564,7 @@
     </path>
 
     <path name="incall-rec-uplink">
-        <ctl name="MultiMedia1 Mixer VOC_REC_UL" value="1" />
+        <ctl name="MultiMedia9 Mixer VOC_REC_UL" value="1" />
     </path>
 
     <path name="incall-rec-uplink bt-sco">
@@ -1602,7 +1604,7 @@
     </path>
 
     <path name="incall-rec-downlink">
-        <ctl name="MultiMedia1 Mixer VOC_REC_DL"  value="1" />
+        <ctl name="MultiMedia9 Mixer VOC_REC_DL"  value="1" />
     </path>
 
     <path name="incall-rec-downlink bt-sco">
@@ -2083,7 +2085,7 @@
     <path name="handset">
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RDAC2 MUX" value="RX1" />
-        <ctl name="RX1 Digital Volume" value="94" />
+        <ctl name="RX1 Digital Volume" value="84" />
         <ctl name="EAR PA Gain" value="POS_6_DB" />
         <ctl name="EAR_S" value="Switch" />
     </path>
@@ -2135,8 +2137,8 @@
         <ctl name="RX HPH Mode" value="HD2" />
         <ctl name="COMP0 RX1" value="0" />
         <ctl name="COMP0 RX2" value="0" />
-        <ctl name="RX1 Digital Volume" value="93" />
-        <ctl name="RX2 Digital Volume" value="93" />
+        <ctl name="RX1 Digital Volume" value="83" />
+        <ctl name="RX2 Digital Volume" value="83" />
         <ctl name="EAR PA Gain" value="POS_3_DB" />
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
@@ -2202,8 +2204,8 @@
         <ctl name="RX HPH Mode" value="HD2" />
         <ctl name="COMP0 RX1" value="0" />
         <ctl name="COMP0 RX2" value="0" />
-        <ctl name="RX1 Digital Volume" value="94" />
-        <ctl name="RX2 Digital Volume" value="94" />
+        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="RX2 Digital Volume" value="84" />
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
     </path>
@@ -2214,10 +2216,6 @@
 
     <path name="voice-headset-mic">
         <path name="headset-mic" />
-    </path>
-
-    <path name="voice-headset">
-    	<path name="headphones" />
     </path>
 
     <path name="speaker-and-headphones">
@@ -2310,8 +2308,14 @@
     <!--#endif /* VENDOR_EDIT */-->
 
     <path name="camcorder-mic">
-        <path name="handset-mic" />
-        <ctl name="DEC1 Volume" value="84" />
+        <ctl name="MicBias_V_Switch" value="V_1P80" />
+        <ctl name="ADC1 Volume" value="4" />
+        <ctl name="DEC1 MUX" value="ADC2" />
+        <ctl name="ADC3 Volume" value="6" />
+        <ctl name="DEC2 MUX" value="ADC1" />
+        <ctl name="ADC1_INP1 Switch" value="1" />
+        <ctl name="ADC2 MUX" value="INP3" />
+        <ctl name="INT3_MI2S_TX Channels" value="Two" />
     </path>
 
     <path name="hdmi-tx">
@@ -2383,8 +2387,8 @@
         <ctl name="DEC2 MUX" value="ADC2" />
         <ctl name="ADC2 MUX" value="INP3" />
         <ctl name="ADC1_INP1 Switch" value="1" />
-        <ctl name="ADC1 Volume" value="4" />
-        <ctl name="ADC3 Volume" value="4" />
+        <ctl name="ADC1 Volume" value="6" />
+        <ctl name="ADC3 Volume" value="6" />
         <ctl name="DEC1 Volume" value="80" />
         <ctl name="DEC2 Volume" value="80" />
         <ctl name="INT3_MI2S_TX Channels" value="Two" />
