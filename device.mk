@@ -51,5 +51,10 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service \
     android.hardware.sensors@1.0-impl.realme_sdm710
 
+# Vndk
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-lite-v29.so \
+    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-full.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-full-v29.so
+
 # Inherit from proprietary version
 $(call inherit-product-if-exists, vendor/realme/RMX1971/RMX1971-vendor.mk)
