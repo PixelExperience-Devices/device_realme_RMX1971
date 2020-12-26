@@ -121,4 +121,7 @@
          -->
     <string translatable="false" name="config_mainBuiltInDisplayCutout">M -70,0 L -70,76 L 70,76 L 70,0 Z</string>
 
+    <!-- Whether device has a notch -->
+    <bool name="config_haveNotch">true</bool>
+
 </resources>
