@@ -1,6 +1,7 @@
 #
 # Copyright (C) 2019 The LineageOS Project
 #
+# Copyright (C) 2022 exTHmUI
 # SPDX-License-Identifier: Apache-2.0
 #
 
