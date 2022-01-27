@@ -5,7 +5,7 @@
 #
 
 # Inherit some common PixelExperience stuff.
-$(call inherit-product, vendor/exthm/config/common_full_phone.mk)
+$(call inherit-product, vendor/exthm/config/common.mk)
 
 # Inherit from RMX1971 device.
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
