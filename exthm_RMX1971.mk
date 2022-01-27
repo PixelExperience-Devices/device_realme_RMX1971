@@ -5,7 +5,7 @@
 #
 
 # Inherit some common PixelExperience stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/exthm/config/common_full_phone.mk)
 
 # Inherit from RMX1971 device.
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -17,7 +17,7 @@ TARGET_GAPPS_ARCH := arm64
 PRODUCT_DEVICE := RMX1971
 PRODUCT_NAME := aosp_RMX1971
 PRODUCT_BRAND := Realme
-PRODUCT_MODEL := Realme 5 Pro
+PRODUCT_MODEL := Realme Q
 PRODUCT_MANUFACTURER := Realme
 
 PRODUCT_GMS_CLIENTID_BASE := android-realme
