@@ -10,7 +10,7 @@ include device/realme/sdm710-common/BoardConfigCommon.mk
 DEVICE_PATH := device/realme/RMX1971
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := RMX1971|RMX1971CN
+TARGET_OTA_ASSERT_DEVICE := RMX1971,RMX1971CN
 
 # Kernel
 TARGET_KERNEL_CONFIG := KharaMe_defconfig
