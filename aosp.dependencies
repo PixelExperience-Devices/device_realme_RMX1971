@@ -2,7 +2,7 @@
     {
         "repository":   "device_realme_sdm710-common",
         "target_path":  "device/realme/sdm710-common",
-        "branch":       "twelve"
+        "branch":       "twelve-wip"
     },
     {
         "repository":   "kernel_realme_sdm710",
