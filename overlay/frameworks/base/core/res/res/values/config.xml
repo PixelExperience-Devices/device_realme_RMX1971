@@ -130,4 +130,7 @@
          As of Honeycomb, blurring is not supported anymore. -->
     <bool name="config_sf_slowBlur">false</bool>
 
+    <!-- 15 seconds for default screen timeout -->
+    <integer name="def_screen_off_timeout">15000</integer>
+
 </resources>
