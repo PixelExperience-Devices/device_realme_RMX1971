@@ -184,6 +184,7 @@
   </array>
   <!-- Operating volatage for wifi radio in mV. 0 by default-->
   <item name="wifi.controller.voltage">3300</item>
+  <item name="bluetooth.controller.voltage">3300</item>
 
   <array name="wifi.batchedscan"> <!-- mA -->
     <value>.0002</value> <!-- 1-8/hr -->
